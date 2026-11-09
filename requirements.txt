@@ -1,0 +1,54 @@
+# ============================================================================
+# AutoTest — AI-Powered Python Testing Workspace
+# Python 3.11+ required
+# ============================================================================
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# CORE: Agent Orchestration & LLM
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+langgraph>=0.4.1                # Multi-agent workflow orchestration
+openai>=1.0.0                   # OpenAI-compatible client (OpenRouter API)
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# AI: RAG bug-pattern memory
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+chromadb>=1.0.7                 # Vector database for RAG pattern storage
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# API: Web Framework & Server
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+fastapi>=0.115.12               # Async web framework
+uvicorn[standard]>=0.34.2       # ASGI server
+python-multipart>=0.0.32        # File upload support
+pydantic>=2.11.3                # Data validation
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# CODE ANALYSIS: Static Analysis & Metrics
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+radon>=6.0.1                    # Cyclomatic complexity analysis
+networkx>=3.5                   # Dependency graph analysis
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# EXECUTION: Sandbox & Testing
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+e2b-code-interpreter>=1.2.0     # Secure sandboxed code execution (optional)
+pytest>=8.4.1                   # Testing framework
+pytest-cov>=5.0.0               # Coverage measurement
+pytest-asyncio>=0.24.0          # Async test support (generated tests)
+coverage>=7.9.1                 # Code coverage engine
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TERMINAL UI
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+rich>=13.7.0                    # Terminal formatting
+colorama>=0.4.6                 # Cross-platform colored terminal text
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# UTILITIES
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+python-dotenv>=1.1.0            # Environment variable management
+
+# ============================================================================
+# INSTALLATION:
+#   pip install -r requirements.txt
+# ============================================================================

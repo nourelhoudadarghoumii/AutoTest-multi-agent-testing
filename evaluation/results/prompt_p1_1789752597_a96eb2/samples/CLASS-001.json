@@ -1,0 +1,97 @@
+{
+  "sample": {
+    "sample_id": "CLASS-001",
+    "category": "class",
+    "difficulty": "medium",
+    "entry_file": "sample_rect.py",
+    "tags": [
+      "classes"
+    ]
+  },
+  "config": {
+    "model": "cohere/north-mini-code:free",
+    "prompt_version": "P1",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "metrics": {
+    "llm_latency_seconds": 6.14,
+    "llm_api_calls": 1,
+    "llm_retries": 0,
+    "llm_prompt_tokens": 457,
+    "llm_completion_tokens": 268,
+    "llm_total_tokens": 725,
+    "ast_validation_passed": true,
+    "pytest_collect_passed": true,
+    "execution_success": true,
+    "pass_at_1": true,
+    "total_tests": 5,
+    "passed": 5,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 5 items\n\n..\\test_sample_rect.py::test_scale_happy_path PASSED                     [ 20%]\n..\\test_sample_rect.py::test_scale_edge_factor_one PASSED                [ 40%]\n..\\test_sample_rect.py::test_scale_error_factor_zero PASSED              [ 60%]\n..\\test_sample_rect.py::test_scale_error_factor_negative PASSED          [ 80%]\n..\\test_sample_rect.py::test_scale_error_original_dimensions_invalid PASSED [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName             Stmts   Miss  Cover   Missing\n----------------------------------------------\nsample_rect.py      14      2    86%   11, 14\n----------------------------------------------\nTOTAL               14      2    86%\n============================== 5 passed in 0.05s ==============================\n",
+    "latency_seconds": 1.42,
+    "line_coverage": 88.89,
+    "branch_coverage": 100.0,
+    "mutants_total": 8,
+    "mutants_killed": 8,
+    "mutation_score": 1.0,
+    "mutant_details": [
+      {
+        "kind": "binop",
+        "line": 11,
+        "killed": true
+      },
+      {
+        "kind": "binop",
+        "line": 14,
+        "killed": true
+      },
+      {
+        "kind": "binop",
+        "line": 14,
+        "killed": true
+      },
+      {
+        "kind": "binop",
+        "line": 20,
+        "killed": true
+      },
+      {
+        "kind": "binop",
+        "line": 20,
+        "killed": true
+      },
+      {
+        "kind": "boolop",
+        "line": 5,
+        "killed": true
+      },
+      {
+        "kind": "compare",
+        "line": 5,
+        "killed": true
+      },
+      {
+        "kind": "compare",
+        "line": 5,
+        "killed": true
+      }
+    ],
+    "total_name_references": 40,
+    "invalid_names": [],
+    "hallucination_rate": 0.0,
+    "bleu_4": 0.2172,
+    "rouge_l": 0.4254,
+    "codebleu_simplified": 0.6427,
+    "note": "text-similarity only — not a correctness measure"
+  },
+  "artifacts": {
+    "test_file": "CLASS-001\\test_sample_rect.py"
+  },
+  "error": null
+}

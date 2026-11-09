@@ -1,0 +1,539 @@
+{
+  "cohere/north-mini-code:free (reference)": {
+    "meta": {
+      "experiment": "prompt_p0",
+      "experiment_id": "prompt_p0_1789728854_98e7e4",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "rag_store": "off",
+      "model": "cohere/north-mini-code:free",
+      "model_overridden": false,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "prompt engineering: P0 (one variable: prompt)",
+      "timestamp_utc": "2026-09-18T10:54:15.128225+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 1.0,
+      "pass_at_1": 0.75,
+      "line_coverage_mean": 96.2325,
+      "branch_coverage_mean": 87.3608,
+      "mutation_score_mean": 1.0,
+      "hallucination_rate_mean": 0.0,
+      "latency_seconds_mean": 3.2833,
+      "latency_seconds_stdev": 1.8924,
+      "tokens_mean": 866.4167,
+      "bleu_4_mean": 0.3651,
+      "rouge_l_mean": 0.5609,
+      "codebleu_simplified_mean": 0.7191,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 0.5
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 1.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 0.5
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    },
+    "samples": {
+      "BRANCH-001": {
+        "pass": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mut": 1.0,
+        "tokens": 879,
+        "lat": 5.28
+      },
+      "BRANCH-002": {
+        "pass": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mut": 1.0,
+        "tokens": 976,
+        "lat": 8.18
+      },
+      "CLASS-001": {
+        "pass": true,
+        "line": 77.78,
+        "branch": 75.0,
+        "mut": 1.0,
+        "tokens": 809,
+        "lat": 4.43
+      },
+      "CLASS-002": {
+        "pass": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mut": 1.0,
+        "tokens": 1227,
+        "lat": 7.72
+      },
+      "DEP-001": {
+        "pass": false,
+        "line": 100.0,
+        "branch": 100.0,
+        "mut": 1.0,
+        "tokens": 886,
+        "lat": 4.56
+      },
+      "DIFF-001": {
+        "pass": false,
+        "line": 91.3,
+        "branch": 90.0,
+        "mut": 1.0,
+        "tokens": 987,
+        "lat": 6.59
+      },
+      "DIFF-002": {
+        "pass": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mut": null,
+        "tokens": 771,
+        "lat": 5.92
+      },
+      "EDGE-001": {
+        "pass": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mut": 1.0,
+        "tokens": 735,
+        "lat": 3.83
+      },
+      "EDGE-002": {
+        "pass": false,
+        "line": 85.71,
+        "branch": 83.33,
+        "mut": 1.0,
+        "tokens": 881,
+        "lat": 4.47
+      },
+      "EXC-001": {
+        "pass": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mut": 1.0,
+        "tokens": 803,
+        "lat": 6.89
+      },
+      "SIMPLE-001": {
+        "pass": true,
+        "line": 100.0,
+        "branch": 0.0,
+        "mut": 1.0,
+        "tokens": 782,
+        "lat": 6.18
+      },
+      "SIMPLE-002": {
+        "pass": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mut": 1.0,
+        "tokens": 661,
+        "lat": 3.78
+      }
+    }
+  },
+  "deepseek/deepseek-v4-flash-0731:free": {
+    "meta": {
+      "experiment": "model_deepseek_deepseek-v4-flash-0731-free",
+      "experiment_id": "model_deepseek_deepseek-v4-flash-0731-free_1789850754_a30599",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "rag_store": "off",
+      "model": "deepseek/deepseek-v4-flash-0731:free",
+      "model_overridden": true,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "SELECT stage: Test Writer model comparison (one variable: model)",
+      "timestamp_utc": "2026-09-19T20:45:55.005696+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 1.0,
+      "pass_at_1": 0.9167,
+      "line_coverage_mean": 95.4425,
+      "branch_coverage_mean": 86.1108,
+      "mutation_score_mean": 0.0909,
+      "hallucination_rate_mean": 0.0,
+      "latency_seconds_mean": 3.1167,
+      "latency_seconds_stdev": 0.2789,
+      "tokens_mean": 1031.75,
+      "bleu_4_mean": 0.314,
+      "rouge_l_mean": 0.5131,
+      "codebleu_simplified_mean": 0.6927,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 1.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 1.0
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    },
+    "samples": {
+      "BRANCH-001": {
+        "pass": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mut": 0.0,
+        "tokens": 1199,
+        "lat": 13.75
+      },
+      "BRANCH-002": {
+        "pass": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mut": 0.0,
+        "tokens": 1066,
+        "lat": 10.67
+      },
+      "CLASS-001": {
+        "pass": true,
+        "line": 77.78,
+        "branch": 75.0,
+        "mut": 0.0,
+        "tokens": 934,
+        "lat": 7.5
+      },
+      "CLASS-002": {
+        "pass": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mut": 0.0,
+        "tokens": 1399,
+        "lat": 14.2
+      },
+      "DEP-001": {
+        "pass": false,
+        "line": 100.0,
+        "branch": 100.0,
+        "mut": 1.0,
+        "tokens": 982,
+        "lat": 9.53
+      },
+      "DIFF-001": {
+        "pass": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mut": 0.0,
+        "tokens": 1243,
+        "lat": 24.77
+      },
+      "DIFF-002": {
+        "pass": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mut": null,
+        "tokens": 998,
+        "lat": 10.85
+      },
+      "EDGE-001": {
+        "pass": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mut": 0.0,
+        "tokens": 982,
+        "lat": 10.17
+      },
+      "EDGE-002": {
+        "pass": true,
+        "line": 85.71,
+        "branch": 83.33,
+        "mut": 0.0,
+        "tokens": 1029,
+        "lat": 9.33
+      },
+      "EXC-001": {
+        "pass": true,
+        "line": 81.82,
+        "branch": 75.0,
+        "mut": 0.0,
+        "tokens": 846,
+        "lat": 5.5
+      },
+      "SIMPLE-001": {
+        "pass": true,
+        "line": 100.0,
+        "branch": 0.0,
+        "mut": 0.0,
+        "tokens": 919,
+        "lat": 8.89
+      },
+      "SIMPLE-002": {
+        "pass": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mut": 0.0,
+        "tokens": 784,
+        "lat": 5.96
+      }
+    }
+  },
+  "poolside/laguna-s-2.1:free": {
+    "meta": {
+      "experiment": "model_poolside_laguna-s-2.1-free",
+      "experiment_id": "model_poolside_laguna-s-2.1-free_1789851194_cc85bd",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "rag_store": "off",
+      "model": "poolside/laguna-s-2.1:free",
+      "model_overridden": true,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "SELECT stage: Test Writer model comparison (one variable: model)",
+      "timestamp_utc": "2026-09-19T20:53:14.085683+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 0.0,
+      "pass_at_1": 0.0,
+      "line_coverage_mean": 0.0,
+      "branch_coverage_mean": 0.0,
+      "mutation_score_mean": null,
+      "hallucination_rate_mean": null,
+      "latency_seconds_mean": null,
+      "latency_seconds_stdev": null,
+      "tokens_mean": 0,
+      "bleu_4_mean": null,
+      "rouge_l_mean": null,
+      "codebleu_simplified_mean": null,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 0.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 0.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 0.0
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 0.0
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 0.0
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    },
+    "samples": {
+      "BRANCH-001": {
+        "pass": 0.0,
+        "line": 0.0,
+        "branch": 0.0,
+        "mut": null,
+        "tokens": 0,
+        "lat": 196.29
+      },
+      "BRANCH-002": {
+        "pass": 0.0,
+        "line": 0.0,
+        "branch": 0.0,
+        "mut": null,
+        "tokens": 0,
+        "lat": 184.21
+      },
+      "CLASS-001": {
+        "pass": 0.0,
+        "line": 0.0,
+        "branch": 0.0,
+        "mut": null,
+        "tokens": 0,
+        "lat": 206.33
+      },
+      "CLASS-002": {
+        "pass": 0.0,
+        "line": 0.0,
+        "branch": 0.0,
+        "mut": null,
+        "tokens": 0,
+        "lat": 185.7
+      },
+      "DEP-001": {
+        "pass": 0.0,
+        "line": 0.0,
+        "branch": 0.0,
+        "mut": null,
+        "tokens": 0,
+        "lat": 203.58
+      },
+      "DIFF-001": {
+        "pass": 0.0,
+        "line": 0.0,
+        "branch": 0.0,
+        "mut": null,
+        "tokens": 0,
+        "lat": 212.84
+      },
+      "DIFF-002": {
+        "pass": 0.0,
+        "line": 0.0,
+        "branch": 0.0,
+        "mut": null,
+        "tokens": 0,
+        "lat": 186.77
+      },
+      "EDGE-001": {
+        "pass": 0.0,
+        "line": 0.0,
+        "branch": 0.0,
+        "mut": null,
+        "tokens": 0,
+        "lat": 184.05
+      },
+      "EDGE-002": {
+        "pass": 0.0,
+        "line": 0.0,
+        "branch": 0.0,
+        "mut": null,
+        "tokens": 0,
+        "lat": 195.21
+      },
+      "EXC-001": {
+        "pass": 0.0,
+        "line": 0.0,
+        "branch": 0.0,
+        "mut": null,
+        "tokens": 0,
+        "lat": 194.68
+      },
+      "SIMPLE-001": {
+        "pass": 0.0,
+        "line": 0.0,
+        "branch": 0.0,
+        "mut": null,
+        "tokens": 0,
+        "lat": 194.94
+      },
+      "SIMPLE-002": {
+        "pass": 0.0,
+        "line": 0.0,
+        "branch": 0.0,
+        "mut": null,
+        "tokens": 0,
+        "lat": 185.81
+      }
+    }
+  }
+}

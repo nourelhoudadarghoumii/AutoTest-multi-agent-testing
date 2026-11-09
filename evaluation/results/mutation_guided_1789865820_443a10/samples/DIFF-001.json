@@ -1,0 +1,142 @@
+{
+  "sample_id": "DIFF-001",
+  "category": "difficult",
+  "config": {
+    "model": "production",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "baseline": {
+    "sample": {
+      "sample_id": "DIFF-001",
+      "category": "difficult",
+      "difficulty": "hard",
+      "entry_file": "sample_intervals.py",
+      "tags": [
+        "algorithm"
+      ]
+    },
+    "config": {
+      "model": "production",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "dataset_version": "v1",
+      "temperature": 0.3,
+      "max_tokens": 2048
+    },
+    "metrics": {
+      "llm_latency_seconds": 4.08,
+      "llm_api_calls": 1,
+      "llm_retries": 0,
+      "llm_prompt_tokens": 696,
+      "llm_completion_tokens": 279,
+      "llm_total_tokens": 975,
+      "ast_validation_passed": true,
+      "pytest_collect_passed": true,
+      "execution_success": true,
+      "pass_at_1": false,
+      "total_tests": 5,
+      "passed": 3,
+      "failed": 2,
+      "errors": 0,
+      "skipped": 0,
+      "failed_test_names": [
+        "test_merge_intervals_happy_path",
+        "test_merge_intervals_edge_case_unsorted_input",
+        "test_merge_intervals_happy_path",
+        "test_merge_intervals_edge_case_unsorted_input"
+      ],
+      "stdout_excerpt": "est_merge_intervals_edge_case_single_interval PASSED [ 40%]\n..\\test_sample_intervals.py::test_merge_intervals_error_invalid_interval PASSED [ 60%]\n..\\test_sample_intervals.py::test_merge_intervals_edge_case_unsorted_input FAILED [ 80%]\n..\\test_sample_intervals.py::test_merge_intervals_happy_path_overlapping PASSED [100%]\n\n================================== FAILURES ===================================\n_______________________ test_merge_intervals_happy_path _______________________\n..\\test_sample_intervals.py:12: in test_merge_intervals_happy_path\n    assert result == [(1, 3), (2, 6), (8, 10), (15, 18)]\nE   AssertionError: assert [(1, 6), (8, 10), (15, 18)] == [(1, 3), (2, ...10), (15, 18)]\nE     \nE     At index 0 diff: (1, 6) != (1, 3)\nE     Right contains one more item: (15, 18)\nE     \nE     Full diff:\nE       [\nE           (...\nE     \nE     ...Full output truncated (16 lines hidden), use '-vv' to show\n________________ test_merge_intervals_edge_case_unsorted_input ________________\n..\\test_sample_intervals.py:26: in test_merge_intervals_edge_case_unsorted_input\n    result = merge_intervals(intervals)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\nsample_intervals.py:7: in merge_intervals\n    raise ValueError(\"invalid interval\")\nE   ValueError: invalid interval\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName                  Stmts   Miss  Cover   Missing\n---------------------------------------------------\nsample_intervals.py      13      1    92%   4\n---------------------------------------------------\nTOTAL                    13      1    92%\n=========================== short test summary info ===========================\nFAILED ..\\test_sample_intervals.py::test_merge_intervals_happy_path - Asserti...\nFAILED ..\\test_sample_intervals.py::test_merge_intervals_edge_case_unsorted_input\n========================= 2 failed, 3 passed in 0.16s =========================\n",
+      "latency_seconds": 3.74,
+      "line_coverage": 91.3,
+      "branch_coverage": 90.0,
+      "mutants_total": 8,
+      "mutants_killed": 8,
+      "mutation_score": 1.0,
+      "mutant_details": [
+        {
+          "kind": "compare",
+          "line": 6,
+          "killed": true
+        },
+        {
+          "kind": "compare",
+          "line": 11,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 9,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 10,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 11,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 11,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 12,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 12,
+          "killed": true
+        }
+      ],
+      "total_name_references": 27,
+      "invalid_names": [],
+      "hallucination_rate": 0.0,
+      "bleu_4": 0.31,
+      "rouge_l": 0.5165,
+      "codebleu_simplified": 0.7,
+      "note": "text-similarity only — not a correctness measure"
+    },
+    "artifacts": {
+      "test_file": "DIFF-001\\test_sample_intervals.py"
+    },
+    "error": null,
+    "surviving_mutants": [],
+    "mutants_total": 8,
+    "mutants_killed": 8
+  },
+  "guided": {
+    "note": "all mutants already killed by the baseline suite — no guided step performed (no additional LLM call)",
+    "pass_at_1": false,
+    "execution_success": true,
+    "line_coverage": 91.3,
+    "branch_coverage": 90.0,
+    "mutation_score": 1.0,
+    "mutants_total": 8,
+    "mutants_killed": 8,
+    "hallucination_rate": 0.0,
+    "latency_seconds": 3.74,
+    "llm_total_tokens": 975,
+    "additional_tests": 0,
+    "additional_llm_tokens": 0,
+    "additional_llm_latency_seconds": 0.0
+  },
+  "deltas": {
+    "mutation_score": 0,
+    "mutants_killed": 0,
+    "line_coverage": 0,
+    "branch_coverage": 0,
+    "pass_at_1": 0
+  },
+  "ceiling_effect": true,
+  "error": null
+}

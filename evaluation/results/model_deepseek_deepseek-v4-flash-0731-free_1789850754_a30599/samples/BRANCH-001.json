@@ -1,0 +1,98 @@
+{
+  "sample": {
+    "sample_id": "BRANCH-001",
+    "category": "branch",
+    "difficulty": "easy",
+    "entry_file": "sample_grades.py",
+    "tags": [
+      "branches",
+      "boundaries"
+    ]
+  },
+  "config": {
+    "model": "deepseek/deepseek-v4-flash-0731:free",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "metrics": {
+    "llm_latency_seconds": 13.75,
+    "llm_api_calls": 1,
+    "llm_retries": 0,
+    "llm_prompt_tokens": 773,
+    "llm_completion_tokens": 426,
+    "llm_total_tokens": 1199,
+    "ast_validation_passed": true,
+    "pytest_collect_passed": true,
+    "execution_success": true,
+    "pass_at_1": true,
+    "total_tests": 14,
+    "passed": 14,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 14 items\n\n..\\test_sample_grades.py::test_classify_grade_happy_path_A PASSED        [  7%]\n..\\test_sample_grades.py::test_classify_grade_happy_path_B PASSED        [ 14%]\n..\\test_sample_grades.py::test_classify_grade_happy_path_C PASSED        [ 21%]\n..\\test_sample_grades.py::test_classify_grade_happy_path_D PASSED        [ 28%]\n..\\test_sample_grades.py::test_classify_grade_happy_path_F PASSED        [ 35%]\n..\\test_sample_grades.py::test_classify_grade_edge_case_lower_boundary PASSED [ 42%]\n..\\test_sample_grades.py::test_classify_grade_edge_case_upper_boundary PASSED [ 50%]\n..\\test_sample_grades.py::test_classify_grade_edge_case_boundary_90 PASSED [ 57%]\n..\\test_sample_grades.py::test_classify_grade_edge_case_boundary_80 PASSED [ 64%]\n..\\test_sample_grades.py::test_classify_grade_edge_case_boundary_70 PASSED [ 71%]\n..\\test_sample_grades.py::test_classify_grade_edge_case_boundary_60 PASSED [ 78%]\n..\\test_sample_grades.py::test_classify_grade_error_negative_score PASSED [ 85%]\n..\\test_sample_grades.py::test_classify_grade_error_above_100 PASSED     [ 92%]\n..\\test_sample_grades.py::test_classify_grade_error_non_numeric PASSED   [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName               Stmts   Miss  Cover   Missing\n------------------------------------------------\nsample_grades.py      12      0   100%\n------------------------------------------------\nTOTAL                 12      0   100%\n============================= 14 passed in 0.11s ==============================\n",
+    "latency_seconds": 3.53,
+    "line_coverage": 100.0,
+    "branch_coverage": 100.0,
+    "mutants_total": 8,
+    "mutants_killed": 0,
+    "mutation_score": 0.0,
+    "mutant_details": [
+      {
+        "kind": "boolop",
+        "line": 3,
+        "killed": false
+      },
+      {
+        "kind": "compare",
+        "line": 3,
+        "killed": false
+      },
+      {
+        "kind": "compare",
+        "line": 3,
+        "killed": false
+      },
+      {
+        "kind": "compare",
+        "line": 5,
+        "killed": false
+      },
+      {
+        "kind": "compare",
+        "line": 7,
+        "killed": false
+      },
+      {
+        "kind": "compare",
+        "line": 9,
+        "killed": false
+      },
+      {
+        "kind": "compare",
+        "line": 11,
+        "killed": false
+      },
+      {
+        "kind": "intconst",
+        "line": 3,
+        "killed": false
+      }
+    ],
+    "total_name_references": 31,
+    "invalid_names": [],
+    "hallucination_rate": 0.0,
+    "bleu_4": 0.2631,
+    "rouge_l": 0.4595,
+    "codebleu_simplified": 0.6649,
+    "note": "text-similarity only — not a correctness measure"
+  },
+  "artifacts": {
+    "test_file": "BRANCH-001\\test_sample_grades.py"
+  },
+  "error": null
+}

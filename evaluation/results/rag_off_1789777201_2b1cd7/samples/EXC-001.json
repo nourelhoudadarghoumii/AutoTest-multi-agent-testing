@@ -1,0 +1,72 @@
+{
+  "sample": {
+    "sample_id": "EXC-001",
+    "category": "exception",
+    "difficulty": "medium",
+    "entry_file": "sample_parser.py",
+    "tags": [
+      "exceptions"
+    ]
+  },
+  "config": {
+    "model": "cohere/north-mini-code:free",
+    "prompt_version": "P3",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "metrics": {
+    "llm_latency_seconds": 4.36,
+    "llm_api_calls": 1,
+    "llm_retries": 0,
+    "llm_prompt_tokens": 613,
+    "llm_completion_tokens": 116,
+    "llm_total_tokens": 729,
+    "ast_validation_passed": true,
+    "pytest_collect_passed": true,
+    "execution_success": true,
+    "pass_at_1": true,
+    "total_tests": 5,
+    "passed": 5,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 5 items\n\n..\\test_sample_parser.py::test_parse_positive_int_valid PASSED           [ 20%]\n..\\test_sample_parser.py::test_parse_positive_int_edge_case_one PASSED   [ 40%]\n..\\test_sample_parser.py::test_parse_positive_int_negative_raises PASSED [ 60%]\n..\\test_sample_parser.py::test_parse_positive_int_zero_raises PASSED     [ 80%]\n..\\test_sample_parser.py::test_parse_positive_int_non_string_raises PASSED [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName               Stmts   Miss  Cover   Missing\n------------------------------------------------\nsample_parser.py       7      0   100%\n------------------------------------------------\nTOTAL                  7      0   100%\n============================== 5 passed in 0.27s ==============================\n",
+    "latency_seconds": 6.91,
+    "line_coverage": 100.0,
+    "branch_coverage": 100.0,
+    "mutants_total": 3,
+    "mutants_killed": 0,
+    "mutation_score": 0.0,
+    "mutant_details": [
+      {
+        "kind": "compare",
+        "line": 6,
+        "killed": false
+      },
+      {
+        "kind": "intconst",
+        "line": 6,
+        "killed": false
+      },
+      {
+        "kind": "not",
+        "line": 3,
+        "killed": false
+      }
+    ],
+    "total_name_references": 24,
+    "invalid_names": [],
+    "hallucination_rate": 0.0,
+    "bleu_4": 0.5467,
+    "rouge_l": 0.6964,
+    "codebleu_simplified": 0.8186,
+    "note": "text-similarity only — not a correctness measure"
+  },
+  "artifacts": {
+    "test_file": "EXC-001\\test_sample_parser.py"
+  },
+  "error": null
+}

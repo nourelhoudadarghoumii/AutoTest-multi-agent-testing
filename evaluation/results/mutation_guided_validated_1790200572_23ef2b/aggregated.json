@@ -1,0 +1,27 @@
+{
+  "n_samples": 12,
+  "n_ceiling_effect": 5,
+  "ceiling_samples": [
+    "SIMPLE-001",
+    "SIMPLE-002",
+    "EDGE-001",
+    "EDGE-002",
+    "DIFF-002"
+  ],
+  "n_effective": 7,
+  "mutation_score_delta_mean": 0.2619,
+  "mutants_killed_delta_mean": 1.7143,
+  "surviving_mutants_delta_mean": -1.8571,
+  "line_coverage_delta_mean": 3.1743,
+  "branch_coverage_delta_mean": 3.5714,
+  "pass_at_1_delta_mean": 0.0,
+  "tokens_delta_mean": 179.2857,
+  "latency_delta_mean": 5.0143,
+  "additional_generated_total": 60,
+  "additional_accepted_total": 54,
+  "additional_rejected_total": 6,
+  "rejection_reasons": {
+    "fails_against_original_code": 6
+  },
+  "note": "MG-v2 = MG-v1 + per-test validation against original unmutated code"
+}

@@ -1,0 +1,251 @@
+{
+  "sample_id": "BRANCH-002",
+  "category": "branch",
+  "config": {
+    "model": "production",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048,
+    "per_test_validation": true
+  },
+  "baseline": {
+    "sample": {
+      "sample_id": "BRANCH-002",
+      "category": "branch",
+      "difficulty": "medium",
+      "entry_file": "sample_shipping.py",
+      "tags": [
+        "branches",
+        "floats"
+      ]
+    },
+    "config": {
+      "model": "production",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "dataset_version": "v1",
+      "temperature": 0.3,
+      "max_tokens": 2048
+    },
+    "metrics": {
+      "llm_latency_seconds": 3.6,
+      "llm_api_calls": 1,
+      "llm_retries": 0,
+      "llm_prompt_tokens": 674,
+      "llm_completion_tokens": 270,
+      "llm_total_tokens": 944,
+      "ast_validation_passed": true,
+      "pytest_collect_passed": true,
+      "execution_success": true,
+      "pass_at_1": true,
+      "total_tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "failed_test_names": [],
+      "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 6 items\n\n..\\test_sample_shipping.py::test_shipping_cost_happy_path PASSED         [ 16%]\n..\\test_sample_shipping.py::test_shipping_cost_express PASSED            [ 33%]\n..\\test_sample_shipping.py::test_shipping_cost_edge_case_weight_one PASSED [ 50%]\n..\\test_sample_shipping.py::test_shipping_cost_edge_case_weight_five PASSED [ 66%]\n..\\test_sample_shipping.py::test_shipping_cost_edge_case_weight_twenty PASSED [ 83%]\n..\\test_sample_shipping.py::test_shipping_cost_error PASSED              [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName                 Stmts   Miss  Cover   Missing\n--------------------------------------------------\nsample_shipping.py      13      0   100%\n--------------------------------------------------\nTOTAL                   13      0   100%\n============================== 6 passed in 0.14s ==============================\n",
+      "latency_seconds": 2.88,
+      "line_coverage": 100.0,
+      "branch_coverage": 100.0,
+      "mutants_total": 8,
+      "mutants_killed": 6,
+      "mutation_score": 0.75,
+      "mutant_details": [
+        {
+          "kind": "binop",
+          "line": 14,
+          "killed": true
+        },
+        {
+          "kind": "compare",
+          "line": 3,
+          "killed": false
+        },
+        {
+          "kind": "compare",
+          "line": 5,
+          "killed": true
+        },
+        {
+          "kind": "compare",
+          "line": 7,
+          "killed": true
+        },
+        {
+          "kind": "compare",
+          "line": 9,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 3,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 5,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 7,
+          "killed": false
+        }
+      ],
+      "total_name_references": 26,
+      "invalid_names": [],
+      "hallucination_rate": 0.0,
+      "bleu_4": 0.3848,
+      "rouge_l": 0.5738,
+      "codebleu_simplified": 0.7547,
+      "note": "text-similarity only — not a correctness measure"
+    },
+    "artifacts": {
+      "test_file": "BRANCH-002\\test_sample_shipping.py"
+    },
+    "error": null,
+    "surviving_mutants": [
+      {
+        "mutation_id": "BRANCH-002-M01",
+        "file": "sample_shipping.py",
+        "function": "shipping_cost",
+        "line": 3,
+        "operator": "compare",
+        "original_code": "if weight_kg <= 0:",
+        "mutated_code": "if weight_kg < 0:"
+      },
+      {
+        "mutation_id": "BRANCH-002-M07",
+        "file": "sample_shipping.py",
+        "function": "shipping_cost",
+        "line": 7,
+        "operator": "intconst",
+        "original_code": "raise ValueError(\"weight must be positive\")",
+        "mutated_code": "raise ValueError('weight must be positive')"
+      }
+    ],
+    "mutants_total": 8,
+    "mutants_killed": 6
+  },
+  "guided": {
+    "survivors_given_to_llm": [
+      {
+        "mutation_id": "BRANCH-002-M01",
+        "file": "sample_shipping.py",
+        "function": "shipping_cost",
+        "line": 3,
+        "operator": "compare",
+        "original_code": "if weight_kg <= 0:",
+        "mutated_code": "if weight_kg < 0:"
+      },
+      {
+        "mutation_id": "BRANCH-002-M07",
+        "file": "sample_shipping.py",
+        "function": "shipping_cost",
+        "line": 7,
+        "operator": "intconst",
+        "original_code": "raise ValueError(\"weight must be positive\")",
+        "mutated_code": "raise ValueError('weight must be positive')"
+      }
+    ],
+    "additional_llm_tokens": 1064,
+    "additional_llm_latency_seconds": 8.14,
+    "additional_generated": 12,
+    "additional_accepted": 12,
+    "additional_rejected": 0,
+    "accepted_tests": [
+      {
+        "test_name": "test_shipping_cost_zero_weight",
+        "snippet": "def test_shipping_cost_zero_weight():\n    try:\n        shipping_cost(0, False)\n    except ValueError as e:\n        assert str(e) == \"weight must be positive\"\n    else:\n        assert False, \"Expected ValueError for zero weight\""
+      },
+      {
+        "test_name": "test_shipping_cost_negative_weight",
+        "snippet": "def test_shipping_cost_negative_weight():\n    try:\n        shipping_cost(-1, False)\n    except ValueError as e:\n        assert str(e) == \"weight must be positive\"\n    else:\n        assert False, \"Expected ValueError for negative weight\""
+      },
+      {
+        "test_name": "test_shipping_cost_express_true",
+        "snippet": "def test_shipping_cost_express_true():\n    assert shipping_cost(0.5, True) == 10.0"
+      },
+      {
+        "test_name": "test_shipping_cost_express_false",
+        "snippet": "def test_shipping_cost_express_false():\n    assert shipping_cost(0.5, False) == 5.0"
+      },
+      {
+        "test_name": "test_shipping_cost_weight_tier_1",
+        "snippet": "def test_shipping_cost_weight_tier_1():\n    assert shipping_cost(1, False) == 5.0"
+      },
+      {
+        "test_name": "test_shipping_cost_weight_tier_2",
+        "snippet": "def test_shipping_cost_weight_tier_2():\n    assert shipping_cost(5, False) == 10.0"
+      },
+      {
+        "test_name": "test_shipping_cost_weight_tier_3",
+        "snippet": "def test_shipping_cost_weight_tier_3():\n    assert shipping_cost(20, False) == 25.0"
+      },
+      {
+        "test_name": "test_shipping_cost_weight_tier_4",
+        "snippet": "def test_shipping_cost_weight_tier_4():\n    assert shipping_cost(21, False) == 50.0"
+      },
+      {
+        "test_name": "test_shipping_cost_express_surcharge_tier_1",
+        "snippet": "def test_shipping_cost_express_surcharge_tier_1():\n    assert shipping_cost(1, True) == 10.0"
+      },
+      {
+        "test_name": "test_shipping_cost_express_surcharge_tier_2",
+        "snippet": "def test_shipping_cost_express_surcharge_tier_2():\n    assert shipping_cost(5, True) == 20.0"
+      },
+      {
+        "test_name": "test_shipping_cost_express_surcharge_tier_3",
+        "snippet": "def test_shipping_cost_express_surcharge_tier_3():\n    assert shipping_cost(20, True) == 50.0"
+      },
+      {
+        "test_name": "test_shipping_cost_express_surcharge_tier_4",
+        "snippet": "def test_shipping_cost_express_surcharge_tier_4():\n    assert shipping_cost(21, True) == 100.0"
+      }
+    ],
+    "rejected_tests": [],
+    "merged_accepted": true,
+    "execution_success": true,
+    "pass_at_1": true,
+    "total_tests": 18,
+    "passed": 18,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "=============\ncollecting ... collected 18 items\n\n..\\test_sample_shipping.py::test_shipping_cost_happy_path PASSED         [  5%]\n..\\test_sample_shipping.py::test_shipping_cost_express PASSED            [ 11%]\n..\\test_sample_shipping.py::test_shipping_cost_edge_case_weight_one PASSED [ 16%]\n..\\test_sample_shipping.py::test_shipping_cost_edge_case_weight_five PASSED [ 22%]\n..\\test_sample_shipping.py::test_shipping_cost_edge_case_weight_twenty PASSED [ 27%]\n..\\test_sample_shipping.py::test_shipping_cost_error PASSED              [ 33%]\n..\\test_sample_shipping.py::test_shipping_cost_zero_weight PASSED        [ 38%]\n..\\test_sample_shipping.py::test_shipping_cost_negative_weight PASSED    [ 44%]\n..\\test_sample_shipping.py::test_shipping_cost_express_true PASSED       [ 50%]\n..\\test_sample_shipping.py::test_shipping_cost_express_false PASSED      [ 55%]\n..\\test_sample_shipping.py::test_shipping_cost_weight_tier_1 PASSED      [ 61%]\n..\\test_sample_shipping.py::test_shipping_cost_weight_tier_2 PASSED      [ 66%]\n..\\test_sample_shipping.py::test_shipping_cost_weight_tier_3 PASSED      [ 72%]\n..\\test_sample_shipping.py::test_shipping_cost_weight_tier_4 PASSED      [ 77%]\n..\\test_sample_shipping.py::test_shipping_cost_express_surcharge_tier_1 PASSED [ 83%]\n..\\test_sample_shipping.py::test_shipping_cost_express_surcharge_tier_2 PASSED [ 88%]\n..\\test_sample_shipping.py::test_shipping_cost_express_surcharge_tier_3 PASSED [ 94%]\n..\\test_sample_shipping.py::test_shipping_cost_express_surcharge_tier_4 PASSED [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName                 Stmts   Miss  Cover   Missing\n--------------------------------------------------\nsample_shipping.py      13      0   100%\n--------------------------------------------------\nTOTAL                   13      0   100%\n============================= 18 passed in 0.47s ==============================\n",
+    "latency_seconds": 7.26,
+    "line_coverage": 100.0,
+    "branch_coverage": 100.0,
+    "mutation_score": 0.875,
+    "mutants_total": 8,
+    "mutants_killed": 7,
+    "surviving_mutants_after": [
+      {
+        "mutation_id": "BRANCH-002-M07",
+        "file": "sample_shipping.py",
+        "function": "shipping_cost",
+        "line": 7,
+        "operator": "intconst",
+        "original_code": "raise ValueError(\"weight must be positive\")",
+        "mutated_code": "raise ValueError('weight must be positive')"
+      }
+    ],
+    "hallucination_rate": 0.0
+  },
+  "deltas": {
+    "mutation_score": 0.125,
+    "mutants_killed": 1,
+    "surviving_mutants": -1,
+    "line_coverage": 0.0,
+    "branch_coverage": 0.0,
+    "pass_at_1": 0.0,
+    "tokens": 120,
+    "latency_seconds": 12.52
+  },
+  "ceiling_effect": false,
+  "error": null
+}

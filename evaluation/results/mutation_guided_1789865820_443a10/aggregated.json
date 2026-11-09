@@ -1,0 +1,21 @@
+{
+  "n_samples": 12,
+  "n_ceiling_effect": 4,
+  "ceiling_samples": [
+    "EDGE-002",
+    "DEP-001",
+    "DIFF-001",
+    "DIFF-002"
+  ],
+  "n_effective": 8,
+  "mutation_score_delta_mean": 0.4286,
+  "mutants_killed_delta_mean": 1.7143,
+  "surviving_mutants_delta_mean": -1.7143,
+  "line_coverage_delta_mean": 5.7714,
+  "branch_coverage_delta_mean": 7.1429,
+  "pass_at_1_delta_mean": -0.4286,
+  "tokens_delta_mean": 290.7143,
+  "latency_delta_mean": 6.1943,
+  "additional_tests_total": 57,
+  "note": "deltas are guided minus baseline on the same initial generation"
+}

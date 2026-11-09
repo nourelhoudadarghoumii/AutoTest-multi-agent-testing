@@ -1,0 +1,72 @@
+{
+  "sample": {
+    "sample_id": "EXC-001",
+    "category": "exception",
+    "difficulty": "medium",
+    "entry_file": "sample_parser.py",
+    "tags": [
+      "exceptions"
+    ]
+  },
+  "config": {
+    "model": "deepseek/deepseek-v4-flash-0731:free",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "metrics": {
+    "llm_latency_seconds": 5.5,
+    "llm_api_calls": 1,
+    "llm_retries": 0,
+    "llm_prompt_tokens": 743,
+    "llm_completion_tokens": 103,
+    "llm_total_tokens": 846,
+    "ast_validation_passed": true,
+    "pytest_collect_passed": true,
+    "execution_success": true,
+    "pass_at_1": true,
+    "total_tests": 3,
+    "passed": 3,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 3 items\n\n..\\test_sample_parser.py::test_parse_positive_int_happy_path PASSED      [ 33%]\n..\\test_sample_parser.py::test_parse_positive_int_edge_case PASSED       [ 66%]\n..\\test_sample_parser.py::test_parse_positive_int_error_case PASSED      [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName               Stmts   Miss  Cover   Missing\n------------------------------------------------\nsample_parser.py       7      1    86%   4\n------------------------------------------------\nTOTAL                  7      1    86%\n============================== 3 passed in 0.15s ==============================\n",
+    "latency_seconds": 3.07,
+    "line_coverage": 81.82,
+    "branch_coverage": 75.0,
+    "mutants_total": 3,
+    "mutants_killed": 0,
+    "mutation_score": 0.0,
+    "mutant_details": [
+      {
+        "kind": "compare",
+        "line": 6,
+        "killed": false
+      },
+      {
+        "kind": "intconst",
+        "line": 6,
+        "killed": false
+      },
+      {
+        "kind": "not",
+        "line": 3,
+        "killed": false
+      }
+    ],
+    "total_name_references": 16,
+    "invalid_names": [],
+    "hallucination_rate": 0.0,
+    "bleu_4": 0.4769,
+    "rouge_l": 0.6377,
+    "codebleu_simplified": 0.7487,
+    "note": "text-similarity only — not a correctness measure"
+  },
+  "artifacts": {
+    "test_file": "EXC-001\\test_sample_parser.py"
+  },
+  "error": null
+}

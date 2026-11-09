@@ -1,0 +1,248 @@
+{
+  "sample_id": "DIFF-001",
+  "category": "difficult",
+  "config": {
+    "model": "production",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048,
+    "per_test_validation": true
+  },
+  "baseline": {
+    "sample": {
+      "sample_id": "DIFF-001",
+      "category": "difficult",
+      "difficulty": "hard",
+      "entry_file": "sample_intervals.py",
+      "tags": [
+        "algorithm"
+      ]
+    },
+    "config": {
+      "model": "production",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "dataset_version": "v1",
+      "temperature": 0.3,
+      "max_tokens": 2048
+    },
+    "metrics": {
+      "llm_latency_seconds": 3.98,
+      "llm_api_calls": 1,
+      "llm_retries": 0,
+      "llm_prompt_tokens": 696,
+      "llm_completion_tokens": 257,
+      "llm_total_tokens": 953,
+      "ast_validation_passed": true,
+      "pytest_collect_passed": true,
+      "execution_success": true,
+      "pass_at_1": true,
+      "total_tests": 5,
+      "passed": 5,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "failed_test_names": [],
+      "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 5 items\n\n..\\test_sample_intervals.py::test_merge_intervals_happy_path PASSED      [ 20%]\n..\\test_sample_intervals.py::test_merge_intervals_edge_case_single_interval PASSED [ 40%]\n..\\test_sample_intervals.py::test_merge_intervals_edge_case_unsorted_input PASSED [ 60%]\n..\\test_sample_intervals.py::test_merge_intervals_error_case_invalid_interval PASSED [ 80%]\n..\\test_sample_intervals.py::test_merge_intervals_error_case_empty_input PASSED [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName                  Stmts   Miss  Cover   Missing\n---------------------------------------------------\nsample_intervals.py      13      0   100%\n---------------------------------------------------\nTOTAL                    13      0   100%\n============================== 5 passed in 0.35s ==============================\n",
+      "latency_seconds": 6.64,
+      "line_coverage": 100.0,
+      "branch_coverage": 100.0,
+      "mutants_total": 8,
+      "mutants_killed": 7,
+      "mutation_score": 0.875,
+      "mutant_details": [
+        {
+          "kind": "compare",
+          "line": 6,
+          "killed": true
+        },
+        {
+          "kind": "compare",
+          "line": 11,
+          "killed": false
+        },
+        {
+          "kind": "intconst",
+          "line": 9,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 10,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 11,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 11,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 12,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 12,
+          "killed": true
+        }
+      ],
+      "total_name_references": 27,
+      "invalid_names": [],
+      "hallucination_rate": 0.0,
+      "bleu_4": 0.3361,
+      "rouge_l": 0.5362,
+      "codebleu_simplified": 0.7114,
+      "note": "text-similarity only — not a correctness measure"
+    },
+    "artifacts": {
+      "test_file": "DIFF-001\\test_sample_intervals.py"
+    },
+    "error": null,
+    "surviving_mutants": [
+      {
+        "mutation_id": "DIFF-001-M01",
+        "file": "sample_intervals.py",
+        "function": "merge_intervals",
+        "line": 11,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"invalid interval\")",
+        "mutated_code": "raise ValueError('invalid interval')"
+      }
+    ],
+    "mutants_total": 8,
+    "mutants_killed": 7
+  },
+  "guided": {
+    "survivors_given_to_llm": [
+      {
+        "mutation_id": "DIFF-001-M01",
+        "file": "sample_intervals.py",
+        "function": "merge_intervals",
+        "line": 11,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"invalid interval\")",
+        "mutated_code": "raise ValueError('invalid interval')"
+      }
+    ],
+    "additional_llm_tokens": 1300,
+    "additional_llm_latency_seconds": 4.98,
+    "additional_generated": 16,
+    "additional_accepted": 16,
+    "additional_rejected": 0,
+    "accepted_tests": [
+      {
+        "test_name": "test_merge_intervals_invalid_interval_single",
+        "snippet": "def test_merge_intervals_invalid_interval_single():\n    intervals = [(5, 3)]\n    try:\n        merge_intervals(intervals)\n    except ValueError as e:\n        assert str(e) == \"invalid interval\""
+      },
+      {
+        "test_name": "test_merge_intervals_invalid_interval_multiple",
+        "snippet": "def test_merge_intervals_invalid_interval_multiple():\n    intervals = [(1, 2), (5, 3), (4, 5)]\n    try:\n        merge_intervals(intervals)\n    except ValueError as e:\n        assert str(e) == \"invalid interval\""
+      },
+      {
+        "test_name": "test_merge_intervals_empty_input",
+        "snippet": "def test_merge_intervals_empty_input():\n    assert merge_intervals([]) == []"
+      },
+      {
+        "test_name": "test_merge_intervals_single_valid_interval",
+        "snippet": "def test_merge_intervals_single_valid_interval():\n    assert merge_intervals([(1, 3)]) == [(1, 3)]"
+      },
+      {
+        "test_name": "test_merge_intervals_overlapping",
+        "snippet": "def test_merge_intervals_overlapping():\n    assert merge_intervals([(1, 3), (2, 6)]) == [(1, 6)]"
+      },
+      {
+        "test_name": "test_merge_intervals_non_overlapping",
+        "snippet": "def test_merge_intervals_non_overlapping():\n    assert merge_intervals([(1, 2), (3, 4)]) == [(1, 2), (3, 4)]"
+      },
+      {
+        "test_name": "test_merge_intervals_unsorted_input",
+        "snippet": "def test_merge_intervals_unsorted_input():\n    assert merge_intervals([(3, 5), (1, 2)]) == [(1, 2), (3, 5)]"
+      },
+      {
+        "test_name": "test_merge_intervals_duplicate_intervals",
+        "snippet": "def test_merge_intervals_duplicate_intervals():\n    assert merge_intervals([(1, 3), (1, 3)]) == [(1, 3)]"
+      },
+      {
+        "test_name": "test_merge_intervals_negative_values",
+        "snippet": "def test_merge_intervals_negative_values():\n    assert merge_intervals([(-5, -1), (-3, 0)]) == [(-5, 0)]"
+      },
+      {
+        "test_name": "test_merge_intervals_mixed_signs",
+        "snippet": "def test_merge_intervals_mixed_signs():\n    assert merge_intervals([(-2, 1), (0, 3)]) == [(-2, 3)]"
+      },
+      {
+        "test_name": "test_merge_intervals_large_numbers",
+        "snippet": "def test_merge_intervals_large_numbers():\n    assert merge_intervals([(1000000, 2000000), (1500000, 2500000)]) == [(1000000, 2500000)]"
+      },
+      {
+        "test_name": "test_merge_intervals_single_point",
+        "snippet": "def test_merge_intervals_single_point():\n    assert merge_intervals([(5, 5)]) == [(5, 5)]"
+      },
+      {
+        "test_name": "test_merge_intervals_all_invalid",
+        "snippet": "def test_merge_intervals_all_invalid():\n    intervals = [(5, 3), (2, 1)]\n    try:\n        merge_intervals(intervals)\n    except ValueError as e:\n        assert str(e) == \"invalid interval\""
+      },
+      {
+        "test_name": "test_merge_intervals_valid_then_invalid",
+        "snippet": "def test_merge_intervals_valid_then_invalid():\n    intervals = [(1, 2), (5, 3)]\n    try:\n        merge_intervals(intervals)\n    except ValueError as e:\n        assert str(e) == \"invalid interval\""
+      },
+      {
+        "test_name": "test_merge_intervals_invalid_then_valid",
+        "snippet": "def test_merge_intervals_invalid_then_valid():\n    intervals = [(5, 3), (1, 2)]\n    try:\n        merge_intervals(intervals)\n    except ValueError as e:\n        assert str(e) == \"invalid interval\""
+      },
+      {
+        "test_name": "test_merge_intervals_whitespace_in_error_message",
+        "snippet": "def test_merge_intervals_whitespace_in_error_message():\n    intervals = [(5, 3)]\n    try:\n        merge_intervals(intervals)\n    except ValueError as e:\n        assert str(e) == 'invalid interval'"
+      }
+    ],
+    "rejected_tests": [],
+    "merged_accepted": true,
+    "execution_success": true,
+    "pass_at_1": true,
+    "total_tests": 21,
+    "passed": 21,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "ASSED [ 14%]\n..\\test_sample_intervals.py::test_merge_intervals_error_case_invalid_interval PASSED [ 19%]\n..\\test_sample_intervals.py::test_merge_intervals_error_case_empty_input PASSED [ 23%]\n..\\test_sample_intervals.py::test_merge_intervals_invalid_interval_single PASSED [ 28%]\n..\\test_sample_intervals.py::test_merge_intervals_invalid_interval_multiple PASSED [ 33%]\n..\\test_sample_intervals.py::test_merge_intervals_empty_input PASSED     [ 38%]\n..\\test_sample_intervals.py::test_merge_intervals_single_valid_interval PASSED [ 42%]\n..\\test_sample_intervals.py::test_merge_intervals_overlapping PASSED     [ 47%]\n..\\test_sample_intervals.py::test_merge_intervals_non_overlapping PASSED [ 52%]\n..\\test_sample_intervals.py::test_merge_intervals_unsorted_input PASSED  [ 57%]\n..\\test_sample_intervals.py::test_merge_intervals_duplicate_intervals PASSED [ 61%]\n..\\test_sample_intervals.py::test_merge_intervals_negative_values PASSED [ 66%]\n..\\test_sample_intervals.py::test_merge_intervals_mixed_signs PASSED     [ 71%]\n..\\test_sample_intervals.py::test_merge_intervals_large_numbers PASSED   [ 76%]\n..\\test_sample_intervals.py::test_merge_intervals_single_point PASSED    [ 80%]\n..\\test_sample_intervals.py::test_merge_intervals_all_invalid PASSED     [ 85%]\n..\\test_sample_intervals.py::test_merge_intervals_valid_then_invalid PASSED [ 90%]\n..\\test_sample_intervals.py::test_merge_intervals_invalid_then_valid PASSED [ 95%]\n..\\test_sample_intervals.py::test_merge_intervals_whitespace_in_error_message PASSED [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName                  Stmts   Miss  Cover   Missing\n---------------------------------------------------\nsample_intervals.py      13      0   100%\n---------------------------------------------------\nTOTAL                    13      0   100%\n============================= 21 passed in 0.26s ==============================\n",
+    "latency_seconds": 5.75,
+    "line_coverage": 100.0,
+    "branch_coverage": 100.0,
+    "mutation_score": 0.875,
+    "mutants_total": 8,
+    "mutants_killed": 7,
+    "surviving_mutants_after": [
+      {
+        "mutation_id": "DIFF-001-M01",
+        "file": "sample_intervals.py",
+        "function": "merge_intervals",
+        "line": 11,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"invalid interval\")",
+        "mutated_code": "raise ValueError('invalid interval')"
+      }
+    ],
+    "hallucination_rate": 0.0
+  },
+  "deltas": {
+    "mutation_score": 0.0,
+    "mutants_killed": 0,
+    "surviving_mutants": 0,
+    "line_coverage": 0.0,
+    "branch_coverage": 0.0,
+    "pass_at_1": 0.0,
+    "tokens": 347,
+    "latency_seconds": 4.09
+  },
+  "ceiling_effect": false,
+  "error": null
+}

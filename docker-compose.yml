@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  # Backend API (serves the built frontend too)
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: autotest-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_BASE_URL=${OPENROUTER_BASE_URL:-https://openrouter.ai/api/v1}
+      - OPENROUTER_TEST_WRITER_MODEL=${OPENROUTER_TEST_WRITER_MODEL:-cohere/north-mini-code:free}
+      - OPENROUTER_DEBUGGER_MODEL=${OPENROUTER_DEBUGGER_MODEL:-nvidia/nemotron-3-super:free}
+      - E2B_API_KEY=${E2B_API_KEY}
+      - LANGSMITH_API_KEY=${LANGSMITH_API_KEY}
+      - LANGSMITH_TRACING=${LANGSMITH_TRACING:-false}
+      - LANGSMITH_PROJECT=${LANGSMITH_PROJECT:-autotest}
+    volumes:
+      - ./workspace:/app/workspace
+      - ./chroma_data:/app/chroma_data
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  default:
+    name: autotest-network

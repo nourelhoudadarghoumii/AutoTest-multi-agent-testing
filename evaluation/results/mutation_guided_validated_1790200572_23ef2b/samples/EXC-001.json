@@ -1,0 +1,169 @@
+{
+  "sample_id": "EXC-001",
+  "category": "exception",
+  "config": {
+    "model": "production",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048,
+    "per_test_validation": true
+  },
+  "baseline": {
+    "sample": {
+      "sample_id": "EXC-001",
+      "category": "exception",
+      "difficulty": "medium",
+      "entry_file": "sample_parser.py",
+      "tags": [
+        "exceptions"
+      ]
+    },
+    "config": {
+      "model": "production",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "dataset_version": "v1",
+      "temperature": 0.3,
+      "max_tokens": 2048
+    },
+    "metrics": {
+      "llm_latency_seconds": 5.44,
+      "llm_api_calls": 1,
+      "llm_retries": 0,
+      "llm_prompt_tokens": 634,
+      "llm_completion_tokens": 126,
+      "llm_total_tokens": 760,
+      "ast_validation_passed": true,
+      "pytest_collect_passed": true,
+      "execution_success": true,
+      "pass_at_1": true,
+      "total_tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "failed_test_names": [],
+      "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 4 items\n\n..\\test_sample_parser.py::test_parse_positive_int_happy_path PASSED      [ 25%]\n..\\test_sample_parser.py::test_parse_positive_int_edge_case PASSED       [ 50%]\n..\\test_sample_parser.py::test_parse_positive_int_error_case PASSED      [ 75%]\n..\\test_sample_parser.py::test_parse_positive_int_type_error PASSED      [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName               Stmts   Miss  Cover   Missing\n------------------------------------------------\nsample_parser.py       7      0   100%\n------------------------------------------------\nTOTAL                  7      0   100%\n============================== 4 passed in 0.43s ==============================\n",
+      "latency_seconds": 8.02,
+      "line_coverage": 100.0,
+      "branch_coverage": 100.0,
+      "mutants_total": 3,
+      "mutants_killed": 2,
+      "mutation_score": 0.6667,
+      "mutant_details": [
+        {
+          "kind": "compare",
+          "line": 6,
+          "killed": false
+        },
+        {
+          "kind": "intconst",
+          "line": 6,
+          "killed": true
+        },
+        {
+          "kind": "not",
+          "line": 3,
+          "killed": true
+        }
+      ],
+      "total_name_references": 20,
+      "invalid_names": [],
+      "hallucination_rate": 0.0,
+      "bleu_4": 0.4229,
+      "rouge_l": 0.5948,
+      "codebleu_simplified": 0.7394,
+      "note": "text-similarity only — not a correctness measure"
+    },
+    "artifacts": {
+      "test_file": "EXC-001\\test_sample_parser.py"
+    },
+    "error": null,
+    "surviving_mutants": [
+      {
+        "mutation_id": "EXC-001-M00",
+        "file": "sample_parser.py",
+        "function": "parse_positive_int",
+        "line": 6,
+        "operator": "compare",
+        "original_code": "raise TypeError(\"text must be a string\")",
+        "mutated_code": "raise TypeError('text must be a string')"
+      }
+    ],
+    "mutants_total": 3,
+    "mutants_killed": 2
+  },
+  "guided": {
+    "survivors_given_to_llm": [
+      {
+        "mutation_id": "EXC-001-M00",
+        "file": "sample_parser.py",
+        "function": "parse_positive_int",
+        "line": 6,
+        "operator": "compare",
+        "original_code": "raise TypeError(\"text must be a string\")",
+        "mutated_code": "raise TypeError('text must be a string')"
+      }
+    ],
+    "additional_llm_tokens": 1036,
+    "additional_llm_latency_seconds": 4.68,
+    "additional_generated": 5,
+    "additional_accepted": 5,
+    "additional_rejected": 0,
+    "accepted_tests": [
+      {
+        "test_name": "test_parse_positive_int_type_error_single_quotes",
+        "snippet": "def test_parse_positive_int_type_error_single_quotes():\n    with patch('sys.stdout', new_callable=lambda: None):\n        with patch('sys.stderr', new_callable=lambda: None):\n            try:\n                parse_positive_int(123)\n            except TypeError as e:\n                assert str(e) == \"text must be a string\"\n            else:\n                assert False, \"Expected TypeError\""
+      },
+      {
+        "test_name": "test_parse_positive_int_type_error_non_string",
+        "snippet": "def test_parse_positive_int_type_error_non_string():\n    with patch('sys.stdout', new_callable=lambda: None):\n        with patch('sys.stderr', new_callable=lambda: None):\n            try:\n                parse_positive_int(None)\n            except TypeError as e:\n                assert str(e) == \"text must be a string\"\n            else:\n                assert False, \"Expected TypeError\""
+      },
+      {
+        "test_name": "test_parse_positive_int_value_error_negative",
+        "snippet": "def test_parse_positive_int_value_error_negative():\n    with patch('sys.stdout', new_callable=lambda: None):\n        with patch('sys.stderr', new_callable=lambda: None):\n            try:\n                parse_positive_int(\"-5\")\n            except ValueError as e:\n                assert \"expected a positive integer, got -5\" in str(e)\n            else:\n                assert False, \"Expected ValueError\""
+      },
+      {
+        "test_name": "test_parse_positive_int_value_error_zero",
+        "snippet": "def test_parse_positive_int_value_error_zero():\n    with patch('sys.stdout', new_callable=lambda: None):\n        with patch('sys.stderr', new_callable=lambda: None):\n            try:\n                parse_positive_int(\"0\")\n            except ValueError as e:\n                assert \"expected a positive integer, got 0\" in str(e)\n            else:\n                assert False, \"Expected ValueError\""
+      },
+      {
+        "test_name": "test_parse_positive_int_valid",
+        "snippet": "def test_parse_positive_int_valid():\n    with patch('sys.stdout', new_callable=lambda: None):\n        with patch('sys.stderr', new_callable=lambda: None):\n            assert parse_positive_int(\"42\") == 42"
+      }
+    ],
+    "rejected_tests": [],
+    "merged_accepted": true,
+    "execution_success": true,
+    "pass_at_1": true,
+    "total_tests": 9,
+    "passed": 9,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 9 items\n\n..\\test_sample_parser.py::test_parse_positive_int_happy_path PASSED      [ 11%]\n..\\test_sample_parser.py::test_parse_positive_int_edge_case PASSED       [ 22%]\n..\\test_sample_parser.py::test_parse_positive_int_error_case PASSED      [ 33%]\n..\\test_sample_parser.py::test_parse_positive_int_type_error PASSED      [ 44%]\n..\\test_sample_parser.py::test_parse_positive_int_type_error_single_quotes PASSED [ 55%]\n..\\test_sample_parser.py::test_parse_positive_int_type_error_non_string PASSED [ 66%]\n..\\test_sample_parser.py::test_parse_positive_int_value_error_negative PASSED [ 77%]\n..\\test_sample_parser.py::test_parse_positive_int_value_error_zero PASSED [ 88%]\n..\\test_sample_parser.py::test_parse_positive_int_valid PASSED           [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName               Stmts   Miss  Cover   Missing\n------------------------------------------------\nsample_parser.py       7      0   100%\n------------------------------------------------\nTOTAL                  7      0   100%\n============================== 9 passed in 0.17s ==============================\n",
+    "latency_seconds": 3.78,
+    "line_coverage": 100.0,
+    "branch_coverage": 100.0,
+    "mutation_score": 1.0,
+    "mutants_total": 3,
+    "mutants_killed": 3,
+    "surviving_mutants_after": [],
+    "hallucination_rate": 0.0
+  },
+  "deltas": {
+    "mutation_score": 0.33330000000000004,
+    "mutants_killed": 1,
+    "surviving_mutants": -1,
+    "line_coverage": 0.0,
+    "branch_coverage": 0.0,
+    "pass_at_1": 0.0,
+    "tokens": 276,
+    "latency_seconds": 0.44
+  },
+  "ceiling_effect": false,
+  "error": null
+}

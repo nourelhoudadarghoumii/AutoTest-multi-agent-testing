@@ -1,0 +1,316 @@
+{
+  "sample_id": "CLASS-001",
+  "category": "class",
+  "config": {
+    "model": "production",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048,
+    "per_test_validation": true
+  },
+  "baseline": {
+    "sample": {
+      "sample_id": "CLASS-001",
+      "category": "class",
+      "difficulty": "medium",
+      "entry_file": "sample_rect.py",
+      "tags": [
+        "classes"
+      ]
+    },
+    "config": {
+      "model": "production",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "dataset_version": "v1",
+      "temperature": 0.3,
+      "max_tokens": 2048
+    },
+    "metrics": {
+      "llm_latency_seconds": 3.55,
+      "llm_api_calls": 1,
+      "llm_retries": 0,
+      "llm_prompt_tokens": 671,
+      "llm_completion_tokens": 177,
+      "llm_total_tokens": 848,
+      "ast_validation_passed": true,
+      "pytest_collect_passed": true,
+      "execution_success": true,
+      "pass_at_1": true,
+      "total_tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "failed_test_names": [],
+      "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 4 items\n\n..\\test_sample_rect.py::test_scale_happy_path PASSED                     [ 25%]\n..\\test_sample_rect.py::test_scale_edge_case PASSED                      [ 50%]\n..\\test_sample_rect.py::test_scale_error_factor_zero PASSED              [ 75%]\n..\\test_sample_rect.py::test_scale_error_factor_negative PASSED          [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName             Stmts   Miss  Cover   Missing\n----------------------------------------------\nsample_rect.py      14      3    79%   6, 11, 14\n----------------------------------------------\nTOTAL               14      3    79%\n============================== 4 passed in 0.13s ==============================\n",
+      "latency_seconds": 2.84,
+      "line_coverage": 77.78,
+      "branch_coverage": 75.0,
+      "mutants_total": 8,
+      "mutants_killed": 2,
+      "mutation_score": 0.25,
+      "mutant_details": [
+        {
+          "kind": "binop",
+          "line": 11,
+          "killed": false
+        },
+        {
+          "kind": "binop",
+          "line": 14,
+          "killed": false
+        },
+        {
+          "kind": "binop",
+          "line": 14,
+          "killed": false
+        },
+        {
+          "kind": "binop",
+          "line": 20,
+          "killed": true
+        },
+        {
+          "kind": "binop",
+          "line": 20,
+          "killed": true
+        },
+        {
+          "kind": "boolop",
+          "line": 5,
+          "killed": false
+        },
+        {
+          "kind": "compare",
+          "line": 5,
+          "killed": false
+        },
+        {
+          "kind": "compare",
+          "line": 5,
+          "killed": false
+        }
+      ],
+      "total_name_references": 36,
+      "invalid_names": [],
+      "hallucination_rate": 0.0,
+      "bleu_4": 0.2663,
+      "rouge_l": 0.5135,
+      "codebleu_simplified": 0.6729,
+      "note": "text-similarity only — not a correctness measure"
+    },
+    "artifacts": {
+      "test_file": "CLASS-001\\test_sample_rect.py"
+    },
+    "error": null,
+    "surviving_mutants": [
+      {
+        "mutation_id": "CLASS-001-M00",
+        "file": "sample_rect.py",
+        "function": "area",
+        "line": 11,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M01",
+        "file": "sample_rect.py",
+        "function": "perimeter",
+        "line": 14,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M02",
+        "file": "sample_rect.py",
+        "function": "perimeter",
+        "line": 14,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M05",
+        "file": "sample_rect.py",
+        "function": "__init__",
+        "line": 5,
+        "operator": "boolop",
+        "original_code": "if width <= 0 or height <= 0:",
+        "mutated_code": "if width <= 0 and height <= 0:"
+      },
+      {
+        "mutation_id": "CLASS-001-M06",
+        "file": "sample_rect.py",
+        "function": "__init__",
+        "line": 5,
+        "operator": "compare",
+        "original_code": "if width <= 0 or height <= 0:",
+        "mutated_code": "if width < 0 or height <= 0:"
+      },
+      {
+        "mutation_id": "CLASS-001-M07",
+        "file": "sample_rect.py",
+        "function": "__init__",
+        "line": 5,
+        "operator": "compare",
+        "original_code": "if width <= 0 or height <= 0:",
+        "mutated_code": "if width <= 0 or height < 0:"
+      }
+    ],
+    "mutants_total": 8,
+    "mutants_killed": 2
+  },
+  "guided": {
+    "survivors_given_to_llm": [
+      {
+        "mutation_id": "CLASS-001-M00",
+        "file": "sample_rect.py",
+        "function": "area",
+        "line": 11,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M01",
+        "file": "sample_rect.py",
+        "function": "perimeter",
+        "line": 14,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M02",
+        "file": "sample_rect.py",
+        "function": "perimeter",
+        "line": 14,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M05",
+        "file": "sample_rect.py",
+        "function": "__init__",
+        "line": 5,
+        "operator": "boolop",
+        "original_code": "if width <= 0 or height <= 0:",
+        "mutated_code": "if width <= 0 and height <= 0:"
+      },
+      {
+        "mutation_id": "CLASS-001-M06",
+        "file": "sample_rect.py",
+        "function": "__init__",
+        "line": 5,
+        "operator": "compare",
+        "original_code": "if width <= 0 or height <= 0:",
+        "mutated_code": "if width < 0 or height <= 0:"
+      },
+      {
+        "mutation_id": "CLASS-001-M07",
+        "file": "sample_rect.py",
+        "function": "__init__",
+        "line": 5,
+        "operator": "compare",
+        "original_code": "if width <= 0 or height <= 0:",
+        "mutated_code": "if width <= 0 or height < 0:"
+      }
+    ],
+    "additional_llm_tokens": 1363,
+    "additional_llm_latency_seconds": 4.86,
+    "additional_generated": 13,
+    "additional_accepted": 13,
+    "additional_rejected": 0,
+    "accepted_tests": [
+      {
+        "test_name": "test_init_width_zero",
+        "snippet": "def test_init_width_zero():\n    with pytest.raises(ValueError, match=\"dimensions must be positive\"):\n        Rectangle(0, 5)"
+      },
+      {
+        "test_name": "test_init_height_zero",
+        "snippet": "def test_init_height_zero():\n    with pytest.raises(ValueError, match=\"dimensions must be positive\"):\n        Rectangle(5, 0)"
+      },
+      {
+        "test_name": "test_init_both_zero",
+        "snippet": "def test_init_both_zero():\n    with pytest.raises(ValueError, match=\"dimensions must be positive\"):\n        Rectangle(0, 0)"
+      },
+      {
+        "test_name": "test_init_negative_width",
+        "snippet": "def test_init_negative_width():\n    with pytest.raises(ValueError, match=\"dimensions must be positive\"):\n        Rectangle(-1, 5)"
+      },
+      {
+        "test_name": "test_init_negative_height",
+        "snippet": "def test_init_negative_height():\n    with pytest.raises(ValueError, match=\"dimensions must be positive\"):\n        Rectangle(5, -1)"
+      },
+      {
+        "test_name": "test_init_negative_both",
+        "snippet": "def test_init_negative_both():\n    with pytest.raises(ValueError, match=\"dimensions must be positive\"):\n        Rectangle(-3, -4)"
+      },
+      {
+        "test_name": "test_area_positive",
+        "snippet": "def test_area_positive():\n    rect = Rectangle(3, 4)\n    assert rect.area() == 12"
+      },
+      {
+        "test_name": "test_perimeter_positive",
+        "snippet": "def test_perimeter_positive():\n    rect = Rectangle(3, 4)\n    assert rect.perimeter() == 14"
+      },
+      {
+        "test_name": "test_scale_factor_zero",
+        "snippet": "def test_scale_factor_zero():\n    rect = Rectangle(2, 3)\n    with pytest.raises(ValueError, match=\"factor must be positive\"):\n        rect.scale(0)"
+      },
+      {
+        "test_name": "test_scale_factor_negative",
+        "snippet": "def test_scale_factor_negative():\n    rect = Rectangle(2, 3)\n    with pytest.raises(ValueError, match=\"factor must be positive\"):\n        rect.scale(-2)"
+      },
+      {
+        "test_name": "test_scale_factor_one",
+        "snippet": "def test_scale_factor_one():\n    rect = Rectangle(2, 3)\n    scaled = rect.scale(1)\n    assert scaled.width == 2\n    assert scaled.height == 3"
+      },
+      {
+        "test_name": "test_scale_factor_two",
+        "snippet": "def test_scale_factor_two():\n    rect = Rectangle(2, 3)\n    scaled = rect.scale(2)\n    assert scaled.width == 4\n    assert scaled.height == 6"
+      },
+      {
+        "test_name": "test_scale_factor_fraction",
+        "snippet": "def test_scale_factor_fraction():\n    rect = Rectangle(4, 6)\n    scaled = rect.scale(0.5)\n    assert scaled.width == 2\n    assert scaled.height == 3"
+      }
+    ],
+    "rejected_tests": [],
+    "merged_accepted": true,
+    "execution_success": true,
+    "pass_at_1": true,
+    "total_tests": 17,
+    "passed": 17,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 17 items\n\n..\\test_sample_rect.py::test_scale_happy_path PASSED                     [  5%]\n..\\test_sample_rect.py::test_scale_edge_case PASSED                      [ 11%]\n..\\test_sample_rect.py::test_scale_error_factor_zero PASSED              [ 17%]\n..\\test_sample_rect.py::test_scale_error_factor_negative PASSED          [ 23%]\n..\\test_sample_rect.py::test_init_width_zero PASSED                      [ 29%]\n..\\test_sample_rect.py::test_init_height_zero PASSED                     [ 35%]\n..\\test_sample_rect.py::test_init_both_zero PASSED                       [ 41%]\n..\\test_sample_rect.py::test_init_negative_width PASSED                  [ 47%]\n..\\test_sample_rect.py::test_init_negative_height PASSED                 [ 52%]\n..\\test_sample_rect.py::test_init_negative_both PASSED                   [ 58%]\n..\\test_sample_rect.py::test_area_positive PASSED                        [ 64%]\n..\\test_sample_rect.py::test_perimeter_positive PASSED                   [ 70%]\n..\\test_sample_rect.py::test_scale_factor_zero PASSED                    [ 76%]\n..\\test_sample_rect.py::test_scale_factor_negative PASSED                [ 82%]\n..\\test_sample_rect.py::test_scale_factor_one PASSED                     [ 88%]\n..\\test_sample_rect.py::test_scale_factor_two PASSED                     [ 94%]\n..\\test_sample_rect.py::test_scale_factor_fraction PASSED                [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName             Stmts   Miss  Cover   Missing\n----------------------------------------------\nsample_rect.py      14      0   100%\n----------------------------------------------\nTOTAL               14      0   100%\n============================= 17 passed in 0.21s ==============================\n",
+    "latency_seconds": 3.14,
+    "line_coverage": 100.0,
+    "branch_coverage": 100.0,
+    "mutation_score": 1.0,
+    "mutants_total": 8,
+    "mutants_killed": 8,
+    "surviving_mutants_after": [],
+    "hallucination_rate": 0.0
+  },
+  "deltas": {
+    "mutation_score": 0.75,
+    "mutants_killed": 6,
+    "surviving_mutants": -6,
+    "line_coverage": 22.22,
+    "branch_coverage": 25.0,
+    "pass_at_1": 0.0,
+    "tokens": 515,
+    "latency_seconds": 5.16
+  },
+  "ceiling_effect": false,
+  "error": null
+}

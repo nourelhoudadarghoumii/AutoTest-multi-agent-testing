@@ -1,0 +1,54 @@
+{
+  "sample": {
+    "sample_id": "SIMPLE-001",
+    "category": "simple",
+    "difficulty": "easy",
+    "entry_file": "sample_simple.py",
+    "tags": [
+      "arithmetic",
+      "pure"
+    ]
+  },
+  "config": {
+    "model": "cohere/north-mini-code:free",
+    "prompt_version": "P2",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "metrics": {
+    "llm_latency_seconds": 3.47,
+    "llm_api_calls": 1,
+    "llm_retries": 0,
+    "llm_prompt_tokens": 616,
+    "llm_completion_tokens": 122,
+    "llm_total_tokens": 738,
+    "ast_validation_passed": true,
+    "pytest_collect_passed": true,
+    "execution_success": true,
+    "pass_at_1": true,
+    "total_tests": 6,
+    "passed": 6,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 6 items\n\n..\\test_sample_simple.py::test_add_positive_numbers PASSED               [ 16%]\n..\\test_sample_simple.py::test_add_negative_numbers PASSED               [ 33%]\n..\\test_sample_simple.py::test_add_mixed_numbers PASSED                  [ 50%]\n..\\test_sample_simple.py::test_sub_positive_numbers PASSED               [ 66%]\n..\\test_sample_simple.py::test_sub_negative_numbers PASSED               [ 83%]\n..\\test_sample_simple.py::test_sub_mixed_numbers PASSED                  [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName               Stmts   Miss  Cover   Missing\n------------------------------------------------\nsample_simple.py       4      0   100%\n------------------------------------------------\nTOTAL                  4      0   100%\n============================== 6 passed in 0.13s ==============================\n",
+    "latency_seconds": 3.16,
+    "line_coverage": 100.0,
+    "branch_coverage": 0.0,
+    "mutation_score": null,
+    "total_name_references": 16,
+    "invalid_names": [],
+    "hallucination_rate": 0.0,
+    "bleu_4": 0.3537,
+    "rouge_l": 0.5753,
+    "codebleu_simplified": 0.6892,
+    "note": "text-similarity only — not a correctness measure"
+  },
+  "artifacts": {
+    "test_file": "SIMPLE-001\\test_sample_simple.py"
+  },
+  "error": null
+}

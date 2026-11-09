@@ -1,0 +1,21 @@
+{
+  "experiment": "mutation_guided_validated",
+  "experiment_id": "mutation_guided_validated_1789937522_80031c",
+  "model": "production (see config.LLMConfig.TEST_WRITER_MODEL)",
+  "prompt_version": "P0",
+  "rag_enabled": false,
+  "dataset_version": "v1",
+  "dataset_hash": "6c117a72e25ca8fc",
+  "temperature": 0.3,
+  "max_tokens": 2048,
+  "max_mutants": 8,
+  "per_test_validation": true,
+  "validation_against": "original unmutated code",
+  "sample_ids": [
+    "BRANCH-001"
+  ],
+  "notes": "MG-v2: mutation feedback + per-test validation (only variable vs MG-v1)",
+  "timestamp_utc": "2026-09-20T20:52:02.846370+00:00",
+  "python_version": "3.14.3",
+  "platform": "Windows-11-10.0.26200-SP0"
+}

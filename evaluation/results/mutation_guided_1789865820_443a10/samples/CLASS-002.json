@@ -1,0 +1,305 @@
+{
+  "sample_id": "CLASS-002",
+  "category": "class",
+  "config": {
+    "model": "production",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "baseline": {
+    "sample": {
+      "sample_id": "CLASS-002",
+      "category": "class",
+      "difficulty": "medium",
+      "entry_file": "sample_bank.py",
+      "tags": [
+        "classes",
+        "state"
+      ]
+    },
+    "config": {
+      "model": "production",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "dataset_version": "v1",
+      "temperature": 0.3,
+      "max_tokens": 2048
+    },
+    "metrics": {
+      "llm_latency_seconds": 7.99,
+      "llm_api_calls": 1,
+      "llm_retries": 0,
+      "llm_prompt_tokens": 834,
+      "llm_completion_tokens": 345,
+      "llm_total_tokens": 1179,
+      "ast_validation_passed": true,
+      "pytest_collect_passed": true,
+      "execution_success": true,
+      "pass_at_1": true,
+      "total_tests": 7,
+      "passed": 7,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "failed_test_names": [],
+      "stdout_excerpt": "ected 7 items\n\n..\\test_sample_bank.py::test_deposit_happy_path PASSED                   [ 14%]\n..\\test_sample_bank.py::test_deposit_edge_case PASSED                    [ 28%]\n..\\test_sample_bank.py::test_deposit_error PASSED                        [ 42%]\n..\\test_sample_bank.py::test_withdraw_happy_path PASSED                  [ 57%]\n..\\test_sample_bank.py::test_withdraw_edge_case PASSED                   [ 71%]\n..\\test_sample_bank.py::test_withdraw_error_insufficient_funds PASSED    [ 85%]\n..\\test_sample_bank.py::test_withdraw_error_non_positive PASSED          [100%]\n\n============================== warnings summary ===============================\n..\\..\\..\\..\\..\\..\\..\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\_pytest\\cacheprovider.py:475\n  /usr/local/lib/python3.14/site-packages\\_pytest\\cacheprovider.py:475: PytestCacheWarning: could not create cache path /workspace/autotest\\evaluation\\eval_ws_1789865820_443a10_e8tl76hd\\CLASS-002\\.pytest_cache\\v\\cache\\nodeids: [WinError 5] Accès refusé: 'C:\\\\Users\\\\USER\\\\Downloads\\\\AutoTest\\\\multi_agent_testing\\\\evaluation\\\\eval_ws_1789865820_443a10_e8tl76hd\\\\CLASS-002\\\\pytest-cache-files-24yoaa8a' -> 'C:\\\\Users\\\\USER\\\\Downloads\\\\AutoTest\\\\multi_agent_testing\\\\evaluation\\\\eval_ws_1789865820_443a10_e8tl76hd\\\\CLASS-002\\\\.pytest_cache'\n    config.cache.set(\"cache/nodeids\", sorted(self.cached_nodeids))\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName             Stmts   Miss  Cover   Missing\n----------------------------------------------\nsample_bank.py      19      0   100%\n----------------------------------------------\nTOTAL               19      0   100%\n======================== 7 passed, 1 warning in 0.17s =========================\n",
+      "latency_seconds": 4.31,
+      "line_coverage": 100.0,
+      "branch_coverage": 100.0,
+      "mutants_total": 6,
+      "mutants_killed": 0,
+      "mutation_score": 0.0,
+      "mutant_details": [
+        {
+          "kind": "compare",
+          "line": 10,
+          "killed": false
+        },
+        {
+          "kind": "compare",
+          "line": 17,
+          "killed": false
+        },
+        {
+          "kind": "compare",
+          "line": 19,
+          "killed": false
+        },
+        {
+          "kind": "intconst",
+          "line": 4,
+          "killed": false
+        },
+        {
+          "kind": "intconst",
+          "line": 10,
+          "killed": false
+        },
+        {
+          "kind": "intconst",
+          "line": 17,
+          "killed": false
+        }
+      ],
+      "total_name_references": 48,
+      "invalid_names": [],
+      "hallucination_rate": 0.0,
+      "bleu_4": 0.1553,
+      "rouge_l": 0.3236,
+      "codebleu_simplified": 0.6048,
+      "note": "text-similarity only — not a correctness measure"
+    },
+    "artifacts": {
+      "test_file": "CLASS-002\\test_sample_bank.py"
+    },
+    "error": null,
+    "surviving_mutants": [
+      {
+        "mutation_id": "CLASS-002-M00",
+        "file": "sample_bank.py",
+        "function": "deposit",
+        "line": 10,
+        "operator": "compare",
+        "original_code": "if amount <= 0:",
+        "mutated_code": "if amount < 0:"
+      },
+      {
+        "mutation_id": "CLASS-002-M01",
+        "file": "sample_bank.py",
+        "function": "withdraw",
+        "line": 17,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"deposit must be positive\")",
+        "mutated_code": "raise ValueError('deposit must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-002-M02",
+        "file": "sample_bank.py",
+        "function": "withdraw",
+        "line": 19,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"deposit must be positive\")",
+        "mutated_code": "raise ValueError('deposit must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-002-M03",
+        "file": "sample_bank.py",
+        "function": "__init__",
+        "line": 4,
+        "operator": "intconst",
+        "original_code": "def __init__(self, owner, balance=0):",
+        "mutated_code": "def __init__(self, owner, balance=1):"
+      },
+      {
+        "mutation_id": "CLASS-002-M04",
+        "file": "sample_bank.py",
+        "function": "deposit",
+        "line": 10,
+        "operator": "intconst",
+        "original_code": "if amount <= 0:",
+        "mutated_code": "if amount <= 1:"
+      },
+      {
+        "mutation_id": "CLASS-002-M05",
+        "file": "sample_bank.py",
+        "function": "withdraw",
+        "line": 17,
+        "operator": "intconst",
+        "original_code": "raise ValueError(\"deposit must be positive\")",
+        "mutated_code": "raise ValueError('deposit must be positive')"
+      }
+    ],
+    "mutants_total": 6,
+    "mutants_killed": 0
+  },
+  "guided": {
+    "survivors_given_to_llm": [
+      {
+        "mutation_id": "CLASS-002-M00",
+        "file": "sample_bank.py",
+        "function": "deposit",
+        "line": 10,
+        "operator": "compare",
+        "original_code": "if amount <= 0:",
+        "mutated_code": "if amount < 0:"
+      },
+      {
+        "mutation_id": "CLASS-002-M01",
+        "file": "sample_bank.py",
+        "function": "withdraw",
+        "line": 17,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"deposit must be positive\")",
+        "mutated_code": "raise ValueError('deposit must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-002-M02",
+        "file": "sample_bank.py",
+        "function": "withdraw",
+        "line": 19,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"deposit must be positive\")",
+        "mutated_code": "raise ValueError('deposit must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-002-M03",
+        "file": "sample_bank.py",
+        "function": "__init__",
+        "line": 4,
+        "operator": "intconst",
+        "original_code": "def __init__(self, owner, balance=0):",
+        "mutated_code": "def __init__(self, owner, balance=1):"
+      },
+      {
+        "mutation_id": "CLASS-002-M04",
+        "file": "sample_bank.py",
+        "function": "deposit",
+        "line": 10,
+        "operator": "intconst",
+        "original_code": "if amount <= 0:",
+        "mutated_code": "if amount <= 1:"
+      },
+      {
+        "mutation_id": "CLASS-002-M05",
+        "file": "sample_bank.py",
+        "function": "withdraw",
+        "line": 17,
+        "operator": "intconst",
+        "original_code": "raise ValueError(\"deposit must be positive\")",
+        "mutated_code": "raise ValueError('deposit must be positive')"
+      }
+    ],
+    "additional_llm_tokens": 1295,
+    "additional_llm_latency_seconds": 5.42,
+    "additional_tests": 7,
+    "merged_accepted": true,
+    "pytest_collect_passed": true,
+    "execution_success": true,
+    "pass_at_1": true,
+    "total_tests": 14,
+    "passed": 14,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 14 items\n\n..\\test_sample_bank.py::test_deposit_happy_path PASSED                   [  7%]\n..\\test_sample_bank.py::test_deposit_edge_case PASSED                    [ 14%]\n..\\test_sample_bank.py::test_deposit_error PASSED                        [ 21%]\n..\\test_sample_bank.py::test_withdraw_happy_path PASSED                  [ 28%]\n..\\test_sample_bank.py::test_withdraw_edge_case PASSED                   [ 35%]\n..\\test_sample_bank.py::test_withdraw_error_insufficient_funds PASSED    [ 42%]\n..\\test_sample_bank.py::test_withdraw_error_non_positive PASSED          [ 50%]\n..\\test_sample_bank.py::test_deposit_zero_mutant PASSED                  [ 57%]\n..\\test_sample_bank.py::test_deposit_negative_mutant PASSED              [ 64%]\n..\\test_sample_bank.py::test_withdraw_zero_mutant PASSED                 [ 71%]\n..\\test_sample_bank.py::test_withdraw_negative_mutant PASSED             [ 78%]\n..\\test_sample_bank.py::test_init_balance_one_mutant PASSED              [ 85%]\n..\\test_sample_bank.py::test_deposit_one_mutant PASSED                   [ 92%]\n..\\test_sample_bank.py::test_withdraw_insufficient_funds_mutant PASSED   [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName             Stmts   Miss  Cover   Missing\n----------------------------------------------\nsample_bank.py      19      0   100%\n----------------------------------------------\nTOTAL               19      0   100%\n============================= 14 passed in 0.30s ==============================\n",
+    "latency_seconds": 6.37,
+    "line_coverage": 100.0,
+    "branch_coverage": 100.0,
+    "mutation_score": 0.0,
+    "mutants_total": 6,
+    "mutants_killed": 0,
+    "surviving_mutants_after": [
+      {
+        "mutation_id": "CLASS-002-M00",
+        "file": "sample_bank.py",
+        "function": "deposit",
+        "line": 10,
+        "operator": "compare",
+        "original_code": "if amount <= 0:",
+        "mutated_code": "if amount < 0:"
+      },
+      {
+        "mutation_id": "CLASS-002-M01",
+        "file": "sample_bank.py",
+        "function": "withdraw",
+        "line": 17,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"deposit must be positive\")",
+        "mutated_code": "raise ValueError('deposit must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-002-M02",
+        "file": "sample_bank.py",
+        "function": "withdraw",
+        "line": 19,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"deposit must be positive\")",
+        "mutated_code": "raise ValueError('deposit must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-002-M03",
+        "file": "sample_bank.py",
+        "function": "__init__",
+        "line": 4,
+        "operator": "intconst",
+        "original_code": "def __init__(self, owner, balance=0):",
+        "mutated_code": "def __init__(self, owner, balance=1):"
+      },
+      {
+        "mutation_id": "CLASS-002-M04",
+        "file": "sample_bank.py",
+        "function": "deposit",
+        "line": 10,
+        "operator": "intconst",
+        "original_code": "if amount <= 0:",
+        "mutated_code": "if amount <= 1:"
+      },
+      {
+        "mutation_id": "CLASS-002-M05",
+        "file": "sample_bank.py",
+        "function": "withdraw",
+        "line": 17,
+        "operator": "intconst",
+        "original_code": "raise ValueError(\"deposit must be positive\")",
+        "mutated_code": "raise ValueError('deposit must be positive')"
+      }
+    ],
+    "hallucination_rate": 0.0
+  },
+  "deltas": {
+    "mutation_score": 0,
+    "mutants_killed": 0,
+    "surviving_mutants": 0,
+    "line_coverage": 0.0,
+    "branch_coverage": 0.0,
+    "pass_at_1": 0.0,
+    "tokens": 116,
+    "latency_seconds": 7.48
+  },
+  "ceiling_effect": false,
+  "error": null
+}

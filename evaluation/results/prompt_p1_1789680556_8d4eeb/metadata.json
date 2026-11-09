@@ -1,0 +1,23 @@
+{
+  "experiment": "prompt_p1",
+  "experiment_id": "prompt_p1_1789680556_8d4eeb",
+  "prompt_version": "P1",
+  "rag_enabled": false,
+  "rag_store": "off",
+  "model": "cohere/north-mini-code:free",
+  "model_overridden": false,
+  "dataset_version": "v1",
+  "dataset_hash": "6c117a72e25ca8fc",
+  "temperature": 0.3,
+  "max_tokens": 2048,
+  "mutation": false,
+  "max_mutants": 8,
+  "sample_ids": [
+    "SIMPLE-001",
+    "SIMPLE-002"
+  ],
+  "notes": "prompt engineering: P1 (one variable: prompt)",
+  "timestamp_utc": "2026-09-17T21:29:16.978910+00:00",
+  "python_version": "3.14.3",
+  "platform": "Windows-11-10.0.26200-SP0"
+}

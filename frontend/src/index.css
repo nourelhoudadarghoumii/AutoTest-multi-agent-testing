@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #F7FAFC; /* slate2-50 */
+  color: #0F1720; /* slate2-950 */
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+code, pre, .mono {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+/* ── Ambient engineering textures ─────────────────────────────────────── */
+
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(0, 112, 173, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 112, 173, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.dark-grid {
+  background-image:
+    linear-gradient(rgba(143, 203, 233, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143, 203, 233, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.hairline {
+  background: linear-gradient(90deg, transparent, rgba(0, 112, 173, 0.35), transparent);
+  height: 1px;
+}
+
+/* ── Components ───────────────────────────────────────────────────────── */
+
+@layer components {
+  .btn-primary {
+    @apply bg-cap-500 text-white px-4 py-2 rounded-md hover:bg-cap-600 active:bg-cap-700 transition-all font-medium inline-flex items-center justify-center gap-2 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-cap-700 px-4 py-2 rounded-md border border-cap-200 hover:border-cap-400 hover:bg-cap-50 transition-all font-medium inline-flex items-center justify-center gap-2 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-danger {
+    @apply bg-white text-danger-600 px-4 py-2 rounded-md border border-danger-200 hover:bg-danger-50 transition-all font-medium inline-flex items-center justify-center gap-2 shadow-sm disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply text-slate2-600 px-3 py-2 rounded-md hover:bg-slate2-100 hover:text-slate2-900 transition-all font-medium inline-flex items-center justify-center gap-2;
+  }
+
+  .card {
+    @apply bg-white rounded-lg border border-slate2-200 p-6 shadow-card;
+  }
+
+  .panel {
+    @apply bg-cap-950 dark-grid text-slate2-200 rounded-lg border border-cap-900;
+  }
+
+  .panel-header {
+    @apply flex items-center justify-between px-4 py-2.5 border-b border-cap-900 bg-cap-900/60 text-xs font-mono uppercase tracking-wider text-slate2-400;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 border border-slate2-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-cap-500/40 focus:border-cap-500 transition-all text-slate2-900 text-sm;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium border;
+  }
+
+  .badge-success { @apply bg-success-50 text-success-700 border-success-200; }
+  .badge-warning { @apply bg-warning-50 text-warning-700 border-warning-200; }
+  .badge-danger  { @apply bg-danger-50 text-danger-600 border-danger-200; }
+  .badge-info    { @apply bg-cap-50 text-cap-700 border-cap-200; }
+  .badge-neutral { @apply bg-slate2-100 text-slate2-600 border-slate2-200; }
+
+  .label-mono {
+    @apply text-[11px] font-mono uppercase tracking-wider text-slate2-400;
+  }
+
+  .th-cell {
+    @apply px-4 py-3 text-left text-[11px] font-mono uppercase tracking-wider text-slate2-500 font-medium;
+  }
+
+  .td-cell {
+    @apply px-4 py-3 text-sm text-slate2-700;
+  }
+}
+
+/* ── Code highlighting (custom Python theme on dark navy) ─────────────── */
+
+.tok-kw     { color: #4FB1DF; }              /* keywords — cap-400 */
+.tok-str    { color: #8FD4A8; }              /* strings — soft green */
+.tok-num    { color: #E5A83C; }              /* numbers — amber */
+.tok-com    { color: #5E7B93; font-style: italic; } /* comments */
+.tok-fn     { color: #BCE0F2; }              /* function names — pale blue */
+.tok-dec    { color: #E5A83C; }              /* decorators */
+.tok-cls    { color: #8FCBE9; font-weight: 600; }   /* class names */
+.tok-builtin { color: #C7A5E0; }             /* builtins — soft violet */
+.tok-op     { color: #94A8BA; }              /* operators */
+
+/* ── Scrollbars ───────────────────────────────────────────────────────── */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-slate2-300 rounded-full;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate2-400;
+}
+.dark-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.dark-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dark-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-cap-800 rounded-full;
+}
+.dark-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-cap-700;
+}
+
+/* ── Animations ───────────────────────────────────────────────────────── */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.35s ease-out both;
+}
+
+@keyframes flow-dash {
+  to { stroke-dashoffset: -12; }
+}
+
+.flow-dash {
+  stroke-dasharray: 4 8;
+  animation: flow-dash 0.9s linear infinite;
+}

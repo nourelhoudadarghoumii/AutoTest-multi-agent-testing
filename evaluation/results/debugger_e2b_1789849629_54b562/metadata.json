@@ -1,0 +1,18 @@
+{
+  "experiment": "debugger_e2b",
+  "experiment_id": "debugger_e2b_1789849629_54b562",
+  "model": "production debugger model (see config.LLMConfig.DEBUGGER_MODEL)",
+  "execution_backend": "e2b_sandbox (real pytest inside E2B; local fallback disabled)",
+  "max_iterations": 3,
+  "dataset_version": "v1",
+  "dataset_hash": "6c117a72e25ca8fc",
+  "sample_ids": [
+    "DEBUG-001",
+    "DEBUG-002",
+    "DEBUG-003"
+  ],
+  "notes": "research evaluation through the production Executor<->Debugger loop",
+  "timestamp_utc": "2026-09-19T20:27:09.264265+00:00",
+  "python_version": "3.14.3",
+  "platform": "Windows-11-10.0.26200-SP0"
+}

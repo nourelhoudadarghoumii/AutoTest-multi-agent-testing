@@ -1,0 +1,303 @@
+{
+  "sample_id": "BRANCH-001",
+  "category": "branch",
+  "config": {
+    "model": "production",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "baseline": {
+    "sample": {
+      "sample_id": "BRANCH-001",
+      "category": "branch",
+      "difficulty": "easy",
+      "entry_file": "sample_grades.py",
+      "tags": [
+        "branches",
+        "boundaries"
+      ]
+    },
+    "config": {
+      "model": "production",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "dataset_version": "v1",
+      "temperature": 0.3,
+      "max_tokens": 2048
+    },
+    "metrics": {
+      "llm_latency_seconds": 5.79,
+      "llm_api_calls": 1,
+      "llm_retries": 0,
+      "llm_prompt_tokens": 661,
+      "llm_completion_tokens": 225,
+      "llm_total_tokens": 886,
+      "ast_validation_passed": true,
+      "pytest_collect_passed": true,
+      "execution_success": true,
+      "pass_at_1": true,
+      "total_tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "failed_test_names": [],
+      "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 3 items\n\n..\\test_sample_grades.py::test_classify_grade_happy_path PASSED          [ 33%]\n..\\test_sample_grades.py::test_classify_grade_edge_cases PASSED          [ 66%]\n..\\test_sample_grades.py::test_classify_grade_error_cases PASSED         [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName               Stmts   Miss  Cover   Missing\n------------------------------------------------\nsample_grades.py      12      0   100%\n------------------------------------------------\nTOTAL                 12      0   100%\n============================== 3 passed in 0.14s ==============================\n",
+      "latency_seconds": 4.5,
+      "line_coverage": 100.0,
+      "branch_coverage": 100.0,
+      "mutants_total": 8,
+      "mutants_killed": 0,
+      "mutation_score": 0.0,
+      "mutant_details": [
+        {
+          "kind": "boolop",
+          "line": 3,
+          "killed": false
+        },
+        {
+          "kind": "compare",
+          "line": 3,
+          "killed": false
+        },
+        {
+          "kind": "compare",
+          "line": 3,
+          "killed": false
+        },
+        {
+          "kind": "compare",
+          "line": 5,
+          "killed": false
+        },
+        {
+          "kind": "compare",
+          "line": 7,
+          "killed": false
+        },
+        {
+          "kind": "compare",
+          "line": 9,
+          "killed": false
+        },
+        {
+          "kind": "compare",
+          "line": 11,
+          "killed": false
+        },
+        {
+          "kind": "intconst",
+          "line": 3,
+          "killed": false
+        }
+      ],
+      "total_name_references": 28,
+      "invalid_names": [],
+      "hallucination_rate": 0.0,
+      "bleu_4": 0.402,
+      "rouge_l": 0.5862,
+      "codebleu_simplified": 0.7504,
+      "note": "text-similarity only — not a correctness measure"
+    },
+    "artifacts": {
+      "test_file": "BRANCH-001\\test_sample_grades.py"
+    },
+    "error": null,
+    "surviving_mutants": [
+      {
+        "mutation_id": "BRANCH-001-M00",
+        "file": "sample_grades.py",
+        "function": "classify_grade",
+        "line": 3,
+        "operator": "boolop",
+        "original_code": "if score < 0 or score > 100:",
+        "mutated_code": "if score < 0 and score > 100:"
+      },
+      {
+        "mutation_id": "BRANCH-001-M01",
+        "file": "sample_grades.py",
+        "function": "classify_grade",
+        "line": 3,
+        "operator": "compare",
+        "original_code": "if score < 0 or score > 100:",
+        "mutated_code": "if score <= 0 or score > 100:"
+      },
+      {
+        "mutation_id": "BRANCH-001-M02",
+        "file": "sample_grades.py",
+        "function": "classify_grade",
+        "line": 3,
+        "operator": "compare",
+        "original_code": "if score < 0 or score > 100:",
+        "mutated_code": "if score < 0 or score >= 100:"
+      },
+      {
+        "mutation_id": "BRANCH-001-M03",
+        "file": "sample_grades.py",
+        "function": "classify_grade",
+        "line": 5,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"score must be between 0 and 100\")",
+        "mutated_code": "raise ValueError('score must be between 0 and 100')"
+      },
+      {
+        "mutation_id": "BRANCH-001-M04",
+        "file": "sample_grades.py",
+        "function": "classify_grade",
+        "line": 7,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"score must be between 0 and 100\")",
+        "mutated_code": "raise ValueError('score must be between 0 and 100')"
+      },
+      {
+        "mutation_id": "BRANCH-001-M05",
+        "file": "sample_grades.py",
+        "function": "classify_grade",
+        "line": 9,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"score must be between 0 and 100\")",
+        "mutated_code": "raise ValueError('score must be between 0 and 100')"
+      },
+      {
+        "mutation_id": "BRANCH-001-M06",
+        "file": "sample_grades.py",
+        "function": "classify_grade",
+        "line": 11,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"score must be between 0 and 100\")",
+        "mutated_code": "raise ValueError('score must be between 0 and 100')"
+      },
+      {
+        "mutation_id": "BRANCH-001-M07",
+        "file": "sample_grades.py",
+        "function": "classify_grade",
+        "line": 3,
+        "operator": "intconst",
+        "original_code": "if score < 0 or score > 100:",
+        "mutated_code": "if score < 1 or score > 100:"
+      }
+    ],
+    "mutants_total": 8,
+    "mutants_killed": 0
+  },
+  "guided": {
+    "survivors_given_to_llm": [
+      {
+        "mutation_id": "BRANCH-001-M00",
+        "file": "sample_grades.py",
+        "function": "classify_grade",
+        "line": 3,
+        "operator": "boolop",
+        "original_code": "if score < 0 or score > 100:",
+        "mutated_code": "if score < 0 and score > 100:"
+      },
+      {
+        "mutation_id": "BRANCH-001-M01",
+        "file": "sample_grades.py",
+        "function": "classify_grade",
+        "line": 3,
+        "operator": "compare",
+        "original_code": "if score < 0 or score > 100:",
+        "mutated_code": "if score <= 0 or score > 100:"
+      },
+      {
+        "mutation_id": "BRANCH-001-M02",
+        "file": "sample_grades.py",
+        "function": "classify_grade",
+        "line": 3,
+        "operator": "compare",
+        "original_code": "if score < 0 or score > 100:",
+        "mutated_code": "if score < 0 or score >= 100:"
+      },
+      {
+        "mutation_id": "BRANCH-001-M03",
+        "file": "sample_grades.py",
+        "function": "classify_grade",
+        "line": 5,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"score must be between 0 and 100\")",
+        "mutated_code": "raise ValueError('score must be between 0 and 100')"
+      },
+      {
+        "mutation_id": "BRANCH-001-M04",
+        "file": "sample_grades.py",
+        "function": "classify_grade",
+        "line": 7,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"score must be between 0 and 100\")",
+        "mutated_code": "raise ValueError('score must be between 0 and 100')"
+      },
+      {
+        "mutation_id": "BRANCH-001-M05",
+        "file": "sample_grades.py",
+        "function": "classify_grade",
+        "line": 9,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"score must be between 0 and 100\")",
+        "mutated_code": "raise ValueError('score must be between 0 and 100')"
+      },
+      {
+        "mutation_id": "BRANCH-001-M06",
+        "file": "sample_grades.py",
+        "function": "classify_grade",
+        "line": 11,
+        "operator": "compare",
+        "original_code": "raise ValueError(\"score must be between 0 and 100\")",
+        "mutated_code": "raise ValueError('score must be between 0 and 100')"
+      },
+      {
+        "mutation_id": "BRANCH-001-M07",
+        "file": "sample_grades.py",
+        "function": "classify_grade",
+        "line": 3,
+        "operator": "intconst",
+        "original_code": "if score < 0 or score > 100:",
+        "mutated_code": "if score < 1 or score > 100:"
+      }
+    ],
+    "additional_llm_tokens": 1413,
+    "additional_llm_latency_seconds": 6.63,
+    "additional_tests": 12,
+    "merged_accepted": true,
+    "pytest_collect_passed": true,
+    "execution_success": true,
+    "pass_at_1": false,
+    "total_tests": 15,
+    "passed": 12,
+    "failed": 3,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [
+      "test_classify_grade_edge_score_0",
+      "test_classify_grade_score_59",
+      "test_classify_grade_score_0_to_59",
+      "test_classify_grade_edge_score_0",
+      "test_classify_grade_score_59",
+      "test_classify_grade_score_0_to_59"
+    ],
+    "stdout_excerpt": "t_sample_grades.py::test_classify_grade_score_0_to_59 FAILED       [ 73%]\n..\\test_sample_grades.py::test_classify_grade_score_60_to_69 PASSED      [ 80%]\n..\\test_sample_grades.py::test_classify_grade_score_70_to_79 PASSED      [ 86%]\n..\\test_sample_grades.py::test_classify_grade_score_80_to_89 PASSED      [ 93%]\n..\\test_sample_grades.py::test_classify_grade_score_90_to_100 PASSED     [100%]\n\n================================== FAILURES ===================================\n______________________ test_classify_grade_edge_score_0 _______________________\n..\\test_sample_grades.py:47: in test_classify_grade_edge_score_0\n    assert classify_grade(0) == \"D\"\nE   AssertionError: assert 'F' == 'D'\nE     \nE     - D\nE     + F\n________________________ test_classify_grade_score_59 _________________________\n..\\test_sample_grades.py:59: in test_classify_grade_score_59\n    assert classify_grade(59) == \"D\"\nE   AssertionError: assert 'F' == 'D'\nE     \nE     - D\nE     + F\n______________________ test_classify_grade_score_0_to_59 ______________________\n..\\test_sample_grades.py:63: in test_classify_grade_score_0_to_59\n    assert classify_grade(s) == \"D\"\nE   AssertionError: assert 'F' == 'D'\nE     \nE     - D\nE     + F\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName               Stmts   Miss  Cover   Missing\n------------------------------------------------\nsample_grades.py      12      0   100%\n------------------------------------------------\nTOTAL                 12      0   100%\n=========================== short test summary info ===========================\nFAILED ..\\test_sample_grades.py::test_classify_grade_edge_score_0 - Assertion...\nFAILED ..\\test_sample_grades.py::test_classify_grade_score_59 - AssertionErro...\nFAILED ..\\test_sample_grades.py::test_classify_grade_score_0_to_59 - Assertio...\n======================== 3 failed, 12 passed in 0.25s =========================\n",
+    "latency_seconds": 5.24,
+    "line_coverage": 100.0,
+    "branch_coverage": 100.0,
+    "mutation_score": 1.0,
+    "mutants_total": 8,
+    "mutants_killed": 8,
+    "surviving_mutants_after": [],
+    "hallucination_rate": 0.0179
+  },
+  "deltas": {
+    "mutation_score": 1.0,
+    "mutants_killed": 8,
+    "surviving_mutants": -8,
+    "line_coverage": 0.0,
+    "branch_coverage": 0.0,
+    "pass_at_1": -1.0,
+    "tokens": 527,
+    "latency_seconds": 7.37
+  },
+  "ceiling_effect": false,
+  "error": null
+}

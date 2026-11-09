@@ -1,0 +1,33 @@
+{
+  "experiment": "baseline",
+  "experiment_id": "baseline_1789681278_877bff",
+  "prompt_version": "P0",
+  "rag_enabled": false,
+  "rag_store": "off",
+  "model": "cohere/north-mini-code:free",
+  "model_overridden": false,
+  "dataset_version": "v1",
+  "dataset_hash": "6c117a72e25ca8fc",
+  "temperature": 0.3,
+  "max_tokens": 2048,
+  "mutation": true,
+  "max_mutants": 8,
+  "sample_ids": [
+    "SIMPLE-001",
+    "SIMPLE-002",
+    "BRANCH-001",
+    "BRANCH-002",
+    "EDGE-001",
+    "EDGE-002",
+    "EXC-001",
+    "CLASS-001",
+    "CLASS-002",
+    "DEP-001",
+    "DIFF-001",
+    "DIFF-002"
+  ],
+  "notes": "production configuration, no variable changed",
+  "timestamp_utc": "2026-09-17T21:41:19.299289+00:00",
+  "python_version": "3.14.3",
+  "platform": "Windows-11-10.0.26200-SP0"
+}

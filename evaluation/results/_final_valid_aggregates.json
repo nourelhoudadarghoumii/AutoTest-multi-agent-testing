@@ -1,0 +1,1598 @@
+{
+  "Baseline (P0, production)": {
+    "dir": "baseline_1789681278_877bff",
+    "meta": {
+      "experiment": "baseline",
+      "experiment_id": "baseline_1789681278_877bff",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "rag_store": "off",
+      "model": "cohere/north-mini-code:free",
+      "model_overridden": false,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "production configuration, no variable changed",
+      "timestamp_utc": "2026-09-17T21:41:19.299289+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 1.0,
+      "pass_at_1": 0.6667,
+      "line_coverage_mean": 96.2325,
+      "branch_coverage_mean": 87.3608,
+      "mutation_score_mean": 1.0,
+      "hallucination_rate_mean": 0.0,
+      "latency_seconds_mean": 4.5992,
+      "latency_seconds_stdev": 1.9849,
+      "tokens_mean": 856.8333,
+      "bleu_4_mean": 0.3729,
+      "rouge_l_mean": 0.5687,
+      "codebleu_simplified_mean": 0.7238,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 0.5
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 1.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 0.5
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 0.5
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    },
+    "samples": {
+      "BRANCH-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 3.25,
+        "tokens": 896
+      },
+      "BRANCH-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 5.99,
+        "tokens": 886
+      },
+      "CLASS-001": {
+        "pass_at_1": true,
+        "line": 77.78,
+        "branch": 75.0,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 2.73,
+        "tokens": 801
+      },
+      "CLASS-002": {
+        "pass_at_1": false,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          6
+        ],
+        "hall": 0.0,
+        "latency": 8.21,
+        "tokens": 1222
+      },
+      "DEP-001": {
+        "pass_at_1": false,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          6
+        ],
+        "hall": 0.0,
+        "latency": 3.38,
+        "tokens": 871
+      },
+      "DIFF-001": {
+        "pass_at_1": false,
+        "line": 91.3,
+        "branch": 90.0,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 4.59,
+        "tokens": 999
+      },
+      "DIFF-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": null,
+        "mutants": [
+          0
+        ],
+        "hall": 0.0,
+        "latency": 3.19,
+        "tokens": 771
+      },
+      "EDGE-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          1
+        ],
+        "hall": 0.0,
+        "latency": 7.86,
+        "tokens": 744
+      },
+      "EDGE-002": {
+        "pass_at_1": false,
+        "line": 85.71,
+        "branch": 83.33,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 6.36,
+        "tokens": 850
+      },
+      "EXC-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          3
+        ],
+        "hall": 0.0,
+        "latency": 3.4,
+        "tokens": 803
+      },
+      "SIMPLE-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 0.0,
+        "mutation": 1.0,
+        "mutants": [
+          2
+        ],
+        "hall": 0.0,
+        "latency": 3.07,
+        "tokens": 782
+      },
+      "SIMPLE-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          1
+        ],
+        "hall": 0.0,
+        "latency": 3.16,
+        "tokens": 657
+      }
+    }
+  },
+  "P0 (full)": {
+    "dir": "prompt_p0_1789728854_98e7e4",
+    "meta": {
+      "experiment": "prompt_p0",
+      "experiment_id": "prompt_p0_1789728854_98e7e4",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "rag_store": "off",
+      "model": "cohere/north-mini-code:free",
+      "model_overridden": false,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "prompt engineering: P0 (one variable: prompt)",
+      "timestamp_utc": "2026-09-18T10:54:15.128225+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 1.0,
+      "pass_at_1": 0.75,
+      "line_coverage_mean": 96.2325,
+      "branch_coverage_mean": 87.3608,
+      "mutation_score_mean": 1.0,
+      "hallucination_rate_mean": 0.0,
+      "latency_seconds_mean": 3.2833,
+      "latency_seconds_stdev": 1.8924,
+      "tokens_mean": 866.4167,
+      "bleu_4_mean": 0.3651,
+      "rouge_l_mean": 0.5609,
+      "codebleu_simplified_mean": 0.7191,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 0.5
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 1.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 0.5
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    },
+    "samples": {
+      "BRANCH-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 3.3,
+        "tokens": 879
+      },
+      "BRANCH-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 3.5,
+        "tokens": 976
+      },
+      "CLASS-001": {
+        "pass_at_1": true,
+        "line": 77.78,
+        "branch": 75.0,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 1.64,
+        "tokens": 809
+      },
+      "CLASS-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          6
+        ],
+        "hall": 0.0,
+        "latency": 1.75,
+        "tokens": 1227
+      },
+      "DEP-001": {
+        "pass_at_1": false,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          6
+        ],
+        "hall": 0.0,
+        "latency": 1.79,
+        "tokens": 886
+      },
+      "DIFF-001": {
+        "pass_at_1": false,
+        "line": 91.3,
+        "branch": 90.0,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 1.49,
+        "tokens": 987
+      },
+      "DIFF-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": null,
+        "mutants": [
+          0
+        ],
+        "hall": 0.0,
+        "latency": 1.73,
+        "tokens": 771
+      },
+      "EDGE-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          1
+        ],
+        "hall": 0.0,
+        "latency": 6.83,
+        "tokens": 735
+      },
+      "EDGE-002": {
+        "pass_at_1": false,
+        "line": 85.71,
+        "branch": 83.33,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 2.99,
+        "tokens": 881
+      },
+      "EXC-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          3
+        ],
+        "hall": 0.0,
+        "latency": 6.9,
+        "tokens": 803
+      },
+      "SIMPLE-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 0.0,
+        "mutation": 1.0,
+        "mutants": [
+          2
+        ],
+        "hall": 0.0,
+        "latency": 4.11,
+        "tokens": 782
+      },
+      "SIMPLE-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          1
+        ],
+        "hall": 0.0,
+        "latency": 3.37,
+        "tokens": 661
+      }
+    }
+  },
+  "P1 (full)": {
+    "dir": "prompt_p1_1789752597_a96eb2",
+    "meta": {
+      "experiment": "prompt_p1",
+      "experiment_id": "prompt_p1_1789752597_a96eb2",
+      "prompt_version": "P1",
+      "rag_enabled": false,
+      "rag_store": "off",
+      "model": "cohere/north-mini-code:free",
+      "model_overridden": false,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "prompt engineering: P1 (one variable: prompt)",
+      "timestamp_utc": "2026-09-18T17:29:57.135488+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 0.9167,
+      "pass_at_1": 0.75,
+      "line_coverage_mean": 92.675,
+      "branch_coverage_mean": 81.9442,
+      "mutation_score_mean": 1.0,
+      "hallucination_rate_mean": 0.0,
+      "latency_seconds_mean": 1.6475,
+      "latency_seconds_stdev": 0.2258,
+      "tokens_mean": 706.25,
+      "bleu_4_mean": 0.301,
+      "rouge_l_mean": 0.4963,
+      "codebleu_simplified_mean": 0.6873,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 0.5
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 1.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 0.5
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    },
+    "samples": {
+      "BRANCH-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 1.49,
+        "tokens": 865
+      },
+      "BRANCH-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 1.41,
+        "tokens": 799
+      },
+      "CLASS-001": {
+        "pass_at_1": true,
+        "line": 88.89,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 1.42,
+        "tokens": 725
+      },
+      "CLASS-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          6
+        ],
+        "hall": 0.0,
+        "latency": 1.55,
+        "tokens": 898
+      },
+      "DEP-001": {
+        "pass_at_1": false,
+        "line": 37.5,
+        "branch": 0.0,
+        "mutation": 1.0,
+        "mutants": [
+          6
+        ],
+        "hall": 0.0,
+        "latency": 1.93,
+        "tokens": 678
+      },
+      "DIFF-001": {
+        "pass_at_1": false,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 1.95,
+        "tokens": 741
+      },
+      "DIFF-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": null,
+        "mutants": [
+          0
+        ],
+        "hall": 0.0,
+        "latency": 1.92,
+        "tokens": 760
+      },
+      "EDGE-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          1
+        ],
+        "hall": 0.0,
+        "latency": 1.4,
+        "tokens": 587
+      },
+      "EDGE-002": {
+        "pass_at_1": false,
+        "line": 85.71,
+        "branch": 83.33,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 1.77,
+        "tokens": 677
+      },
+      "EXC-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          3
+        ],
+        "hall": 0.0,
+        "latency": 1.47,
+        "tokens": 643
+      },
+      "SIMPLE-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 0.0,
+        "mutation": 1.0,
+        "mutants": [
+          2
+        ],
+        "hall": 0.0,
+        "latency": 1.89,
+        "tokens": 645
+      },
+      "SIMPLE-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          1
+        ],
+        "hall": 0.0,
+        "latency": 1.57,
+        "tokens": 457
+      }
+    }
+  },
+  "P2 (full)": {
+    "dir": "prompt_p2_1789758263_3f7aee",
+    "meta": {
+      "experiment": "prompt_p2",
+      "experiment_id": "prompt_p2_1789758263_3f7aee",
+      "prompt_version": "P2",
+      "rag_enabled": false,
+      "rag_store": "off",
+      "model": "cohere/north-mini-code:free",
+      "model_overridden": false,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "prompt engineering: P2 (one variable: prompt)",
+      "timestamp_utc": "2026-09-18T19:04:23.577232+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 1.0,
+      "pass_at_1": 0.75,
+      "line_coverage_mean": 96.9575,
+      "branch_coverage_mean": 88.1942,
+      "mutation_score_mean": 0.4545,
+      "hallucination_rate_mean": 0.0,
+      "latency_seconds_mean": 1.9675,
+      "latency_seconds_stdev": 0.2092,
+      "tokens_mean": 804.25,
+      "bleu_4_mean": 0.4072,
+      "rouge_l_mean": 0.6019,
+      "codebleu_simplified_mean": 0.7413,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 0.5
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 1.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 0.5
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    },
+    "samples": {
+      "BRANCH-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 1.86,
+        "tokens": 827
+      },
+      "BRANCH-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 2.08,
+        "tokens": 885
+      },
+      "CLASS-001": {
+        "pass_at_1": true,
+        "line": 77.78,
+        "branch": 75.0,
+        "mutation": 0.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 1.97,
+        "tokens": 752
+      },
+      "CLASS-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          6
+        ],
+        "hall": 0.0,
+        "latency": 1.89,
+        "tokens": 1038
+      },
+      "DEP-001": {
+        "pass_at_1": false,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          6
+        ],
+        "hall": 0.0,
+        "latency": 1.97,
+        "tokens": 836
+      },
+      "DIFF-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 2.1,
+        "tokens": 836
+      },
+      "DIFF-002": {
+        "pass_at_1": false,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": null,
+        "mutants": [
+          0
+        ],
+        "hall": 0.0,
+        "latency": 2.05,
+        "tokens": 778
+      },
+      "EDGE-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          1
+        ],
+        "hall": 0.0,
+        "latency": 1.83,
+        "tokens": 696
+      },
+      "EDGE-002": {
+        "pass_at_1": false,
+        "line": 85.71,
+        "branch": 83.33,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 2.08,
+        "tokens": 881
+      },
+      "EXC-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          3
+        ],
+        "hall": 0.0,
+        "latency": 1.88,
+        "tokens": 731
+      },
+      "SIMPLE-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 0.0,
+        "mutation": 1.0,
+        "mutants": [
+          2
+        ],
+        "hall": 0.0,
+        "latency": 1.51,
+        "tokens": 756
+      },
+      "SIMPLE-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          1
+        ],
+        "hall": 0.0,
+        "latency": 2.39,
+        "tokens": 635
+      }
+    }
+  },
+  "P3 (full)": {
+    "dir": "prompt_p3_1789776746_63c4d9",
+    "meta": {
+      "experiment": "prompt_p3",
+      "experiment_id": "prompt_p3_1789776746_63c4d9",
+      "prompt_version": "P3",
+      "rag_enabled": false,
+      "rag_store": "off",
+      "model": "cohere/north-mini-code:free",
+      "model_overridden": false,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "prompt engineering: P3 (one variable: prompt)",
+      "timestamp_utc": "2026-09-19T00:12:27.236175+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 1.0,
+      "pass_at_1": 0.75,
+      "line_coverage_mean": 96.9575,
+      "branch_coverage_mean": 88.1942,
+      "mutation_score_mean": 0.1818,
+      "hallucination_rate_mean": 0.0,
+      "latency_seconds_mean": 4.0875,
+      "latency_seconds_stdev": 0.725,
+      "tokens_mean": 810.9167,
+      "bleu_4_mean": 0.3961,
+      "rouge_l_mean": 0.5906,
+      "codebleu_simplified_mean": 0.737,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 0.5
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 1.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 0.5
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    },
+    "samples": {
+      "BRANCH-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 3.69,
+        "tokens": 827
+      },
+      "BRANCH-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 5.85,
+        "tokens": 928
+      },
+      "CLASS-001": {
+        "pass_at_1": true,
+        "line": 77.78,
+        "branch": 75.0,
+        "mutation": 0.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 3.91,
+        "tokens": 830
+      },
+      "CLASS-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          6
+        ],
+        "hall": 0.0,
+        "latency": 3.58,
+        "tokens": 1032
+      },
+      "DEP-001": {
+        "pass_at_1": false,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          6
+        ],
+        "hall": 0.0,
+        "latency": 3.62,
+        "tokens": 836
+      },
+      "DIFF-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 3.64,
+        "tokens": 836
+      },
+      "DIFF-002": {
+        "pass_at_1": false,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": null,
+        "mutants": [
+          0
+        ],
+        "hall": 0.0,
+        "latency": 4.45,
+        "tokens": 778
+      },
+      "EDGE-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          1
+        ],
+        "hall": 0.0,
+        "latency": 3.35,
+        "tokens": 694
+      },
+      "EDGE-002": {
+        "pass_at_1": false,
+        "line": 85.71,
+        "branch": 83.33,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 3.97,
+        "tokens": 875
+      },
+      "EXC-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          3
+        ],
+        "hall": 0.0,
+        "latency": 4.0,
+        "tokens": 727
+      },
+      "SIMPLE-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 0.0,
+        "mutation": 0.0,
+        "mutants": [
+          2
+        ],
+        "hall": 0.0,
+        "latency": 5.12,
+        "tokens": 732
+      },
+      "SIMPLE-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          1
+        ],
+        "hall": 0.0,
+        "latency": 3.87,
+        "tokens": 636
+      }
+    }
+  },
+  "RAG OFF (P3)": {
+    "dir": "rag_off_1789777201_2b1cd7",
+    "meta": {
+      "experiment": "rag_off",
+      "experiment_id": "rag_off_1789777201_2b1cd7",
+      "prompt_version": "P3",
+      "rag_enabled": false,
+      "rag_store": "off",
+      "model": "cohere/north-mini-code:free",
+      "model_overridden": false,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "RAG A/B: P3 without retrieved patterns",
+      "timestamp_utc": "2026-09-19T00:20:01.676220+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 1.0,
+      "pass_at_1": 0.75,
+      "line_coverage_mean": 96.9575,
+      "branch_coverage_mean": 88.1942,
+      "mutation_score_mean": 0.1818,
+      "hallucination_rate_mean": 0.0,
+      "latency_seconds_mean": 4.0075,
+      "latency_seconds_stdev": 1.0961,
+      "tokens_mean": 814.8333,
+      "bleu_4_mean": 0.4009,
+      "rouge_l_mean": 0.5903,
+      "codebleu_simplified_mean": 0.7401,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 0.5
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 1.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 0.5
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    },
+    "samples": {
+      "BRANCH-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 3.98,
+        "tokens": 907
+      },
+      "BRANCH-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 4.3,
+        "tokens": 929
+      },
+      "CLASS-001": {
+        "pass_at_1": true,
+        "line": 77.78,
+        "branch": 75.0,
+        "mutation": 0.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 4.89,
+        "tokens": 830
+      },
+      "CLASS-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          6
+        ],
+        "hall": 0.0,
+        "latency": 3.1,
+        "tokens": 1032
+      },
+      "DEP-001": {
+        "pass_at_1": false,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          6
+        ],
+        "hall": 0.0,
+        "latency": 3.15,
+        "tokens": 833
+      },
+      "DIFF-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 3.44,
+        "tokens": 830
+      },
+      "DIFF-002": {
+        "pass_at_1": false,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": null,
+        "mutants": [
+          0
+        ],
+        "hall": 0.0,
+        "latency": 3.19,
+        "tokens": 778
+      },
+      "EDGE-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          1
+        ],
+        "hall": 0.0,
+        "latency": 3.29,
+        "tokens": 694
+      },
+      "EDGE-002": {
+        "pass_at_1": false,
+        "line": 85.71,
+        "branch": 83.33,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 3.57,
+        "tokens": 843
+      },
+      "EXC-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          3
+        ],
+        "hall": 0.0,
+        "latency": 6.91,
+        "tokens": 729
+      },
+      "SIMPLE-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 0.0,
+        "mutation": 0.0,
+        "mutants": [
+          2
+        ],
+        "hall": 0.0,
+        "latency": 4.7,
+        "tokens": 738
+      },
+      "SIMPLE-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          1
+        ],
+        "hall": 0.0,
+        "latency": 3.57,
+        "tokens": 635
+      }
+    }
+  },
+  "RAG ON (P3)": {
+    "dir": "rag_on_1789777613_9f485e",
+    "meta": {
+      "experiment": "rag_on",
+      "experiment_id": "rag_on_1789777613_9f485e",
+      "prompt_version": "P3",
+      "rag_enabled": true,
+      "rag_store": "isolated_seeded",
+      "model": "cohere/north-mini-code:free",
+      "model_overridden": false,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "RAG A/B: P3 with seeded bug patterns retrieved",
+      "timestamp_utc": "2026-09-19T00:26:53.420089+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 1.0,
+      "pass_at_1": 0.75,
+      "line_coverage_mean": 96.9575,
+      "branch_coverage_mean": 88.1942,
+      "mutation_score_mean": 0.1818,
+      "hallucination_rate_mean": 0.0,
+      "latency_seconds_mean": 4.13,
+      "latency_seconds_stdev": 1.6128,
+      "tokens_mean": 930.25,
+      "bleu_4_mean": 0.3758,
+      "rouge_l_mean": 0.5714,
+      "codebleu_simplified_mean": 0.7276,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 0.5
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 1.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 0.5
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    },
+    "samples": {
+      "BRANCH-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 3.31,
+        "tokens": 961
+      },
+      "BRANCH-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 3.92,
+        "tokens": 1059
+      },
+      "CLASS-001": {
+        "pass_at_1": true,
+        "line": 77.78,
+        "branch": 75.0,
+        "mutation": 0.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 6.63,
+        "tokens": 921
+      },
+      "CLASS-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          6
+        ],
+        "hall": 0.0,
+        "latency": 6.92,
+        "tokens": 1188
+      },
+      "DEP-001": {
+        "pass_at_1": false,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 1.0,
+        "mutants": [
+          6
+        ],
+        "hall": 0.0,
+        "latency": 6.74,
+        "tokens": 929
+      },
+      "DIFF-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 3.01,
+        "tokens": 949
+      },
+      "DIFF-002": {
+        "pass_at_1": false,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": null,
+        "mutants": [
+          0
+        ],
+        "hall": 0.0,
+        "latency": 3.08,
+        "tokens": 1005
+      },
+      "EDGE-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          1
+        ],
+        "hall": 0.0,
+        "latency": 3.1,
+        "tokens": 826
+      },
+      "EDGE-002": {
+        "pass_at_1": false,
+        "line": 85.71,
+        "branch": 83.33,
+        "mutation": 1.0,
+        "mutants": [
+          8
+        ],
+        "hall": 0.0,
+        "latency": 3.18,
+        "tokens": 937
+      },
+      "EXC-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          3
+        ],
+        "hall": 0.0,
+        "latency": 3.64,
+        "tokens": 832
+      },
+      "SIMPLE-001": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 0.0,
+        "mutation": 0.0,
+        "mutants": [
+          2
+        ],
+        "hall": 0.0,
+        "latency": 2.99,
+        "tokens": 827
+      },
+      "SIMPLE-002": {
+        "pass_at_1": true,
+        "line": 100.0,
+        "branch": 100.0,
+        "mutation": 0.0,
+        "mutants": [
+          1
+        ],
+        "hall": 0.0,
+        "latency": 3.04,
+        "tokens": 729
+      }
+    }
+  }
+}

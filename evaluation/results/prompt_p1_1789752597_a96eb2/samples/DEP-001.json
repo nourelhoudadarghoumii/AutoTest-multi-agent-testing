@@ -1,0 +1,87 @@
+{
+  "sample": {
+    "sample_id": "DEP-001",
+    "category": "dependency",
+    "difficulty": "medium",
+    "entry_file": "sample_report.py",
+    "tags": [
+      "dependencies"
+    ]
+  },
+  "config": {
+    "model": "cohere/north-mini-code:free",
+    "prompt_version": "P1",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "metrics": {
+    "llm_latency_seconds": 4.49,
+    "llm_api_calls": 1,
+    "llm_retries": 0,
+    "llm_prompt_tokens": 456,
+    "llm_completion_tokens": 222,
+    "llm_total_tokens": 678,
+    "ast_validation_passed": true,
+    "pytest_collect_passed": false,
+    "execution_success": false,
+    "pass_at_1": false,
+    "total_tests": 0,
+    "passed": 0,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 0 items\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName               Stmts   Miss  Cover   Missing\n------------------------------------------------\nhelpers.py             9      9     0%   1-10\nsample_report.py       6      3    50%   8-10\n------------------------------------------------\nTOTAL                 15     12    20%\n============================ no tests ran in 0.07s ============================\n",
+    "latency_seconds": 1.93,
+    "line_coverage": 37.5,
+    "branch_coverage": 0.0,
+    "mutants_total": 6,
+    "mutants_killed": 6,
+    "mutation_score": 1.0,
+    "mutant_details": [
+      {
+        "kind": "binop",
+        "line": 14,
+        "killed": true
+      },
+      {
+        "kind": "binop",
+        "line": 16,
+        "killed": true
+      },
+      {
+        "kind": "binop",
+        "line": 16,
+        "killed": true
+      },
+      {
+        "kind": "binop",
+        "line": 16,
+        "killed": true
+      },
+      {
+        "kind": "intconst",
+        "line": 16,
+        "killed": true
+      },
+      {
+        "kind": "not",
+        "line": 8,
+        "killed": true
+      }
+    ],
+    "total_name_references": 40,
+    "invalid_names": [],
+    "hallucination_rate": 0.0,
+    "bleu_4": 0.2278,
+    "rouge_l": 0.4194,
+    "codebleu_simplified": 0.6628,
+    "note": "text-similarity only — not a correctness measure"
+  },
+  "artifacts": {
+    "test_file": "DEP-001\\test_sample_report.py"
+  },
+  "error": null
+}

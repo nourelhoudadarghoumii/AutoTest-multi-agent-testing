@@ -1,0 +1,101 @@
+{
+  "sample": {
+    "sample_id": "EDGE-002",
+    "category": "edge",
+    "difficulty": "medium",
+    "entry_file": "sample_moving_avg.py",
+    "tags": [
+      "edges",
+      "sequences"
+    ]
+  },
+  "config": {
+    "model": "cohere/north-mini-code:free",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "metrics": {
+    "llm_latency_seconds": 4.47,
+    "llm_api_calls": 1,
+    "llm_retries": 0,
+    "llm_prompt_tokens": 660,
+    "llm_completion_tokens": 221,
+    "llm_total_tokens": 881,
+    "ast_validation_passed": true,
+    "pytest_collect_passed": true,
+    "execution_success": true,
+    "pass_at_1": false,
+    "total_tests": 5,
+    "passed": 4,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [
+      "test_moving_average_empty_values",
+      "test_moving_average_empty_values"
+    ],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 5 items\n\n..\\test_sample_moving_avg.py::test_moving_average_happy_path PASSED      [ 20%]\n..\\test_sample_moving_avg.py::test_moving_average_edge_case PASSED       [ 40%]\n..\\test_sample_moving_avg.py::test_moving_average_error_window_zero PASSED [ 60%]\n..\\test_sample_moving_avg.py::test_moving_average_error_window_larger_than_data PASSED [ 80%]\n..\\test_sample_moving_avg.py::test_moving_average_empty_values FAILED    [100%]\n\n================================== FAILURES ===================================\n______________________ test_moving_average_empty_values _______________________\n..\\test_sample_moving_avg.py:26: in test_moving_average_empty_values\n    assert moving_average([], 5) == []\n           ^^^^^^^^^^^^^^^^^^^^^\nsample_moving_avg.py:6: in moving_average\n    raise ValueError(\"window larger than data\")\nE   ValueError: window larger than data\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName                   Stmts   Miss  Cover   Missing\n----------------------------------------------------\nsample_moving_avg.py       8      1    88%   8\n----------------------------------------------------\nTOTAL                      8      1    88%\n=========================== short test summary info ===========================\nFAILED ..\\test_sample_moving_avg.py::test_moving_average_empty_values - Value...\n========================= 1 failed, 4 passed in 0.19s =========================\n",
+    "latency_seconds": 2.99,
+    "line_coverage": 85.71,
+    "branch_coverage": 83.33,
+    "mutants_total": 8,
+    "mutants_killed": 8,
+    "mutation_score": 1.0,
+    "mutant_details": [
+      {
+        "kind": "binop",
+        "line": 9,
+        "killed": true
+      },
+      {
+        "kind": "binop",
+        "line": 9,
+        "killed": true
+      },
+      {
+        "kind": "binop",
+        "line": 9,
+        "killed": true
+      },
+      {
+        "kind": "binop",
+        "line": 9,
+        "killed": true
+      },
+      {
+        "kind": "compare",
+        "line": 3,
+        "killed": true
+      },
+      {
+        "kind": "compare",
+        "line": 5,
+        "killed": true
+      },
+      {
+        "kind": "intconst",
+        "line": 3,
+        "killed": true
+      },
+      {
+        "kind": "intconst",
+        "line": 9,
+        "killed": true
+      }
+    ],
+    "total_name_references": 21,
+    "invalid_names": [],
+    "hallucination_rate": 0.0,
+    "bleu_4": 0.3156,
+    "rouge_l": 0.5096,
+    "codebleu_simplified": 0.7069,
+    "note": "text-similarity only — not a correctness measure"
+  },
+  "artifacts": {
+    "test_file": "EDGE-002\\test_sample_moving_avg.py"
+  },
+  "error": null
+}

@@ -1,0 +1,100 @@
+{
+  "sample_id": "DIFF-002",
+  "category": "difficult",
+  "config": {
+    "model": "production",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048,
+    "per_test_validation": true
+  },
+  "baseline": {
+    "sample": {
+      "sample_id": "DIFF-002",
+      "category": "difficult",
+      "difficulty": "hard",
+      "entry_file": "sample_flatten.py",
+      "tags": [
+        "recursion"
+      ]
+    },
+    "config": {
+      "model": "production",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "dataset_version": "v1",
+      "temperature": 0.3,
+      "max_tokens": 2048
+    },
+    "metrics": {
+      "llm_latency_seconds": 3.49,
+      "llm_api_calls": 1,
+      "llm_retries": 0,
+      "llm_prompt_tokens": 650,
+      "llm_completion_tokens": 134,
+      "llm_total_tokens": 784,
+      "ast_validation_passed": true,
+      "pytest_collect_passed": true,
+      "execution_success": true,
+      "pass_at_1": false,
+      "total_tests": 3,
+      "passed": 2,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "failed_test_names": [
+        "test_flatten_dict_error_case_non_dict_input",
+        "test_flatten_dict_error_case_non_dict_input"
+      ],
+      "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 3 items\n\n..\\test_sample_flatten.py::test_flatten_dict_happy_path PASSED           [ 33%]\n..\\test_sample_flatten.py::test_flatten_dict_edge_case_empty_dict PASSED [ 66%]\n..\\test_sample_flatten.py::test_flatten_dict_error_case_non_dict_input FAILED [100%]\n\n================================== FAILURES ===================================\n_________________ test_flatten_dict_error_case_non_dict_input _________________\n..\\test_sample_flatten.py:19: in test_flatten_dict_error_case_non_dict_input\n    result = flatten_dict(nested)\n             ^^^^^^^^^^^^^^^^^^^^\nsample_flatten.py:4: in flatten_dict\n    for key, value in nested.items():\n                      ^^^^^^^^^^^^\nE   AttributeError: 'int' object has no attribute 'items'\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName                Stmts   Miss  Cover   Missing\n-------------------------------------------------\nsample_flatten.py       8      0   100%\n-------------------------------------------------\nTOTAL                   8      0   100%\n=========================== short test summary info ===========================\nFAILED ..\\test_sample_flatten.py::test_flatten_dict_error_case_non_dict_input\n========================= 1 failed, 2 passed in 0.16s =========================\n",
+      "latency_seconds": 3.0,
+      "line_coverage": 100.0,
+      "branch_coverage": 100.0,
+      "mutants_total": 0,
+      "mutants_killed": 0,
+      "mutation_score": null,
+      "mutant_details": [],
+      "total_name_references": 19,
+      "invalid_names": [],
+      "hallucination_rate": 0.0,
+      "bleu_4": 0.374,
+      "rouge_l": 0.5736,
+      "codebleu_simplified": 0.6975,
+      "note": "text-similarity only — not a correctness measure"
+    },
+    "artifacts": {
+      "test_file": "DIFF-002\\test_sample_flatten.py"
+    },
+    "error": null,
+    "surviving_mutants": [],
+    "mutants_total": 0,
+    "mutants_killed": 0
+  },
+  "guided": {
+    "note": "all mutants already killed — no guided step (no extra LLM call)",
+    "additional_generated": 0,
+    "additional_accepted": 0,
+    "additional_rejected": 0,
+    "pass_at_1": false,
+    "execution_success": true,
+    "line_coverage": 100.0,
+    "branch_coverage": 100.0,
+    "mutation_score": null,
+    "mutants_total": 0,
+    "mutants_killed": 0,
+    "hallucination_rate": 0.0,
+    "latency_seconds": 3.0,
+    "llm_total_tokens": 784
+  },
+  "deltas": {
+    "mutation_score": 0,
+    "mutants_killed": 0,
+    "line_coverage": 0,
+    "branch_coverage": 0,
+    "pass_at_1": 0
+  },
+  "ceiling_effect": true,
+  "error": null
+}

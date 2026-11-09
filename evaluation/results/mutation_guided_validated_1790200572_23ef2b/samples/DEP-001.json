@@ -1,0 +1,244 @@
+{
+  "sample_id": "DEP-001",
+  "category": "dependency",
+  "config": {
+    "model": "production",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048,
+    "per_test_validation": true
+  },
+  "baseline": {
+    "sample": {
+      "sample_id": "DEP-001",
+      "category": "dependency",
+      "difficulty": "medium",
+      "entry_file": "sample_report.py",
+      "tags": [
+        "dependencies"
+      ]
+    },
+    "config": {
+      "model": "production",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "dataset_version": "v1",
+      "temperature": 0.3,
+      "max_tokens": 2048
+    },
+    "metrics": {
+      "llm_latency_seconds": 3.46,
+      "llm_api_calls": 1,
+      "llm_retries": 0,
+      "llm_prompt_tokens": 656,
+      "llm_completion_tokens": 266,
+      "llm_total_tokens": 922,
+      "ast_validation_passed": true,
+      "pytest_collect_passed": true,
+      "execution_success": true,
+      "pass_at_1": false,
+      "total_tests": 3,
+      "passed": 2,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "failed_test_names": [
+        "test_describe_happy_path",
+        "test_describe_happy_path"
+      ],
+      "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 3 items\n\n..\\test_sample_report.py::test_describe_happy_path FAILED                [ 33%]\n..\\test_sample_report.py::test_describe_edge_case_single_value PASSED    [ 66%]\n..\\test_sample_report.py::test_describe_error_empty_data PASSED          [100%]\n\n================================== FAILURES ===================================\n__________________________ test_describe_happy_path ___________________________\n..\\test_sample_report.py:20: in test_describe_happy_path\n    assert result[\"stdev\"] == 0.0\nE   assert 1.4142135623730951 == 0.0\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName               Stmts   Miss  Cover   Missing\n------------------------------------------------\nhelpers.py             9      9     0%   1-10\nsample_report.py       6      0   100%\n------------------------------------------------\nTOTAL                 15      9    40%\n=========================== short test summary info ===========================\nFAILED ..\\test_sample_report.py::test_describe_happy_path - assert 1.41421356...\n========================= 1 failed, 2 passed in 0.40s =========================\n",
+      "latency_seconds": 7.45,
+      "line_coverage": 100.0,
+      "branch_coverage": 100.0,
+      "mutants_total": 6,
+      "mutants_killed": 5,
+      "mutation_score": 0.8333,
+      "mutant_details": [
+        {
+          "kind": "binop",
+          "line": 14,
+          "killed": true
+        },
+        {
+          "kind": "binop",
+          "line": 16,
+          "killed": true
+        },
+        {
+          "kind": "binop",
+          "line": 16,
+          "killed": true
+        },
+        {
+          "kind": "binop",
+          "line": 16,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 16,
+          "killed": false
+        },
+        {
+          "kind": "not",
+          "line": 8,
+          "killed": true
+        }
+      ],
+      "total_name_references": 40,
+      "invalid_names": [],
+      "hallucination_rate": 0.0,
+      "bleu_4": 0.2193,
+      "rouge_l": 0.4072,
+      "codebleu_simplified": 0.6561,
+      "note": "text-similarity only — not a correctness measure"
+    },
+    "artifacts": {
+      "test_file": "DEP-001\\test_sample_report.py"
+    },
+    "error": null,
+    "surviving_mutants": [
+      {
+        "mutation_id": "DEP-001-M04",
+        "file": "sample_report.py",
+        "function": "describe",
+        "line": 16,
+        "operator": "intconst",
+        "original_code": "",
+        "mutated_code": "from helpers import median"
+      }
+    ],
+    "mutants_total": 6,
+    "mutants_killed": 5
+  },
+  "guided": {
+    "survivors_given_to_llm": [
+      {
+        "mutation_id": "DEP-001-M04",
+        "file": "sample_report.py",
+        "function": "describe",
+        "line": 16,
+        "operator": "intconst",
+        "original_code": "",
+        "mutated_code": "from helpers import median"
+      }
+    ],
+    "additional_llm_tokens": 1124,
+    "additional_llm_latency_seconds": 5.34,
+    "additional_generated": 6,
+    "additional_accepted": 0,
+    "additional_rejected": 6,
+    "accepted_tests": [],
+    "rejected_tests": [
+      {
+        "test_name": "test_describe_empty_values",
+        "snippet": "def test_describe_empty_values():\n    try:\n        describe([])\n        assert False, \"Expected ValueError for empty data\"\n    except ValueError as e:\n        assert str(e) == \"empty data\"",
+        "reason": "fails_against_original_code",
+        "failed_test_names": [
+          "test_describe_happy_path",
+          "test_describe_happy_path"
+        ]
+      },
+      {
+        "test_name": "test_describe_single_value",
+        "snippet": "def test_describe_single_value():\n    result = describe([5])\n    assert result[\"count\"] == 1\n    assert result[\"min\"] == 5\n    assert result[\"max\"] == 5\n    assert result[\"mean\"] == 5\n    assert result[\"median\"] == 5\n    assert result[\"stdev\"] == 0.0",
+        "reason": "fails_against_original_code",
+        "failed_test_names": [
+          "test_describe_happy_path",
+          "test_describe_single_value",
+          "test_describe_happy_path",
+          "test_describe_single_value"
+        ]
+      },
+      {
+        "test_name": "test_describe_multiple_values",
+        "snippet": "def test_describe_multiple_values():\n    result = describe([1, 2, 3, 4, 5])\n    assert result[\"count\"] == 5\n    assert result[\"min\"] == 1\n    assert result[\"max\"] == 5\n    assert result[\"mean\"] == 3.0\n    assert result[\"median\"] == 3\n    assert result[\"stdev\"] == 1.4142135623730951",
+        "reason": "fails_against_original_code",
+        "failed_test_names": [
+          "test_describe_happy_path",
+          "test_describe_multiple_values",
+          "test_describe_happy_path",
+          "test_describe_multiple_values"
+        ]
+      },
+      {
+        "test_name": "test_describe_negative_values",
+        "snippet": "def test_describe_negative_values():\n    result = describe([-5, 0, 5])\n    assert result[\"count\"] == 3\n    assert result[\"min\"] == -5\n    assert result[\"max\"] == 5\n    assert result[\"mean\"] == 0.0\n    assert result[\"median\"] == 0\n    assert result[\"stdev\"] == 4.08248290463863",
+        "reason": "fails_against_original_code",
+        "failed_test_names": [
+          "test_describe_happy_path",
+          "test_describe_negative_values",
+          "test_describe_happy_path",
+          "test_describe_negative_values"
+        ]
+      },
+      {
+        "test_name": "test_describe_float_values",
+        "snippet": "def test_describe_float_values():\n    result = describe([1.5, 2.5, 3.5])\n    assert result[\"count\"] == 3\n    assert result[\"min\"] == 1.5\n    assert result[\"max\"] == 3.5\n    assert result[\"mean\"] == 2.5\n    assert result[\"median\"] == 2.5\n    assert result[\"stdev\"] == 0.816496580927726",
+        "reason": "fails_against_original_code",
+        "failed_test_names": [
+          "test_describe_happy_path",
+          "test_describe_float_values",
+          "test_describe_happy_path",
+          "test_describe_float_values"
+        ]
+      },
+      {
+        "test_name": "test_describe_median_mutation",
+        "snippet": "def test_describe_median_mutation():\n    result = describe([10, 20, 30, 40])\n    assert result[\"median\"] == 25.0",
+        "reason": "fails_against_original_code",
+        "failed_test_names": [
+          "test_describe_happy_path",
+          "test_describe_median_mutation",
+          "test_describe_happy_path",
+          "test_describe_median_mutation"
+        ]
+      }
+    ],
+    "merged_accepted": false,
+    "execution_success": true,
+    "pass_at_1": false,
+    "total_tests": 3,
+    "passed": 2,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [
+      "test_describe_happy_path",
+      "test_describe_happy_path"
+    ],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 3 items\n\n..\\test_sample_report.py::test_describe_happy_path FAILED                [ 33%]\n..\\test_sample_report.py::test_describe_edge_case_single_value PASSED    [ 66%]\n..\\test_sample_report.py::test_describe_error_empty_data PASSED          [100%]\n\n================================== FAILURES ===================================\n__________________________ test_describe_happy_path ___________________________\n..\\test_sample_report.py:20: in test_describe_happy_path\n    assert result[\"stdev\"] == 0.0\nE   assert 1.4142135623730951 == 0.0\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName               Stmts   Miss  Cover   Missing\n------------------------------------------------\nhelpers.py             9      9     0%   1-10\nsample_report.py       6      0   100%\n------------------------------------------------\nTOTAL                 15      9    40%\n=========================== short test summary info ===========================\nFAILED ..\\test_sample_report.py::test_describe_happy_path - assert 1.41421356...\n========================= 1 failed, 2 passed in 0.40s =========================\n",
+    "latency_seconds": 7.3,
+    "line_coverage": 100.0,
+    "branch_coverage": 100.0,
+    "mutation_score": 0.8333,
+    "mutants_total": 6,
+    "mutants_killed": 5,
+    "surviving_mutants_after": [
+      {
+        "mutation_id": "DEP-001-M04",
+        "file": "sample_report.py",
+        "function": "describe",
+        "line": 16,
+        "operator": "intconst",
+        "original_code": "",
+        "mutated_code": "from helpers import median"
+      }
+    ],
+    "hallucination_rate": 0.0
+  },
+  "deltas": {
+    "mutation_score": 0.0,
+    "mutants_killed": 0,
+    "surviving_mutants": 0,
+    "line_coverage": 0.0,
+    "branch_coverage": 0.0,
+    "pass_at_1": 0.0,
+    "tokens": 202,
+    "latency_seconds": 5.19
+  },
+  "ceiling_effect": false,
+  "error": null
+}

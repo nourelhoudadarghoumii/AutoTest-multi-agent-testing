@@ -1,0 +1,177 @@
+{
+  "sample_id": "SIMPLE-001",
+  "category": "simple",
+  "config": {
+    "model": "production",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "baseline": {
+    "sample": {
+      "sample_id": "SIMPLE-001",
+      "category": "simple",
+      "difficulty": "easy",
+      "entry_file": "sample_simple.py",
+      "tags": [
+        "arithmetic",
+        "pure"
+      ]
+    },
+    "config": {
+      "model": "production",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "dataset_version": "v1",
+      "temperature": 0.3,
+      "max_tokens": 2048
+    },
+    "metrics": {
+      "llm_latency_seconds": 10.81,
+      "llm_api_calls": 1,
+      "llm_retries": 0,
+      "llm_prompt_tokens": 660,
+      "llm_completion_tokens": 122,
+      "llm_total_tokens": 782,
+      "ast_validation_passed": true,
+      "pytest_collect_passed": true,
+      "execution_success": true,
+      "pass_at_1": true,
+      "total_tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "failed_test_names": [],
+      "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 6 items\n\n..\\test_sample_simple.py::test_add_happy_path PASSED                     [ 16%]\n..\\test_sample_simple.py::test_add_edge_case PASSED                      [ 33%]\n..\\test_sample_simple.py::test_add_error_case PASSED                     [ 50%]\n..\\test_sample_simple.py::test_sub_happy_path PASSED                     [ 66%]\n..\\test_sample_simple.py::test_sub_edge_case PASSED                      [ 83%]\n..\\test_sample_simple.py::test_sub_error_case PASSED                     [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName               Stmts   Miss  Cover   Missing\n------------------------------------------------\nsample_simple.py       4      0   100%\n------------------------------------------------\nTOTAL                  4      0   100%\n============================== 6 passed in 0.18s ==============================\n",
+      "latency_seconds": 8.41,
+      "line_coverage": 100.0,
+      "branch_coverage": 0.0,
+      "mutants_total": 2,
+      "mutants_killed": 0,
+      "mutation_score": 0.0,
+      "mutant_details": [
+        {
+          "kind": "binop",
+          "line": 3,
+          "killed": false
+        },
+        {
+          "kind": "binop",
+          "line": 8,
+          "killed": false
+        }
+      ],
+      "total_name_references": 16,
+      "invalid_names": [],
+      "hallucination_rate": 0.0,
+      "bleu_4": 0.4245,
+      "rouge_l": 0.6103,
+      "codebleu_simplified": 0.7541,
+      "note": "text-similarity only — not a correctness measure"
+    },
+    "artifacts": {
+      "test_file": "SIMPLE-001\\test_sample_simple.py"
+    },
+    "error": null,
+    "surviving_mutants": [
+      {
+        "mutation_id": "SIMPLE-001-M00",
+        "file": "sample_simple.py",
+        "function": "add",
+        "line": 3,
+        "operator": "binop",
+        "original_code": "return a + b",
+        "mutated_code": "return a - b"
+      },
+      {
+        "mutation_id": "SIMPLE-001-M01",
+        "file": "sample_simple.py",
+        "function": "sub",
+        "line": 8,
+        "operator": "binop",
+        "original_code": "",
+        "mutated_code": "def sub(a, b):"
+      }
+    ],
+    "mutants_total": 2,
+    "mutants_killed": 0
+  },
+  "guided": {
+    "survivors_given_to_llm": [
+      {
+        "mutation_id": "SIMPLE-001-M00",
+        "file": "sample_simple.py",
+        "function": "add",
+        "line": 3,
+        "operator": "binop",
+        "original_code": "return a + b",
+        "mutated_code": "return a - b"
+      },
+      {
+        "mutation_id": "SIMPLE-001-M01",
+        "file": "sample_simple.py",
+        "function": "sub",
+        "line": 8,
+        "operator": "binop",
+        "original_code": "",
+        "mutated_code": "def sub(a, b):"
+      }
+    ],
+    "additional_llm_tokens": 709,
+    "additional_llm_latency_seconds": 4.07,
+    "additional_tests": 2,
+    "merged_accepted": true,
+    "pytest_collect_passed": true,
+    "execution_success": true,
+    "pass_at_1": true,
+    "total_tests": 8,
+    "passed": 8,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 8 items\n\n..\\test_sample_simple.py::test_add_happy_path PASSED                     [ 12%]\n..\\test_sample_simple.py::test_add_edge_case PASSED                      [ 25%]\n..\\test_sample_simple.py::test_add_error_case PASSED                     [ 37%]\n..\\test_sample_simple.py::test_sub_happy_path PASSED                     [ 50%]\n..\\test_sample_simple.py::test_sub_edge_case PASSED                      [ 62%]\n..\\test_sample_simple.py::test_sub_error_case PASSED                     [ 75%]\n..\\test_sample_simple.py::test_add_mutant_001 PASSED                     [ 87%]\n..\\test_sample_simple.py::test_sub_mutant_001 PASSED                     [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName               Stmts   Miss  Cover   Missing\n------------------------------------------------\nsample_simple.py       4      0   100%\n------------------------------------------------\nTOTAL                  4      0   100%\n============================== 8 passed in 0.19s ==============================\n",
+    "latency_seconds": 5.23,
+    "line_coverage": 100.0,
+    "branch_coverage": 0.0,
+    "mutation_score": 0.0,
+    "mutants_total": 2,
+    "mutants_killed": 0,
+    "surviving_mutants_after": [
+      {
+        "mutation_id": "SIMPLE-001-M00",
+        "file": "sample_simple.py",
+        "function": "add",
+        "line": 3,
+        "operator": "binop",
+        "original_code": "return a + b",
+        "mutated_code": "return a - b"
+      },
+      {
+        "mutation_id": "SIMPLE-001-M01",
+        "file": "sample_simple.py",
+        "function": "sub",
+        "line": 8,
+        "operator": "binop",
+        "original_code": "",
+        "mutated_code": "def sub(a, b):"
+      }
+    ],
+    "hallucination_rate": 0.0
+  },
+  "deltas": {
+    "mutation_score": 0,
+    "mutants_killed": 0,
+    "surviving_mutants": 0,
+    "line_coverage": 0.0,
+    "branch_coverage": 0,
+    "pass_at_1": 0.0,
+    "tokens": -73,
+    "latency_seconds": 0.89
+  },
+  "ceiling_effect": false,
+  "error": null
+}

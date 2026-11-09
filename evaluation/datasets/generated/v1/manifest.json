@@ -1,0 +1,242 @@
+{
+  "dataset_hash": "6c117a72e25ca8fc",
+  "dataset_version": "v1",
+  "files": {
+    "BRANCH-001/reference_test.py": "1c8fb50e40edcbeb2743d7c12b15680c34a61e562855a3ba7f928b345145656c",
+    "BRANCH-001/source/sample_grades.py": "7e44e2c6b01560bf2aacd484ea2992107d4622c876251248d49c6bb5cb79f8d9",
+    "BRANCH-002/reference_test.py": "9b538c5610cf0470bc965c0117a70a9a8261b347cf781f86c34c6b5fb45fe69b",
+    "BRANCH-002/source/sample_shipping.py": "c047b1e9cc62c160c6ac150042454bdcbfadbc4e0333ab0c1272eabd2cf6d981",
+    "CLASS-001/reference_test.py": "ea201d16cd2e1e8652647f852f793baed10c55584b5e8b265419f08beccdca33",
+    "CLASS-001/source/sample_rect.py": "55fca5dd581d11e4be1e23530b4974b198d53215891f29687c508ab1288c5fdc",
+    "CLASS-002/reference_test.py": "7357e8c763a29514cf122be24d7dde92f1ab0b8e9e86163e3b9b452a41fd7ab7",
+    "CLASS-002/source/sample_bank.py": "9f25655c1f18e24431abf6f879fe71969fecaa0f9098e05721d8165465d3cfab",
+    "DEBUG-001/buggy_test.py": "fe0eb0189280a56693606ebc4110d028b5e548982a995903240ec687db35781e",
+    "DEBUG-001/source/sample_debug_add.py": "ef944a1a8e98524fb04428e890ad4a25d967d2bec664cd8dccf667c9b0bede20",
+    "DEBUG-002/buggy_test.py": "8299dd62abd7fe68c2ef50dc66cde0533a6d63110dae8abf457b612e26e826aa",
+    "DEBUG-002/source/sample_debug_ports.py": "9d1d253e869d094ce884a26980e8b3bf55b375c58723e7f53b56333b78eab5e4",
+    "DEBUG-003/buggy_test.py": "7e09b2b349e10e1c848c270b0fe7eaa0f3c058a5e0e4df562ad50ce786dd50e2",
+    "DEBUG-003/source/sample_debug_payload.py": "9a089a57e76b1d0c41578e8cd1755e09f7daeb35a71295918a0d080a6a995e28",
+    "DEP-001/reference_test.py": "f29db483f348d6ef3cd1ab81ed6858fd9ee94e69e8246d4ee934645bbcb32d86",
+    "DEP-001/source/helpers.py": "6e1930e99e1a5cd04d7c0c8a171c539414ee88c092299bbb085af466803dac9e",
+    "DEP-001/source/sample_report.py": "c84dc16c06de31f16e1bd7d6b9eb1d902c4d896b5d82da46faf34a5c24eb50a7",
+    "DIFF-001/reference_test.py": "05de2a1658ee6837b19b7d1fe549d78bd10cb4e0dbae8061b19fdb163a59bf0c",
+    "DIFF-001/source/sample_intervals.py": "31b300f2454ce14a3a8d233ca4b3ac99c2a9d1b24fdd336d07936e356dae047a",
+    "DIFF-002/reference_test.py": "b4de6b853ad76032c65e03286faccfd6ab38ea2f684c344d06cab3d32a4607be",
+    "DIFF-002/source/sample_flatten.py": "cbc6542fb518398548c70a278a66772e3c0bf5e21ffd39f77fc1db78b368aa5f",
+    "EDGE-001/reference_test.py": "71f465f22c8dcf60c8d1dc07d9fa97ca2f6588b992eb4ee188005f2e0cdf0751",
+    "EDGE-001/source/sample_clamp.py": "534ab758de16de59adb445a997da71f3718135d3892d8d859477feae3fef77e8",
+    "EDGE-002/reference_test.py": "62d70c0bb51d40d8eda8e0f4a036ccc06359b8b6b4283e9ac9b307b73695bd48",
+    "EDGE-002/source/sample_moving_avg.py": "2a7cfc4235fa1c1c4383010e2118353fa5231ba96d48cec4560dc4a099750764",
+    "EXC-001/reference_test.py": "f9adb243881c60c69a06a34b46d39bd964e0483931ea86d56209e797bb3eec06",
+    "EXC-001/source/sample_parser.py": "70495a60603287e1fa396b681359c16cb8d3cc8d78c48320b49b376c280a9e58",
+    "SIMPLE-001/reference_test.py": "9370a8a8f842a59a0ac1ea75f8ac7ee0211c89db694063c4a05171e9267cd4d0",
+    "SIMPLE-001/source/sample_simple.py": "0eaf5ce0d1b5ea6bed7b3fcd7b880bf71315d484a2c15e790c87654599dfc65b",
+    "SIMPLE-002/reference_test.py": "a6c6f2c01df85a38e996d6fbd958db2d3e298893e2040a4909368df6168c1dbd",
+    "SIMPLE-002/source/sample_greet.py": "2a91c0d7c7e35ef83f9616b4073b3b7c6240749dcba4f6ab673b477ae171e902"
+  },
+  "samples": [
+    {
+      "buggy_failure_kind": null,
+      "category": "simple",
+      "description": "Pure arithmetic functions, no branching.",
+      "difficulty": "easy",
+      "entry_file": "sample_simple.py",
+      "has_reference_test": true,
+      "is_debug_target": false,
+      "sample_id": "SIMPLE-001",
+      "tags": [
+        "arithmetic",
+        "pure"
+      ]
+    },
+    {
+      "buggy_failure_kind": null,
+      "category": "simple",
+      "description": "String formatting with one default branch.",
+      "difficulty": "easy",
+      "entry_file": "sample_greet.py",
+      "has_reference_test": true,
+      "is_debug_target": false,
+      "sample_id": "SIMPLE-002",
+      "tags": [
+        "strings"
+      ]
+    },
+    {
+      "buggy_failure_kind": null,
+      "category": "branch",
+      "description": "Grade classifier: five-way branch plus input validation.",
+      "difficulty": "easy",
+      "entry_file": "sample_grades.py",
+      "has_reference_test": true,
+      "is_debug_target": false,
+      "sample_id": "BRANCH-001",
+      "tags": [
+        "branches",
+        "boundaries"
+      ]
+    },
+    {
+      "buggy_failure_kind": null,
+      "category": "branch",
+      "description": "Shipping cost: weight tiers plus a boolean surcharge.",
+      "difficulty": "medium",
+      "entry_file": "sample_shipping.py",
+      "has_reference_test": true,
+      "is_debug_target": false,
+      "sample_id": "BRANCH-002",
+      "tags": [
+        "branches",
+        "floats"
+      ]
+    },
+    {
+      "buggy_failure_kind": null,
+      "category": "edge",
+      "description": "Clamping with inverted-bound rejection.",
+      "difficulty": "easy",
+      "entry_file": "sample_clamp.py",
+      "has_reference_test": true,
+      "is_debug_target": false,
+      "sample_id": "EDGE-001",
+      "tags": [
+        "edges"
+      ]
+    },
+    {
+      "buggy_failure_kind": null,
+      "category": "edge",
+      "description": "Moving average with empty-data and window validation.",
+      "difficulty": "medium",
+      "entry_file": "sample_moving_avg.py",
+      "has_reference_test": true,
+      "is_debug_target": false,
+      "sample_id": "EDGE-002",
+      "tags": [
+        "edges",
+        "sequences"
+      ]
+    },
+    {
+      "buggy_failure_kind": null,
+      "category": "exception",
+      "description": "Strict parser with TypeError vs ValueError distinction.",
+      "difficulty": "medium",
+      "entry_file": "sample_parser.py",
+      "has_reference_test": true,
+      "is_debug_target": false,
+      "sample_id": "EXC-001",
+      "tags": [
+        "exceptions"
+      ]
+    },
+    {
+      "buggy_failure_kind": null,
+      "category": "class",
+      "description": "Rectangle value object: constructor validation + immutable-style scale().",
+      "difficulty": "medium",
+      "entry_file": "sample_rect.py",
+      "has_reference_test": true,
+      "is_debug_target": false,
+      "sample_id": "CLASS-001",
+      "tags": [
+        "classes"
+      ]
+    },
+    {
+      "buggy_failure_kind": null,
+      "category": "class",
+      "description": "BankAccount with history and overdraft rejection.",
+      "difficulty": "medium",
+      "entry_file": "sample_bank.py",
+      "has_reference_test": true,
+      "is_debug_target": false,
+      "sample_id": "CLASS-002",
+      "tags": [
+        "classes",
+        "state"
+      ]
+    },
+    {
+      "buggy_failure_kind": null,
+      "category": "dependency",
+      "description": "Two modules: report.py depends on helpers.median and math.",
+      "difficulty": "medium",
+      "entry_file": "sample_report.py",
+      "has_reference_test": true,
+      "is_debug_target": false,
+      "sample_id": "DEP-001",
+      "tags": [
+        "dependencies"
+      ]
+    },
+    {
+      "buggy_failure_kind": null,
+      "category": "difficult",
+      "description": "Interval merging: sorting, in-place merging, tuple conversion.",
+      "difficulty": "hard",
+      "entry_file": "sample_intervals.py",
+      "has_reference_test": true,
+      "is_debug_target": false,
+      "sample_id": "DIFF-001",
+      "tags": [
+        "algorithm"
+      ]
+    },
+    {
+      "buggy_failure_kind": null,
+      "category": "difficult",
+      "description": "Recursive dict flattening with prefix building.",
+      "difficulty": "hard",
+      "entry_file": "sample_flatten.py",
+      "has_reference_test": true,
+      "is_debug_target": false,
+      "sample_id": "DIFF-002",
+      "tags": [
+        "recursion"
+      ]
+    },
+    {
+      "buggy_failure_kind": "wrong_expected",
+      "category": "debug",
+      "description": "Controlled failure: generated-style test with a wrong expected value.",
+      "difficulty": "easy",
+      "entry_file": "sample_debug_add.py",
+      "has_reference_test": false,
+      "is_debug_target": true,
+      "sample_id": "DEBUG-001",
+      "tags": [
+        "debug",
+        "assertion"
+      ]
+    },
+    {
+      "buggy_failure_kind": "wrong_exception",
+      "category": "debug",
+      "description": "Controlled failure: test expects ValueError, source raises TypeError.",
+      "difficulty": "medium",
+      "entry_file": "sample_debug_ports.py",
+      "has_reference_test": false,
+      "is_debug_target": true,
+      "sample_id": "DEBUG-002",
+      "tags": [
+        "debug",
+        "exception-type"
+      ]
+    },
+    {
+      "buggy_failure_kind": "wrong_patch",
+      "category": "debug",
+      "description": "Controlled failure: test patches a module attribute that does not exist.",
+      "difficulty": "hard",
+      "entry_file": "sample_debug_payload.py",
+      "has_reference_test": false,
+      "is_debug_target": true,
+      "sample_id": "DEBUG-003",
+      "tags": [
+        "debug",
+        "mocking"
+      ]
+    }
+  ]
+}

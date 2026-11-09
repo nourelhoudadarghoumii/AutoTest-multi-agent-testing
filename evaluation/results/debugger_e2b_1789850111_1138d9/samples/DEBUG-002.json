@@ -1,0 +1,91 @@
+{
+  "sample_id": "DEBUG-002",
+  "failure_category": "wrong_exception",
+  "expected_repair": "expect TypeError instead of ValueError",
+  "target_function": "parse_port",
+  "initial_failure": "1 failed / 0 errors (test_parse_port_string_raises_value_error, \u001b[1mtest_parse_port_string_raises_value_error\u001b[0m)",
+  "initial_test_result": {
+    "mode": "e2b_sandbox",
+    "total_tests": 2,
+    "passed": 1,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 0,
+    "coverage_percent": 83.0,
+    "failed_test_names": [
+      "test_parse_port_string_raises_value_error",
+      "\u001b[1mtest_parse_port_string_raises_value_error\u001b[0m"
+    ],
+    "exit_code": 1,
+    "execution_succeeded": false
+  },
+  "iterations": [
+    {
+      "mode": "e2b_sandbox",
+      "total_tests": 2,
+      "passed": 1,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "coverage_percent": 83.0,
+      "failed_test_names": [
+        "test_parse_port_string_raises_value_error",
+        "\u001b[1mtest_parse_port_string_raises_value_error\u001b[0m"
+      ],
+      "exit_code": 1,
+      "execution_succeeded": false
+    },
+    {
+      "mode": "e2b_sandbox",
+      "total_tests": 2,
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "coverage_percent": 83.0,
+      "failed_test_names": [],
+      "exit_code": 0,
+      "execution_succeeded": true
+    }
+  ],
+  "debugger_response": [
+    {
+      "iteration": 1,
+      "test_name": "test_parse_port_string_raises_value_error",
+      "error_type": "test_buggy.py",
+      "root_cause": "The test expects a ValueError to be raised when parse_port is called with a string argument (\"8080\"), but the function actually raises a TypeError with the message \"port must be an integer\". This indicates that the function performs a type check and raises TypeError for non-integer inputs, not ValueError. The test is therefore incorrect in its expectation of the exception type.",
+      "fix_description": "Change the expected exception in the test from ValueError to TypeError to match the actual behavior of the parse_port function. This ensures the test correctly validates that invalid input types are rejected without altering the production code or weakening the test's intent.",
+      "confidence": "high",
+      "applied": true
+    }
+  ],
+  "repair_applied": true,
+  "final_test_result": {
+    "total_tests": 2,
+    "passed": 2,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "coverage_percent": 83.0,
+    "failed_test_names": []
+  },
+  "final_passed": 2,
+  "regression_detected": false,
+  "execution_backend": "e2b_sandbox",
+  "e2b_sandbox_used": true,
+  "e2b_sandbox_passes": 2,
+  "latency_seconds": 46.64,
+  "prompt_tokens": 521,
+  "completion_tokens": 216,
+  "llm_calls": 1,
+  "error": null,
+  "repair_success": true,
+  "test_recovery_rate": 1.0,
+  "iterations_used": 1,
+  "max_iterations_allowed": 3,
+  "first_attempt_repair": true,
+  "status": "tests_executed",
+  "repair_success_ratio": 1.0,
+  "first_attempt_repair_ratio": 1.0,
+  "regression_ratio": 0.0
+}

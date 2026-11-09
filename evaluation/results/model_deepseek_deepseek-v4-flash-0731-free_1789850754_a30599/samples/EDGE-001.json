@@ -1,0 +1,62 @@
+{
+  "sample": {
+    "sample_id": "EDGE-001",
+    "category": "edge",
+    "difficulty": "easy",
+    "entry_file": "sample_clamp.py",
+    "tags": [
+      "edges"
+    ]
+  },
+  "config": {
+    "model": "deepseek/deepseek-v4-flash-0731:free",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "metrics": {
+    "llm_latency_seconds": 10.17,
+    "llm_api_calls": 1,
+    "llm_retries": 0,
+    "llm_prompt_tokens": 722,
+    "llm_completion_tokens": 260,
+    "llm_total_tokens": 982,
+    "ast_validation_passed": true,
+    "pytest_collect_passed": true,
+    "execution_success": true,
+    "pass_at_1": true,
+    "total_tests": 3,
+    "passed": 3,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 3 items\n\n..\\test_sample_clamp.py::test_clamp_happy_path PASSED                    [ 33%]\n..\\test_sample_clamp.py::test_clamp_edge_case PASSED                     [ 66%]\n..\\test_sample_clamp.py::test_clamp_error_case PASSED                    [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName              Stmts   Miss  Cover   Missing\n-----------------------------------------------\nsample_clamp.py       4      0   100%\n-----------------------------------------------\nTOTAL                 4      0   100%\n============================== 3 passed in 0.12s ==============================\n",
+    "latency_seconds": 2.79,
+    "line_coverage": 100.0,
+    "branch_coverage": 100.0,
+    "mutants_total": 1,
+    "mutants_killed": 0,
+    "mutation_score": 0.0,
+    "mutant_details": [
+      {
+        "kind": "compare",
+        "line": 3,
+        "killed": false
+      }
+    ],
+    "total_name_references": 26,
+    "invalid_names": [],
+    "hallucination_rate": 0.0,
+    "bleu_4": 0.336,
+    "rouge_l": 0.5322,
+    "codebleu_simplified": 0.7222,
+    "note": "text-similarity only — not a correctness measure"
+  },
+  "artifacts": {
+    "test_file": "EDGE-001\\test_sample_clamp.py"
+  },
+  "error": null
+}

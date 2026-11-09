@@ -1,0 +1,576 @@
+{
+  "baseline (P0, prod)": {
+    "dir": "baseline_1789681278_877bff",
+    "meta": {
+      "experiment": "baseline",
+      "experiment_id": "baseline_1789681278_877bff",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "rag_store": "off",
+      "model": "cohere/north-mini-code:free",
+      "model_overridden": false,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "production configuration, no variable changed",
+      "timestamp_utc": "2026-09-17T21:41:19.299289+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 1.0,
+      "pass_at_1": 0.6667,
+      "line_coverage_mean": 96.2325,
+      "branch_coverage_mean": 87.3608,
+      "mutation_score_mean": 1.0,
+      "hallucination_rate_mean": 0.0,
+      "latency_seconds_mean": 4.5992,
+      "latency_seconds_stdev": 1.9849,
+      "tokens_mean": 856.8333,
+      "bleu_4_mean": 0.3729,
+      "rouge_l_mean": 0.5687,
+      "codebleu_simplified_mean": 0.7238,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 0.5
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 1.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 0.5
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 0.5
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    }
+  },
+  "P0 (full)": {
+    "dir": "prompt_p0_1789728854_98e7e4",
+    "meta": {
+      "experiment": "prompt_p0",
+      "experiment_id": "prompt_p0_1789728854_98e7e4",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "rag_store": "off",
+      "model": "cohere/north-mini-code:free",
+      "model_overridden": false,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "prompt engineering: P0 (one variable: prompt)",
+      "timestamp_utc": "2026-09-18T10:54:15.128225+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 1.0,
+      "pass_at_1": 0.75,
+      "line_coverage_mean": 96.2325,
+      "branch_coverage_mean": 87.3608,
+      "mutation_score_mean": 1.0,
+      "hallucination_rate_mean": 0.0,
+      "latency_seconds_mean": 3.2833,
+      "latency_seconds_stdev": 1.8924,
+      "tokens_mean": 866.4167,
+      "bleu_4_mean": 0.3651,
+      "rouge_l_mean": 0.5609,
+      "codebleu_simplified_mean": 0.7191,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 0.5
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 1.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 0.5
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    }
+  },
+  "P1 (full)": {
+    "dir": "prompt_p1_1789752597_a96eb2",
+    "meta": {
+      "experiment": "prompt_p1",
+      "experiment_id": "prompt_p1_1789752597_a96eb2",
+      "prompt_version": "P1",
+      "rag_enabled": false,
+      "rag_store": "off",
+      "model": "cohere/north-mini-code:free",
+      "model_overridden": false,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "prompt engineering: P1 (one variable: prompt)",
+      "timestamp_utc": "2026-09-18T17:29:57.135488+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 0.9167,
+      "pass_at_1": 0.75,
+      "line_coverage_mean": 92.675,
+      "branch_coverage_mean": 81.9442,
+      "mutation_score_mean": 1.0,
+      "hallucination_rate_mean": 0.0,
+      "latency_seconds_mean": 1.6475,
+      "latency_seconds_stdev": 0.2258,
+      "tokens_mean": 706.25,
+      "bleu_4_mean": 0.301,
+      "rouge_l_mean": 0.4963,
+      "codebleu_simplified_mean": 0.6873,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 0.5
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 1.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 0.5
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    }
+  },
+  "P2 (full)": {
+    "dir": "prompt_p2_1789758263_3f7aee",
+    "meta": {
+      "experiment": "prompt_p2",
+      "experiment_id": "prompt_p2_1789758263_3f7aee",
+      "prompt_version": "P2",
+      "rag_enabled": false,
+      "rag_store": "off",
+      "model": "cohere/north-mini-code:free",
+      "model_overridden": false,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "prompt engineering: P2 (one variable: prompt)",
+      "timestamp_utc": "2026-09-18T19:04:23.577232+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 1.0,
+      "pass_at_1": 0.75,
+      "line_coverage_mean": 96.9575,
+      "branch_coverage_mean": 88.1942,
+      "mutation_score_mean": 0.4545,
+      "hallucination_rate_mean": 0.0,
+      "latency_seconds_mean": 1.9675,
+      "latency_seconds_stdev": 0.2092,
+      "tokens_mean": 804.25,
+      "bleu_4_mean": 0.4072,
+      "rouge_l_mean": 0.6019,
+      "codebleu_simplified_mean": 0.7413,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 0.5
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 1.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 0.5
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    }
+  },
+  "P3 (full)": {
+    "dir": "prompt_p3_1789762175_fa4fef",
+    "meta": {
+      "experiment": "prompt_p3",
+      "experiment_id": "prompt_p3_1789762175_fa4fef",
+      "prompt_version": "P3",
+      "rag_enabled": false,
+      "rag_store": "off",
+      "model": "cohere/north-mini-code:free",
+      "model_overridden": false,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "prompt engineering: P3 (one variable: prompt)",
+      "timestamp_utc": "2026-09-18T20:09:35.742495+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 0.5833,
+      "pass_at_1": 0.5,
+      "line_coverage_mean": 57.1425,
+      "branch_coverage_mean": 48.6108,
+      "mutation_score_mean": 0.1429,
+      "hallucination_rate_mean": 0.0,
+      "latency_seconds_mean": 1.9329,
+      "latency_seconds_stdev": 0.1366,
+      "tokens_mean": 455.1667,
+      "bleu_4_mean": 0.4724,
+      "rouge_l_mean": 0.6645,
+      "codebleu_simplified_mean": 0.7741,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 1.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 0.5
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 1.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 0.0
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 0.0
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    }
+  },
+  "RAG OFF (P3)": {
+    "dir": "rag_off_1789763476_f18ddf",
+    "meta": {
+      "experiment": "rag_off",
+      "experiment_id": "rag_off_1789763476_f18ddf",
+      "prompt_version": "P3",
+      "rag_enabled": false,
+      "rag_store": "off",
+      "model": "cohere/north-mini-code:free",
+      "model_overridden": false,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "RAG A/B: P3 without retrieved patterns",
+      "timestamp_utc": "2026-09-18T20:31:16.817105+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 0.0,
+      "pass_at_1": 0.0,
+      "line_coverage_mean": 0.0,
+      "branch_coverage_mean": 0.0,
+      "mutation_score_mean": null,
+      "hallucination_rate_mean": null,
+      "latency_seconds_mean": null,
+      "latency_seconds_stdev": null,
+      "tokens_mean": 0,
+      "bleu_4_mean": null,
+      "rouge_l_mean": null,
+      "codebleu_simplified_mean": null,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 0.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 0.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 0.0
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 0.0
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 0.0
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    }
+  },
+  "RAG ON (P3)": {
+    "dir": "rag_on_1789766454_86747f",
+    "meta": {
+      "experiment": "rag_on",
+      "experiment_id": "rag_on_1789766454_86747f",
+      "prompt_version": "P3",
+      "rag_enabled": true,
+      "rag_store": "isolated_seeded",
+      "model": "cohere/north-mini-code:free",
+      "model_overridden": false,
+      "dataset_version": "v1",
+      "dataset_hash": "6c117a72e25ca8fc",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "mutation": true,
+      "max_mutants": 8,
+      "sample_ids": [
+        "SIMPLE-001",
+        "SIMPLE-002",
+        "BRANCH-001",
+        "BRANCH-002",
+        "EDGE-001",
+        "EDGE-002",
+        "EXC-001",
+        "CLASS-001",
+        "CLASS-002",
+        "DEP-001",
+        "DIFF-001",
+        "DIFF-002"
+      ],
+      "notes": "RAG A/B: P3 with seeded bug patterns retrieved",
+      "timestamp_utc": "2026-09-18T21:20:54.520380+00:00",
+      "python_version": "3.14.3",
+      "platform": "Windows-11-10.0.26200-SP0"
+    },
+    "agg": {
+      "n_samples": 12,
+      "execution_success_rate": 0.0,
+      "pass_at_1": 0.0,
+      "line_coverage_mean": 0.0,
+      "branch_coverage_mean": 0.0,
+      "mutation_score_mean": null,
+      "hallucination_rate_mean": null,
+      "latency_seconds_mean": null,
+      "latency_seconds_stdev": null,
+      "tokens_mean": 0,
+      "bleu_4_mean": null,
+      "rouge_l_mean": null,
+      "codebleu_simplified_mean": null,
+      "by_category": {
+        "simple": {
+          "n": 2,
+          "pass_at_1": 0.0
+        },
+        "branch": {
+          "n": 2,
+          "pass_at_1": 0.0
+        },
+        "edge": {
+          "n": 2,
+          "pass_at_1": 0.0
+        },
+        "exception": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "class": {
+          "n": 2,
+          "pass_at_1": 0.0
+        },
+        "dependency": {
+          "n": 1,
+          "pass_at_1": 0.0
+        },
+        "difficult": {
+          "n": 2,
+          "pass_at_1": 0.0
+        }
+      },
+      "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+    }
+  }
+}

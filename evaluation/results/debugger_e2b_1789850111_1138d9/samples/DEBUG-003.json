@@ -1,0 +1,91 @@
+{
+  "sample_id": "DEBUG-003",
+  "failure_category": "wrong_patch",
+  "expected_repair": "patch json.dumps (the real dependency), not json.tool",
+  "target_function": "encode_payload",
+  "initial_failure": "1 failed / 0 errors (test_encode_uses_json_dumps, \u001b[1mtest_encode_uses_json_dumps\u001b[0m)",
+  "initial_test_result": {
+    "mode": "e2b_sandbox",
+    "total_tests": 1,
+    "passed": 0,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 0,
+    "coverage_percent": 67.0,
+    "failed_test_names": [
+      "test_encode_uses_json_dumps",
+      "\u001b[1mtest_encode_uses_json_dumps\u001b[0m"
+    ],
+    "exit_code": 1,
+    "execution_succeeded": false
+  },
+  "iterations": [
+    {
+      "mode": "e2b_sandbox",
+      "total_tests": 1,
+      "passed": 0,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "coverage_percent": 67.0,
+      "failed_test_names": [
+        "test_encode_uses_json_dumps",
+        "\u001b[1mtest_encode_uses_json_dumps\u001b[0m"
+      ],
+      "exit_code": 1,
+      "execution_succeeded": false
+    },
+    {
+      "mode": "e2b_sandbox",
+      "total_tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "coverage_percent": 100.0,
+      "failed_test_names": [],
+      "exit_code": 0,
+      "execution_succeeded": true
+    }
+  ],
+  "debugger_response": [
+    {
+      "iteration": 1,
+      "test_name": "test_encode_uses_json_dumps",
+      "error_type": "test_buggy.py",
+      "root_cause": "The test is attempting to patch 'sample_debug_payload.json.tool' but the encode_payload function likely uses the standard library's json.dumps function, not a 'tool' attribute. The patch target is incorrect, causing the mock to not intercept the actual json.dumps call used in the function.",
+      "fix_description": "Correct the patch target to mock 'json.dumps' from the standard library, assuming that's what encode_payload uses. If encode_payload is in the sample_debug_payload module, we should patch 'sample_debug_payload.json.dumps' or simply 'json.dumps' if it imports json directly. Based on common patterns, we'll patch 'json.dumps' at the module level where it's used.",
+      "confidence": "high",
+      "applied": true
+    }
+  ],
+  "repair_applied": true,
+  "final_test_result": {
+    "total_tests": 1,
+    "passed": 1,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "coverage_percent": 100.0,
+    "failed_test_names": []
+  },
+  "final_passed": 1,
+  "regression_detected": false,
+  "execution_backend": "e2b_sandbox",
+  "e2b_sandbox_used": true,
+  "e2b_sandbox_passes": 2,
+  "latency_seconds": 43.76,
+  "prompt_tokens": 509,
+  "completion_tokens": 257,
+  "llm_calls": 1,
+  "error": null,
+  "repair_success": true,
+  "test_recovery_rate": 1.0,
+  "iterations_used": 1,
+  "max_iterations_allowed": 3,
+  "first_attempt_repair": true,
+  "status": "tests_executed",
+  "repair_success_ratio": 1.0,
+  "first_attempt_repair_ratio": 1.0,
+  "regression_ratio": 0.0
+}

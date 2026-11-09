@@ -1,0 +1,92 @@
+{
+  "sample": {
+    "sample_id": "DEP-001",
+    "category": "dependency",
+    "difficulty": "medium",
+    "entry_file": "sample_report.py",
+    "tags": [
+      "dependencies"
+    ]
+  },
+  "config": {
+    "model": "cohere/north-mini-code:free",
+    "prompt_version": "P3",
+    "rag_enabled": true,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "metrics": {
+    "llm_latency_seconds": 5.32,
+    "llm_api_calls": 1,
+    "llm_retries": 0,
+    "llm_prompt_tokens": 726,
+    "llm_completion_tokens": 203,
+    "llm_total_tokens": 929,
+    "ast_validation_passed": true,
+    "pytest_collect_passed": true,
+    "execution_success": true,
+    "pass_at_1": false,
+    "total_tests": 3,
+    "passed": 1,
+    "failed": 2,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [
+      "test_describe_single_value",
+      "test_describe_multiple_values",
+      "test_describe_single_value",
+      "test_describe_multiple_values"
+    ],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 3 items\n\n..\\test_sample_report.py::test_describe_empty_raises PASSED              [ 33%]\n..\\test_sample_report.py::test_describe_single_value FAILED              [ 66%]\n..\\test_sample_report.py::test_describe_multiple_values FAILED           [100%]\n\n================================== FAILURES ===================================\n_________________________ test_describe_single_value __________________________\n..\\test_sample_report.py:20: in test_describe_single_value\n    assert result[\"median\"] == 5\nE   AssertionError: assert <MagicMock name='mock.median()' id='2369156482112'> == 5\n________________________ test_describe_multiple_values ________________________\n..\\test_sample_report.py:28: in test_describe_multiple_values\n    assert result[\"median\"] == 3\nE   AssertionError: assert <MagicMock name='mock.median()' id='2369156482112'> == 3\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName               Stmts   Miss  Cover   Missing\n------------------------------------------------\nhelpers.py             9      9     0%   1-10\nsample_report.py       6      0   100%\n------------------------------------------------\nTOTAL                 15      9    40%\n=========================== short test summary info ===========================\nFAILED ..\\test_sample_report.py::test_describe_single_value - AssertionError:...\nFAILED ..\\test_sample_report.py::test_describe_multiple_values - AssertionErr...\n========================= 2 failed, 1 passed in 0.32s =========================\n",
+    "latency_seconds": 6.74,
+    "line_coverage": 100.0,
+    "branch_coverage": 100.0,
+    "mutants_total": 6,
+    "mutants_killed": 6,
+    "mutation_score": 1.0,
+    "mutant_details": [
+      {
+        "kind": "binop",
+        "line": 14,
+        "killed": true
+      },
+      {
+        "kind": "binop",
+        "line": 16,
+        "killed": true
+      },
+      {
+        "kind": "binop",
+        "line": 16,
+        "killed": true
+      },
+      {
+        "kind": "binop",
+        "line": 16,
+        "killed": true
+      },
+      {
+        "kind": "intconst",
+        "line": 16,
+        "killed": true
+      },
+      {
+        "kind": "not",
+        "line": 8,
+        "killed": true
+      }
+    ],
+    "total_name_references": 36,
+    "invalid_names": [],
+    "hallucination_rate": 0.0,
+    "bleu_4": 0.2529,
+    "rouge_l": 0.4413,
+    "codebleu_simplified": 0.6779,
+    "note": "text-similarity only — not a correctness measure"
+  },
+  "artifacts": {
+    "test_file": "DEP-001\\test_sample_report.py"
+  },
+  "error": null
+}

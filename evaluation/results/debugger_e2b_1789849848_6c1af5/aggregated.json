@@ -1,0 +1,29 @@
+{
+  "n_samples": 3,
+  "repair_success_rate": 0.0,
+  "test_recovery_rate_mean": null,
+  "first_attempt_repair_rate": 0.0,
+  "regression_rate": 0.0,
+  "iterations_mean": null,
+  "latency_seconds_mean": 0.4733,
+  "prompt_tokens_total": 0,
+  "completion_tokens_total": 0,
+  "llm_calls_total": 0,
+  "e2b_sandbox_passes_total": 0,
+  "all_runs_used_e2b": false,
+  "per_failure_category": {
+    "wrong_exception": {
+      "n": 1,
+      "repair_success_rate": 0.0
+    },
+    "wrong_expected": {
+      "n": 1,
+      "repair_success_rate": 0.0
+    },
+    "wrong_patch": {
+      "n": 1,
+      "repair_success_rate": 0.0
+    }
+  },
+  "note": "research evaluation — every execution ran as real pytest inside an E2B sandbox"
+}

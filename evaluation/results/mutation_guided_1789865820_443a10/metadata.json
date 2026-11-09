@@ -1,0 +1,30 @@
+{
+  "experiment": "mutation_guided",
+  "experiment_id": "mutation_guided_1789865820_443a10",
+  "model": "production (see config.LLMConfig.TEST_WRITER_MODEL)",
+  "prompt_version": "P0",
+  "rag_enabled": false,
+  "dataset_version": "v1",
+  "dataset_hash": "6c117a72e25ca8fc",
+  "temperature": 0.3,
+  "max_tokens": 2048,
+  "max_mutants": 8,
+  "sample_ids": [
+    "SIMPLE-001",
+    "SIMPLE-002",
+    "BRANCH-001",
+    "BRANCH-002",
+    "EDGE-001",
+    "EDGE-002",
+    "EXC-001",
+    "CLASS-001",
+    "CLASS-002",
+    "DEP-001",
+    "DIFF-001",
+    "DIFF-002"
+  ],
+  "notes": "mutation-guided full run (one variable: real survivor feedback)",
+  "timestamp_utc": "2026-09-20T00:57:00.498387+00:00",
+  "python_version": "3.14.3",
+  "platform": "Windows-11-10.0.26200-SP0"
+}

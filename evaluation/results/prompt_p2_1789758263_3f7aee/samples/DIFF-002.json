@@ -1,0 +1,59 @@
+{
+  "sample": {
+    "sample_id": "DIFF-002",
+    "category": "difficult",
+    "difficulty": "hard",
+    "entry_file": "sample_flatten.py",
+    "tags": [
+      "recursion"
+    ]
+  },
+  "config": {
+    "model": "production",
+    "prompt_version": "P2",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "metrics": {
+    "llm_latency_seconds": 5.0,
+    "llm_api_calls": 1,
+    "llm_retries": 0,
+    "llm_prompt_tokens": 628,
+    "llm_completion_tokens": 150,
+    "llm_total_tokens": 778,
+    "ast_validation_passed": true,
+    "pytest_collect_passed": true,
+    "execution_success": true,
+    "pass_at_1": false,
+    "total_tests": 3,
+    "passed": 2,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [
+      "test_flatten_dict_nested",
+      "test_flatten_dict_nested"
+    ],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 3 items\n\n..\\test_sample_flatten.py::test_flatten_dict_simple PASSED               [ 33%]\n..\\test_sample_flatten.py::test_flatten_dict_nested FAILED               [ 66%]\n..\\test_sample_flatten.py::test_flatten_dict_with_prefix PASSED          [100%]\n\n================================== FAILURES ===================================\n__________________________ test_flatten_dict_nested ___________________________\n..\\test_sample_flatten.py:16: in test_flatten_dict_nested\n    assert result == {\"a\": {\"b\": 2, \"c\": {\"d\": 4}}}\nE   AssertionError: assert {'a.b': 2, 'a.c.d': 4} == {'a': {'b': 2, 'c': {'d': 4}}}\nE     \nE     Left contains 2 more items:\nE     {'a.b': 2, 'a.c.d': 4}\nE     Right contains 1 more item:\nE     {'a': {'b': 2, 'c': {'d': 4}}}\nE     \nE     Full diff:...\nE     \nE     ...Full output truncated (12 lines hidden), use '-vv' to show\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName                Stmts   Miss  Cover   Missing\n-------------------------------------------------\nsample_flatten.py       8      0   100%\n-------------------------------------------------\nTOTAL                   8      0   100%\n=========================== short test summary info ===========================\nFAILED ..\\test_sample_flatten.py::test_flatten_dict_nested - AssertionError: ...\n========================= 1 failed, 2 passed in 0.08s =========================\n",
+    "latency_seconds": 2.05,
+    "line_coverage": 100.0,
+    "branch_coverage": 100.0,
+    "mutants_total": 0,
+    "mutants_killed": 0,
+    "mutation_score": null,
+    "mutant_details": [],
+    "total_name_references": 19,
+    "invalid_names": [],
+    "hallucination_rate": 0.0,
+    "bleu_4": 0.3313,
+    "rouge_l": 0.5648,
+    "codebleu_simplified": 0.6882,
+    "note": "text-similarity only — not a correctness measure"
+  },
+  "artifacts": {
+    "test_file": "DIFF-002\\test_sample_flatten.py"
+  },
+  "error": null
+}

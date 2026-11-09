@@ -1,0 +1,54 @@
+{
+  "k": 3,
+  "n_queries": 3,
+  "recall_at_k": 1.0,
+  "precision_at_k": 0.3333,
+  "mrr": 1.0,
+  "ndcg": 1.0,
+  "seeded_patterns": [
+    "add",
+    "parse_port",
+    "encode_payload",
+    "withdraw",
+    "classify_grade",
+    "scale"
+  ],
+  "per_query": [
+    {
+      "function_name": "add",
+      "function_signature": "def add(...)",
+      "relevant": [
+        "add"
+      ],
+      "retrieved": [
+        "add",
+        "scale",
+        "encode_payload"
+      ]
+    },
+    {
+      "function_name": "parse_port",
+      "function_signature": "def parse_port(...)",
+      "relevant": [
+        "parse_port"
+      ],
+      "retrieved": [
+        "parse_port",
+        "add",
+        "encode_payload"
+      ]
+    },
+    {
+      "function_name": "encode_payload",
+      "function_signature": "def encode_payload(...)",
+      "relevant": [
+        "encode_payload"
+      ],
+      "retrieved": [
+        "encode_payload",
+        "add",
+        "parse_port"
+      ]
+    }
+  ]
+}

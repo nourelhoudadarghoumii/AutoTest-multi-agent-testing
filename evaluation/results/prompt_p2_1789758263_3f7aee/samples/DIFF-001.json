@@ -1,0 +1,97 @@
+{
+  "sample": {
+    "sample_id": "DIFF-001",
+    "category": "difficult",
+    "difficulty": "hard",
+    "entry_file": "sample_intervals.py",
+    "tags": [
+      "algorithm"
+    ]
+  },
+  "config": {
+    "model": "production",
+    "prompt_version": "P2",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "metrics": {
+    "llm_latency_seconds": 5.52,
+    "llm_api_calls": 1,
+    "llm_retries": 0,
+    "llm_prompt_tokens": 674,
+    "llm_completion_tokens": 162,
+    "llm_total_tokens": 836,
+    "ast_validation_passed": true,
+    "pytest_collect_passed": true,
+    "execution_success": true,
+    "pass_at_1": true,
+    "total_tests": 5,
+    "passed": 5,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 5 items\n\n..\\test_sample_intervals.py::test_merge_intervals_empty PASSED           [ 20%]\n..\\test_sample_intervals.py::test_merge_intervals_single PASSED          [ 40%]\n..\\test_sample_intervals.py::test_merge_intervals_overlapping PASSED     [ 60%]\n..\\test_sample_intervals.py::test_merge_intervals_unsorted PASSED        [ 80%]\n..\\test_sample_intervals.py::test_merge_intervals_invalid_interval_raises PASSED [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName                  Stmts   Miss  Cover   Missing\n---------------------------------------------------\nsample_intervals.py      13      0   100%\n---------------------------------------------------\nTOTAL                    13      0   100%\n============================== 5 passed in 0.07s ==============================\n",
+    "latency_seconds": 2.1,
+    "line_coverage": 100.0,
+    "branch_coverage": 100.0,
+    "mutants_total": 8,
+    "mutants_killed": 0,
+    "mutation_score": 0.0,
+    "mutant_details": [
+      {
+        "kind": "compare",
+        "line": 6,
+        "killed": false
+      },
+      {
+        "kind": "compare",
+        "line": 11,
+        "killed": false
+      },
+      {
+        "kind": "intconst",
+        "line": 9,
+        "killed": false
+      },
+      {
+        "kind": "intconst",
+        "line": 10,
+        "killed": false
+      },
+      {
+        "kind": "intconst",
+        "line": 11,
+        "killed": false
+      },
+      {
+        "kind": "intconst",
+        "line": 11,
+        "killed": false
+      },
+      {
+        "kind": "intconst",
+        "line": 12,
+        "killed": false
+      },
+      {
+        "kind": "intconst",
+        "line": 12,
+        "killed": false
+      }
+    ],
+    "total_name_references": 18,
+    "invalid_names": [],
+    "hallucination_rate": 0.0,
+    "bleu_4": 0.4276,
+    "rouge_l": 0.6109,
+    "codebleu_simplified": 0.7672,
+    "note": "text-similarity only — not a correctness measure"
+  },
+  "artifacts": {
+    "test_file": "DIFF-001\\test_sample_intervals.py"
+  },
+  "error": null
+}

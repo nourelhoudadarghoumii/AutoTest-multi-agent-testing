@@ -1,0 +1,18 @@
+{
+  "n_samples": 1,
+  "repair_success_rate": 1.0,
+  "test_recovery_rate_mean": 1.0,
+  "first_attempt_repair_rate": 1.0,
+  "regression_rate": 0.0,
+  "iterations_mean": 1,
+  "latency_seconds_mean": 7.57,
+  "per_failure_kind": {
+    "wrong_expected": {
+      "n": 1,
+      "repair_success_rate": 1.0
+    }
+  },
+  "llm_calls": 0,
+  "llm_prompt_tokens": 0,
+  "llm_completion_tokens": 0
+}

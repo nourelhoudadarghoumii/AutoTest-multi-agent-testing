@@ -1,0 +1,33 @@
+{
+  "experiment": "rag_on",
+  "experiment_id": "rag_on_1789777613_9f485e",
+  "prompt_version": "P3",
+  "rag_enabled": true,
+  "rag_store": "isolated_seeded",
+  "model": "cohere/north-mini-code:free",
+  "model_overridden": false,
+  "dataset_version": "v1",
+  "dataset_hash": "6c117a72e25ca8fc",
+  "temperature": 0.3,
+  "max_tokens": 2048,
+  "mutation": true,
+  "max_mutants": 8,
+  "sample_ids": [
+    "SIMPLE-001",
+    "SIMPLE-002",
+    "BRANCH-001",
+    "BRANCH-002",
+    "EDGE-001",
+    "EDGE-002",
+    "EXC-001",
+    "CLASS-001",
+    "CLASS-002",
+    "DEP-001",
+    "DIFF-001",
+    "DIFF-002"
+  ],
+  "notes": "RAG A/B: P3 with seeded bug patterns retrieved",
+  "timestamp_utc": "2026-09-19T00:26:53.420089+00:00",
+  "python_version": "3.14.3",
+  "platform": "Windows-11-10.0.26200-SP0"
+}

@@ -1,0 +1,98 @@
+{
+  "sample": {
+    "sample_id": "EDGE-002",
+    "category": "edge",
+    "difficulty": "medium",
+    "entry_file": "sample_moving_avg.py",
+    "tags": [
+      "edges",
+      "sequences"
+    ]
+  },
+  "config": {
+    "model": "deepseek/deepseek-v4-flash-0731:free",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "metrics": {
+    "llm_latency_seconds": 9.33,
+    "llm_api_calls": 1,
+    "llm_retries": 0,
+    "llm_prompt_tokens": 773,
+    "llm_completion_tokens": 256,
+    "llm_total_tokens": 1029,
+    "ast_validation_passed": true,
+    "pytest_collect_passed": true,
+    "execution_success": true,
+    "pass_at_1": true,
+    "total_tests": 4,
+    "passed": 4,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 4 items\n\n..\\test_sample_moving_avg.py::test_moving_average_happy_path PASSED      [ 25%]\n..\\test_sample_moving_avg.py::test_moving_average_edge_case_window_equals_length PASSED [ 50%]\n..\\test_sample_moving_avg.py::test_moving_average_error_window_larger_than_data PASSED [ 75%]\n..\\test_sample_moving_avg.py::test_moving_average_error_non_positive_window PASSED [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName                   Stmts   Miss  Cover   Missing\n----------------------------------------------------\nsample_moving_avg.py       8      1    88%   8\n----------------------------------------------------\nTOTAL                      8      1    88%\n============================== 4 passed in 0.10s ==============================\n",
+    "latency_seconds": 2.89,
+    "line_coverage": 85.71,
+    "branch_coverage": 83.33,
+    "mutants_total": 8,
+    "mutants_killed": 0,
+    "mutation_score": 0.0,
+    "mutant_details": [
+      {
+        "kind": "binop",
+        "line": 9,
+        "killed": false
+      },
+      {
+        "kind": "binop",
+        "line": 9,
+        "killed": false
+      },
+      {
+        "kind": "binop",
+        "line": 9,
+        "killed": false
+      },
+      {
+        "kind": "binop",
+        "line": 9,
+        "killed": false
+      },
+      {
+        "kind": "compare",
+        "line": 3,
+        "killed": false
+      },
+      {
+        "kind": "compare",
+        "line": 5,
+        "killed": false
+      },
+      {
+        "kind": "intconst",
+        "line": 3,
+        "killed": false
+      },
+      {
+        "kind": "intconst",
+        "line": 9,
+        "killed": false
+      }
+    ],
+    "total_name_references": 30,
+    "invalid_names": [],
+    "hallucination_rate": 0.0,
+    "bleu_4": 0.2494,
+    "rouge_l": 0.4673,
+    "codebleu_simplified": 0.6341,
+    "note": "text-similarity only — not a correctness measure"
+  },
+  "artifacts": {
+    "test_file": "EDGE-002\\test_sample_moving_avg.py"
+  },
+  "error": null
+}

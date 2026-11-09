@@ -1,0 +1,142 @@
+{
+  "sample_id": "EDGE-002",
+  "category": "edge",
+  "config": {
+    "model": "production",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048,
+    "per_test_validation": true
+  },
+  "baseline": {
+    "sample": {
+      "sample_id": "EDGE-002",
+      "category": "edge",
+      "difficulty": "medium",
+      "entry_file": "sample_moving_avg.py",
+      "tags": [
+        "edges",
+        "sequences"
+      ]
+    },
+    "config": {
+      "model": "production",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "dataset_version": "v1",
+      "temperature": 0.3,
+      "max_tokens": 2048
+    },
+    "metrics": {
+      "llm_latency_seconds": 3.88,
+      "llm_api_calls": 1,
+      "llm_retries": 0,
+      "llm_prompt_tokens": 660,
+      "llm_completion_tokens": 264,
+      "llm_total_tokens": 924,
+      "ast_validation_passed": true,
+      "pytest_collect_passed": true,
+      "execution_success": true,
+      "pass_at_1": false,
+      "total_tests": 6,
+      "passed": 5,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "failed_test_names": [
+        "test_moving_average_empty_values",
+        "test_moving_average_empty_values"
+      ],
+      "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 6 items\n\n..\\test_sample_moving_avg.py::test_moving_average_happy_path PASSED      [ 16%]\n..\\test_sample_moving_avg.py::test_moving_average_edge_case PASSED       [ 33%]\n..\\test_sample_moving_avg.py::test_moving_average_error_window_zero PASSED [ 50%]\n..\\test_sample_moving_avg.py::test_moving_average_error_window_negative PASSED [ 66%]\n..\\test_sample_moving_avg.py::test_moving_average_error_window_larger_than_data PASSED [ 83%]\n..\\test_sample_moving_avg.py::test_moving_average_empty_values FAILED    [100%]\n\n================================== FAILURES ===================================\n______________________ test_moving_average_empty_values _______________________\n..\\test_sample_moving_avg.py:31: in test_moving_average_empty_values\n    result = moving_average([], 5)\n             ^^^^^^^^^^^^^^^^^^^^^\nsample_moving_avg.py:6: in moving_average\n    raise ValueError(\"window larger than data\")\nE   ValueError: window larger than data\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName                   Stmts   Miss  Cover   Missing\n----------------------------------------------------\nsample_moving_avg.py       8      1    88%   8\n----------------------------------------------------\nTOTAL                      8      1    88%\n=========================== short test summary info ===========================\nFAILED ..\\test_sample_moving_avg.py::test_moving_average_empty_values - Value...\n========================= 1 failed, 5 passed in 0.48s =========================\n",
+      "latency_seconds": 8.55,
+      "line_coverage": 85.71,
+      "branch_coverage": 83.33,
+      "mutants_total": 8,
+      "mutants_killed": 8,
+      "mutation_score": 1.0,
+      "mutant_details": [
+        {
+          "kind": "binop",
+          "line": 9,
+          "killed": true
+        },
+        {
+          "kind": "binop",
+          "line": 9,
+          "killed": true
+        },
+        {
+          "kind": "binop",
+          "line": 9,
+          "killed": true
+        },
+        {
+          "kind": "binop",
+          "line": 9,
+          "killed": true
+        },
+        {
+          "kind": "compare",
+          "line": 3,
+          "killed": true
+        },
+        {
+          "kind": "compare",
+          "line": 5,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 3,
+          "killed": true
+        },
+        {
+          "kind": "intconst",
+          "line": 9,
+          "killed": true
+        }
+      ],
+      "total_name_references": 28,
+      "invalid_names": [],
+      "hallucination_rate": 0.0,
+      "bleu_4": 0.2477,
+      "rouge_l": 0.4585,
+      "codebleu_simplified": 0.666,
+      "note": "text-similarity only — not a correctness measure"
+    },
+    "artifacts": {
+      "test_file": "EDGE-002\\test_sample_moving_avg.py"
+    },
+    "error": null,
+    "surviving_mutants": [],
+    "mutants_total": 8,
+    "mutants_killed": 8
+  },
+  "guided": {
+    "note": "all mutants already killed — no guided step (no extra LLM call)",
+    "additional_generated": 0,
+    "additional_accepted": 0,
+    "additional_rejected": 0,
+    "pass_at_1": false,
+    "execution_success": true,
+    "line_coverage": 85.71,
+    "branch_coverage": 83.33,
+    "mutation_score": 1.0,
+    "mutants_total": 8,
+    "mutants_killed": 8,
+    "hallucination_rate": 0.0,
+    "latency_seconds": 8.55,
+    "llm_total_tokens": 924
+  },
+  "deltas": {
+    "mutation_score": 0,
+    "mutants_killed": 0,
+    "line_coverage": 0,
+    "branch_coverage": 0,
+    "pass_at_1": 0
+  },
+  "ceiling_effect": true,
+  "error": null
+}

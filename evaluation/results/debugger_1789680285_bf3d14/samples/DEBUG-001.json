@@ -1,0 +1,46 @@
+{
+  "sample": {
+    "sample_id": "DEBUG-001",
+    "category": "debug",
+    "buggy_failure_kind": "wrong_expected"
+  },
+  "metrics": {
+    "sample_id": "DEBUG-001",
+    "failure_kind": "wrong_expected",
+    "expected_repair": "change expected 6 to the correct sum 5",
+    "initial": {
+      "total": 3,
+      "passed": 2,
+      "failed": 1
+    },
+    "iterations": [
+      {
+        "iteration": 1,
+        "test_name": "test_add",
+        "error_type": "test_buggy.py",
+        "diagnosed": true,
+        "root_cause": "The test is failing because it expects the add function to return 6 when called with arguments (2, 3), but the actual result is 5. This indicates that the test assertion is incorrect - the add function is correctly implementing addition (2 + 3 = 5), but the test wrongly expects 6.",
+        "confidence": "high",
+        "applied": true
+      }
+    ],
+    "iterations_used": 1,
+    "final": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "errors": 0
+    },
+    "repair_success": true,
+    "test_recovery_rate": 1.0,
+    "first_attempt_repair": true,
+    "regression": false,
+    "latency_seconds": 7.57,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "error": null,
+    "repair_success_ratio": 1.0,
+    "first_attempt_repair_ratio": 1.0,
+    "regression_ratio": 0.0
+  }
+}

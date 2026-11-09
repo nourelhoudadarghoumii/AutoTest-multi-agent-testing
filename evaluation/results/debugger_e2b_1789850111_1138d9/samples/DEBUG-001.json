@@ -1,0 +1,91 @@
+{
+  "sample_id": "DEBUG-001",
+  "failure_category": "wrong_expected",
+  "expected_repair": "change expected 6 to the correct sum 5",
+  "target_function": "add",
+  "initial_failure": "1 failed / 0 errors (test_add, \u001b[1mtest_add\u001b[0m)",
+  "initial_test_result": {
+    "mode": "e2b_sandbox",
+    "total_tests": 3,
+    "passed": 2,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 0,
+    "coverage_percent": 100.0,
+    "failed_test_names": [
+      "test_add",
+      "\u001b[1mtest_add\u001b[0m"
+    ],
+    "exit_code": 1,
+    "execution_succeeded": false
+  },
+  "iterations": [
+    {
+      "mode": "e2b_sandbox",
+      "total_tests": 3,
+      "passed": 2,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "coverage_percent": 100.0,
+      "failed_test_names": [
+        "test_add",
+        "\u001b[1mtest_add\u001b[0m"
+      ],
+      "exit_code": 1,
+      "execution_succeeded": false
+    },
+    {
+      "mode": "e2b_sandbox",
+      "total_tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "coverage_percent": 100.0,
+      "failed_test_names": [],
+      "exit_code": 0,
+      "execution_succeeded": true
+    }
+  ],
+  "debugger_response": [
+    {
+      "iteration": 1,
+      "test_name": "test_add",
+      "error_type": "test_buggy.py",
+      "root_cause": "The test expects add(2, 3) to equal 6, but the actual result is 5. This indicates the test has an incorrect expected value. The add function likely performs standard addition (2 + 3 = 5), so the assertion should check for 5 instead of 6.",
+      "fix_description": "Change the expected value in the assertion from 6 to 5 to match the correct behavior of the add function.",
+      "confidence": "high",
+      "applied": true
+    }
+  ],
+  "repair_applied": true,
+  "final_test_result": {
+    "total_tests": 3,
+    "passed": 3,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "coverage_percent": 100.0,
+    "failed_test_names": []
+  },
+  "final_passed": 3,
+  "regression_detected": false,
+  "execution_backend": "e2b_sandbox",
+  "e2b_sandbox_used": true,
+  "e2b_sandbox_passes": 2,
+  "latency_seconds": 59.72,
+  "prompt_tokens": 441,
+  "completion_tokens": 163,
+  "llm_calls": 1,
+  "error": null,
+  "repair_success": true,
+  "test_recovery_rate": 1.0,
+  "iterations_used": 1,
+  "max_iterations_allowed": 3,
+  "first_attempt_repair": true,
+  "status": "tests_executed",
+  "repair_success_ratio": 1.0,
+  "first_attempt_repair_ratio": 1.0,
+  "regression_ratio": 0.0
+}

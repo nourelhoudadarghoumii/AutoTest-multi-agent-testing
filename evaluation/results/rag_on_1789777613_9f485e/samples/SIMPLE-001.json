@@ -1,0 +1,68 @@
+{
+  "sample": {
+    "sample_id": "SIMPLE-001",
+    "category": "simple",
+    "difficulty": "easy",
+    "entry_file": "sample_simple.py",
+    "tags": [
+      "arithmetic",
+      "pure"
+    ]
+  },
+  "config": {
+    "model": "cohere/north-mini-code:free",
+    "prompt_version": "P3",
+    "rag_enabled": true,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "metrics": {
+    "llm_latency_seconds": 4.74,
+    "llm_api_calls": 1,
+    "llm_retries": 0,
+    "llm_prompt_tokens": 711,
+    "llm_completion_tokens": 116,
+    "llm_total_tokens": 827,
+    "ast_validation_passed": true,
+    "pytest_collect_passed": true,
+    "execution_success": true,
+    "pass_at_1": true,
+    "total_tests": 6,
+    "passed": 6,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 6 items\n\n..\\test_sample_simple.py::test_add_positive PASSED                       [ 16%]\n..\\test_sample_simple.py::test_add_negative PASSED                       [ 33%]\n..\\test_sample_simple.py::test_add_mixed PASSED                          [ 50%]\n..\\test_sample_simple.py::test_sub_positive PASSED                       [ 66%]\n..\\test_sample_simple.py::test_sub_negative PASSED                       [ 83%]\n..\\test_sample_simple.py::test_sub_mixed PASSED                          [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName               Stmts   Miss  Cover   Missing\n------------------------------------------------\nsample_simple.py       4      0   100%\n------------------------------------------------\nTOTAL                  4      0   100%\n============================== 6 passed in 0.11s ==============================\n",
+    "latency_seconds": 2.99,
+    "line_coverage": 100.0,
+    "branch_coverage": 0.0,
+    "mutants_total": 2,
+    "mutants_killed": 0,
+    "mutation_score": 0.0,
+    "mutant_details": [
+      {
+        "kind": "binop",
+        "line": 3,
+        "killed": false
+      },
+      {
+        "kind": "binop",
+        "line": 8,
+        "killed": false
+      }
+    ],
+    "total_name_references": 16,
+    "invalid_names": [],
+    "hallucination_rate": 0.0,
+    "bleu_4": 0.3537,
+    "rouge_l": 0.5753,
+    "codebleu_simplified": 0.6892,
+    "note": "text-similarity only — not a correctness measure"
+  },
+  "artifacts": {
+    "test_file": "SIMPLE-001\\test_sample_simple.py"
+  },
+  "error": null
+}

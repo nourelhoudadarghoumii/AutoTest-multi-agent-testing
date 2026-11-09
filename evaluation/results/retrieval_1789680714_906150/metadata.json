@@ -1,0 +1,11 @@
+{
+  "experiment": "retrieval",
+  "experiment_id": "retrieval_1789680714_906150",
+  "k": 3,
+  "dataset_version": "v1",
+  "dataset_hash": "6c117a72e25ca8fc",
+  "rag_store": "isolated_seeded",
+  "timestamp_utc": "2026-09-17T21:32:00.283352+00:00",
+  "python_version": "3.14.3",
+  "platform": "Windows-11-10.0.26200-SP0"
+}

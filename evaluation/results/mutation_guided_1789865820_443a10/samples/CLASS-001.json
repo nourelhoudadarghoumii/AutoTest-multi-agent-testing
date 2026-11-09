@@ -1,0 +1,368 @@
+{
+  "sample_id": "CLASS-001",
+  "category": "class",
+  "config": {
+    "model": "production",
+    "prompt_version": "P0",
+    "rag_enabled": false,
+    "dataset_version": "v1",
+    "temperature": 0.3,
+    "max_tokens": 2048
+  },
+  "baseline": {
+    "sample": {
+      "sample_id": "CLASS-001",
+      "category": "class",
+      "difficulty": "medium",
+      "entry_file": "sample_rect.py",
+      "tags": [
+        "classes"
+      ]
+    },
+    "config": {
+      "model": "production",
+      "prompt_version": "P0",
+      "rag_enabled": false,
+      "dataset_version": "v1",
+      "temperature": 0.3,
+      "max_tokens": 2048
+    },
+    "metrics": {
+      "llm_latency_seconds": 3.2,
+      "llm_api_calls": 1,
+      "llm_retries": 0,
+      "llm_prompt_tokens": 671,
+      "llm_completion_tokens": 130,
+      "llm_total_tokens": 801,
+      "ast_validation_passed": true,
+      "pytest_collect_passed": true,
+      "execution_success": true,
+      "pass_at_1": true,
+      "total_tests": 3,
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "failed_test_names": [],
+      "stdout_excerpt": "============================= test session starts =============================\ncollecting ... collected 3 items\n\n..\\test_sample_rect.py::test_scale_happy_path PASSED                     [ 33%]\n..\\test_sample_rect.py::test_scale_edge_case PASSED                      [ 66%]\n..\\test_sample_rect.py::test_scale_error PASSED                          [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName             Stmts   Miss  Cover   Missing\n----------------------------------------------\nsample_rect.py      14      3    79%   6, 11, 14\n----------------------------------------------\nTOTAL               14      3    79%\n============================== 3 passed in 0.12s ==============================\n",
+      "latency_seconds": 5.73,
+      "line_coverage": 77.78,
+      "branch_coverage": 75.0,
+      "mutants_total": 8,
+      "mutants_killed": 0,
+      "mutation_score": 0.0,
+      "mutant_details": [
+        {
+          "kind": "binop",
+          "line": 11,
+          "killed": false
+        },
+        {
+          "kind": "binop",
+          "line": 14,
+          "killed": false
+        },
+        {
+          "kind": "binop",
+          "line": 14,
+          "killed": false
+        },
+        {
+          "kind": "binop",
+          "line": 20,
+          "killed": false
+        },
+        {
+          "kind": "binop",
+          "line": 20,
+          "killed": false
+        },
+        {
+          "kind": "boolop",
+          "line": 5,
+          "killed": false
+        },
+        {
+          "kind": "compare",
+          "line": 5,
+          "killed": false
+        },
+        {
+          "kind": "compare",
+          "line": 5,
+          "killed": false
+        }
+      ],
+      "total_name_references": 30,
+      "invalid_names": [],
+      "hallucination_rate": 0.0,
+      "bleu_4": 0.328,
+      "rouge_l": 0.5859,
+      "codebleu_simplified": 0.6997,
+      "note": "text-similarity only — not a correctness measure"
+    },
+    "artifacts": {
+      "test_file": "CLASS-001\\test_sample_rect.py"
+    },
+    "error": null,
+    "surviving_mutants": [
+      {
+        "mutation_id": "CLASS-001-M00",
+        "file": "sample_rect.py",
+        "function": "area",
+        "line": 11,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M01",
+        "file": "sample_rect.py",
+        "function": "perimeter",
+        "line": 14,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M02",
+        "file": "sample_rect.py",
+        "function": "perimeter",
+        "line": 14,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M03",
+        "file": "sample_rect.py",
+        "function": "scale",
+        "line": 20,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M04",
+        "file": "sample_rect.py",
+        "function": "scale",
+        "line": 20,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M05",
+        "file": "sample_rect.py",
+        "function": "__init__",
+        "line": 5,
+        "operator": "boolop",
+        "original_code": "if width <= 0 or height <= 0:",
+        "mutated_code": "if width <= 0 and height <= 0:"
+      },
+      {
+        "mutation_id": "CLASS-001-M06",
+        "file": "sample_rect.py",
+        "function": "__init__",
+        "line": 5,
+        "operator": "compare",
+        "original_code": "if width <= 0 or height <= 0:",
+        "mutated_code": "if width < 0 or height <= 0:"
+      },
+      {
+        "mutation_id": "CLASS-001-M07",
+        "file": "sample_rect.py",
+        "function": "__init__",
+        "line": 5,
+        "operator": "compare",
+        "original_code": "if width <= 0 or height <= 0:",
+        "mutated_code": "if width <= 0 or height < 0:"
+      }
+    ],
+    "mutants_total": 8,
+    "mutants_killed": 0
+  },
+  "guided": {
+    "survivors_given_to_llm": [
+      {
+        "mutation_id": "CLASS-001-M00",
+        "file": "sample_rect.py",
+        "function": "area",
+        "line": 11,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M01",
+        "file": "sample_rect.py",
+        "function": "perimeter",
+        "line": 14,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M02",
+        "file": "sample_rect.py",
+        "function": "perimeter",
+        "line": 14,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M03",
+        "file": "sample_rect.py",
+        "function": "scale",
+        "line": 20,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M04",
+        "file": "sample_rect.py",
+        "function": "scale",
+        "line": 20,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M05",
+        "file": "sample_rect.py",
+        "function": "__init__",
+        "line": 5,
+        "operator": "boolop",
+        "original_code": "if width <= 0 or height <= 0:",
+        "mutated_code": "if width <= 0 and height <= 0:"
+      },
+      {
+        "mutation_id": "CLASS-001-M06",
+        "file": "sample_rect.py",
+        "function": "__init__",
+        "line": 5,
+        "operator": "compare",
+        "original_code": "if width <= 0 or height <= 0:",
+        "mutated_code": "if width < 0 or height <= 0:"
+      },
+      {
+        "mutation_id": "CLASS-001-M07",
+        "file": "sample_rect.py",
+        "function": "__init__",
+        "line": 5,
+        "operator": "compare",
+        "original_code": "if width <= 0 or height <= 0:",
+        "mutated_code": "if width <= 0 or height < 0:"
+      }
+    ],
+    "additional_llm_tokens": 1596,
+    "additional_llm_latency_seconds": 17.13,
+    "additional_tests": 17,
+    "merged_accepted": true,
+    "pytest_collect_passed": true,
+    "execution_success": true,
+    "pass_at_1": true,
+    "total_tests": 20,
+    "passed": 20,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "stdout_excerpt": "t_sample_rect.py::test_scale_edge_case PASSED                      [ 10%]\n..\\test_sample_rect.py::test_scale_error PASSED                          [ 15%]\n..\\test_sample_rect.py::test_init_width_zero PASSED                      [ 20%]\n..\\test_sample_rect.py::test_init_height_zero PASSED                     [ 25%]\n..\\test_sample_rect.py::test_init_both_zero PASSED                       [ 30%]\n..\\test_sample_rect.py::test_init_negative_width PASSED                  [ 35%]\n..\\test_sample_rect.py::test_init_negative_height PASSED                 [ 40%]\n..\\test_sample_rect.py::test_init_both_negative PASSED                   [ 45%]\n..\\test_sample_rect.py::test_area_positive PASSED                        [ 50%]\n..\\test_sample_rect.py::test_perimeter_positive PASSED                   [ 55%]\n..\\test_sample_rect.py::test_scale_positive PASSED                       [ 60%]\n..\\test_sample_rect.py::test_scale_factor_zero PASSED                    [ 65%]\n..\\test_sample_rect.py::test_scale_factor_negative PASSED                [ 70%]\n..\\test_sample_rect.py::test_init_width_zero_and_height_zero_mutant_and PASSED [ 75%]\n..\\test_sample_rect.py::test_init_width_negative_and_height_negative_mutant_and PASSED [ 80%]\n..\\test_sample_rect.py::test_init_width_less_than_zero_mutant_compare PASSED [ 85%]\n..\\test_sample_rect.py::test_init_height_less_than_zero_mutant_compare PASSED [ 90%]\n..\\test_sample_rect.py::test_scale_factor_zero_mutant_binop PASSED       [ 95%]\n..\\test_sample_rect.py::test_scale_factor_negative_mutant_binop PASSED   [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName             Stmts   Miss  Cover   Missing\n----------------------------------------------\nsample_rect.py      14      0   100%\n----------------------------------------------\nTOTAL               14      0   100%\n============================= 20 passed in 0.24s ==============================\n",
+    "latency_seconds": 3.71,
+    "line_coverage": 100.0,
+    "branch_coverage": 100.0,
+    "mutation_score": 0.0,
+    "mutants_total": 8,
+    "mutants_killed": 0,
+    "surviving_mutants_after": [
+      {
+        "mutation_id": "CLASS-001-M00",
+        "file": "sample_rect.py",
+        "function": "area",
+        "line": 11,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M01",
+        "file": "sample_rect.py",
+        "function": "perimeter",
+        "line": 14,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M02",
+        "file": "sample_rect.py",
+        "function": "perimeter",
+        "line": 14,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M03",
+        "file": "sample_rect.py",
+        "function": "scale",
+        "line": 20,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M04",
+        "file": "sample_rect.py",
+        "function": "scale",
+        "line": 20,
+        "operator": "binop",
+        "original_code": "raise ValueError(\"dimensions must be positive\")",
+        "mutated_code": "raise ValueError('dimensions must be positive')"
+      },
+      {
+        "mutation_id": "CLASS-001-M05",
+        "file": "sample_rect.py",
+        "function": "__init__",
+        "line": 5,
+        "operator": "boolop",
+        "original_code": "if width <= 0 or height <= 0:",
+        "mutated_code": "if width <= 0 and height <= 0:"
+      },
+      {
+        "mutation_id": "CLASS-001-M06",
+        "file": "sample_rect.py",
+        "function": "__init__",
+        "line": 5,
+        "operator": "compare",
+        "original_code": "if width <= 0 or height <= 0:",
+        "mutated_code": "if width < 0 or height <= 0:"
+      },
+      {
+        "mutation_id": "CLASS-001-M07",
+        "file": "sample_rect.py",
+        "function": "__init__",
+        "line": 5,
+        "operator": "compare",
+        "original_code": "if width <= 0 or height <= 0:",
+        "mutated_code": "if width <= 0 or height < 0:"
+      }
+    ],
+    "hallucination_rate": 0.0
+  },
+  "deltas": {
+    "mutation_score": 0,
+    "mutants_killed": 0,
+    "surviving_mutants": 0,
+    "line_coverage": 22.22,
+    "branch_coverage": 25.0,
+    "pass_at_1": 0.0,
+    "tokens": 795,
+    "latency_seconds": 15.11
+  },
+  "ceiling_effect": false,
+  "error": null
+}

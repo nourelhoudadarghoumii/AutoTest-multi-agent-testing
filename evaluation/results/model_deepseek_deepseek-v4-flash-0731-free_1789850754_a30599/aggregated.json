@@ -1,0 +1,46 @@
+{
+  "n_samples": 12,
+  "execution_success_rate": 1.0,
+  "pass_at_1": 0.9167,
+  "line_coverage_mean": 95.4425,
+  "branch_coverage_mean": 86.1108,
+  "mutation_score_mean": 0.0909,
+  "hallucination_rate_mean": 0.0,
+  "latency_seconds_mean": 3.1167,
+  "latency_seconds_stdev": 0.2789,
+  "tokens_mean": 1031.75,
+  "bleu_4_mean": 0.314,
+  "rouge_l_mean": 0.5131,
+  "codebleu_simplified_mean": 0.6927,
+  "by_category": {
+    "simple": {
+      "n": 2,
+      "pass_at_1": 1.0
+    },
+    "branch": {
+      "n": 2,
+      "pass_at_1": 1.0
+    },
+    "edge": {
+      "n": 2,
+      "pass_at_1": 1.0
+    },
+    "exception": {
+      "n": 1,
+      "pass_at_1": 1.0
+    },
+    "class": {
+      "n": 2,
+      "pass_at_1": 1.0
+    },
+    "dependency": {
+      "n": 1,
+      "pass_at_1": 0.0
+    },
+    "difficult": {
+      "n": 2,
+      "pass_at_1": 1.0
+    }
+  },
+  "note_textsim": "BLEU/ROUGE/CodeBLEU are text-similarity only, never correctness"
+}
